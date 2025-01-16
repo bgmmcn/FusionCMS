@@ -9,7 +9,7 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') or exit('不允许直接脚本访问。');
 
 /**
  * CodeIgniter URL Helpers

@@ -36,7 +36,7 @@
  * @since	Version 1.3.1
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 /**
  * Unit Testing Class

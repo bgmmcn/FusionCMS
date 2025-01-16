@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('不允许直接脚本访问。'); ?>
 
 A PHP Error was encountered
 

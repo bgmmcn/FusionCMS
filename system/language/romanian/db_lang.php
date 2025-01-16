@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str'] = 'Datele conexiunii eronate. Nu s-au putut determina setările bazei de date.';
 $lang['db_unable_to_connect'] = 'Conexiunea la baza de date nu se poate efectua utilizând setările furnizate.';

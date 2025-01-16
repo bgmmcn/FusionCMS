@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" href="<?= base_url() . $INSTALL_PATH ?>images/favicon.png" />
 		<link rel="stylesheet" href="<?= base_url() . $css ?>" />
 
-		<script src="//cdnjs.cloudflare.com/ajax/libs/Kraken/3.8.2/js/html5.min.js"></script>
+		<script src="//cdnjs.loli.net/ajax/libs/Kraken/3.8.2/js/html5.min.js"></script>
 		<script src="<?= base_url() ?>node_modules/jquery/dist/jquery.min.js"></script>
         <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
@@ -168,6 +168,17 @@
 														</div>
 														<div class="relative h-[calc(100%_-_64px)] w-full px-10">
 															<div class="grid grid-cols-4 py-6">
+															<div class="relative my-4 flex items-center justify-center px-3">
+																	<div class="relative">
+																		<input type="radio" id="language_selection_en" class="peer absolute start-0 top-0 z-20 h-full w-full cursor-pointer opacity-0" onclick="setLanguage('cn')">
+																		<div class="border-muted-200 peer-checked:border-primary-500 dark:border-muted-600 flex h-14 w-14 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300"><img class="h-10 w-10 rounded-full" src="<?= base_url() ?>application/images/flags2/cn.svg" alt="flag icon"></div>
+																		<div class="bg-primary-500 dark:border-muted-800 absolute -end-1 -top-1 hidden h-7 w-7 items-center justify-center rounded-full border-4 border-white text-white peer-checked:flex">
+																			<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon h-3 w-3" width="1em" height="1em" viewBox="0 0 24 24">
+																				<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
+																			</svg>
+																		</div>
+																	</div>
+																</div>
 																<div class="relative my-4 flex items-center justify-center px-3">
 																	<div class="relative">
 																		<input type="radio" id="language_selection_en" class="peer absolute start-0 top-0 z-20 h-full w-full cursor-pointer opacity-0" onclick="setLanguage('en')">
@@ -812,9 +823,9 @@
 											<h2 class="text-white"> {{installing}}</h2>
 											<span class="text-white" id="install"></span>
 											<div id="install_after_actions" class="mt-6 flex items-center justify-between gap-2 text-nowrap" style="display:none">
-												<a href="<?= base_url('install/upgrade') ?>" class="m-0 is-button rounded bg-primary-500 dark:bg-primary-500 hover:enabled:bg-primary-400 dark:hover:enabled:bg-primary-400 text-white hover:enabled:shadow-lg hover:enabled:shadow-primary-500/50 dark:hover:enabled:shadow-primary-800/20 focus-visible:outline-primary-400/70 focus-within:outline-primary-400/70 focus-visible:bg-primary-500 active:enabled:bg-primary-500 dark:focus-visible:outline-primary-400 dark:focus-within:outline-primary-400 dark:focus-visible:bg-primary-500 dark:active:enabled:bg-primary-500 w-full">Upgrade</a>
-												<span class="text-muted-500 dark:text-muted-400">OR</span>
-												<a href="<?= base_url() ?>" class="m-0 is-button rounded bg-primary-500 dark:bg-primary-500 hover:enabled:bg-primary-400 dark:hover:enabled:bg-primary-400 text-white hover:enabled:shadow-lg hover:enabled:shadow-primary-500/50 dark:hover:enabled:shadow-primary-800/20 focus-visible:outline-primary-400/70 focus-within:outline-primary-400/70 focus-visible:bg-primary-500 active:enabled:bg-primary-500 dark:focus-visible:outline-primary-400 dark:focus-within:outline-primary-400 dark:focus-visible:bg-primary-500 dark:active:enabled:bg-primary-500 w-full">Go to website</a>
+												<a href="<?= base_url('install/upgrade') ?>" class="m-0 is-button rounded bg-primary-500 dark:bg-primary-500 hover:enabled:bg-primary-400 dark:hover:enabled:bg-primary-400 text-white hover:enabled:shadow-lg hover:enabled:shadow-primary-500/50 dark:hover:enabled:shadow-primary-800/20 focus-visible:outline-primary-400/70 focus-within:outline-primary-400/70 focus-visible:bg-primary-500 active:enabled:bg-primary-500 dark:focus-visible:outline-primary-400 dark:focus-within:outline-primary-400 dark:focus-visible:bg-primary-500 dark:active:enabled:bg-primary-500 w-full">升级</a>
+												<span class="text-muted-500 dark:text-muted-400">或者</span>
+												<a href="<?= base_url() ?>" class="m-0 is-button rounded bg-primary-500 dark:bg-primary-500 hover:enabled:bg-primary-400 dark:hover:enabled:bg-primary-400 text-white hover:enabled:shadow-lg hover:enabled:shadow-primary-500/50 dark:hover:enabled:shadow-primary-800/20 focus-visible:outline-primary-400/70 focus-within:outline-primary-400/70 focus-visible:bg-primary-500 active:enabled:bg-primary-500 dark:focus-visible:outline-primary-400 dark:focus-within:outline-primary-400 dark:focus-visible:bg-primary-500 dark:active:enabled:bg-primary-500 w-full">访问网站</a>
 											</div>
 										</section>
 									</aside>
@@ -837,7 +848,7 @@
         <script>
             Language.init();
 
-			const userLang = localStorage.getItem('language') == null ? 'en' : localStorage.getItem('language');
+			const userLang = localStorage.getItem('language') == null ? 'cn' : localStorage.getItem('language');
 			document.getElementById('language_selection_' + userLang).checked = true;
 
             if (userLang == 'fa')

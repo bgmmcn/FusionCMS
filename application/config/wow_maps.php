@@ -1,3 +1,3 @@
-<?php
-
-$config['maps'] = lang("maps", "wow_maps");
+<?php
+
+$config['maps'] = lang("maps", "wow_maps");

@@ -52,7 +52,7 @@ class Item extends MX_Controller
     public function ajax(int $realm = 0, int $item = 0)
     {
         if (!$this->input->is_ajax_request()) {
-            die('No direct script access allowed');
+            die('不允许直接脚本访问。');
         }
 
         // Make sure item and realm are set

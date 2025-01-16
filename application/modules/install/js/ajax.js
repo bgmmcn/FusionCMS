@@ -231,11 +231,11 @@ const Ajax = {
         },
 
         complete: function () {
-            $("#install").append("<div style='color:green;display:inline;'>done</div><br />");
+            $("#install").append("<div style='color:green;display:inline;'>完毕</div><br />");
         },
 
         configs: function (name, callback) {
-            $("#install").append("Writing configs...");
+            $("#install").append("正在写入配置...");
 
 			const data = {
 				title: $("#title").val(),
@@ -273,7 +273,7 @@ const Ajax = {
         },
 
         database: function (callback) {
-            $("#install").append("Importing database...");
+            $("#install").append("正在导入数据库...");
 
             $.post("install/next?step=database", function (res) {
                 if (res != '1') {
@@ -286,7 +286,7 @@ const Ajax = {
         },
 
         realms: function (callback) {
-            $("#install").append("Creating realms...");
+            $("#install").append("正在创建领域...");
 
 			const data = {
 				realms: JSON.stringify(Ajax.Realms.data),

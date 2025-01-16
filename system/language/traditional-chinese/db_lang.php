@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str'] = '無法根據送出的連接字串確定資料庫設定';
 $lang['db_unable_to_connect'] = '無法使用提供的設定連接到資料庫伺服器';

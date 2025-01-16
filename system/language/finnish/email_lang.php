@@ -35,7 +35,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['email_must_be_array'] = 'The email validation method must be passed an array.';
 $lang['email_invalid_address'] = 'Sähköpostiosoite ei kelpaa: %s';

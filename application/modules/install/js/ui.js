@@ -80,7 +80,7 @@ const UI = {
                         // check Apache or Nginx Modules
                         Ajax.checkApacheModules(function (result) {
                             if (result == '2') {
-                                notifyResult(false, 'Unable to check Apache or Nginx Modules, make sure required modules are enabled.');
+                                notifyResult(false, '无法检查 Apache 或 Nginx 模块，请确保所需模块已启用。');
                             } else if (result != '1') {
                                 notifyResult(false, 'Please enable all required Apache or Nginx modules to continue.');
                             }
@@ -97,7 +97,7 @@ const UI = {
                                     }
                                 });
                             } else {
-                                notifyResult(false, 'Please enable all required PHP extensions to continue.');
+                                notifyResult(false, '请启用所有必需的 PHP 扩展才能继续。');
                             }
                         });
                     }
@@ -188,7 +188,7 @@ const UI = {
                         return false;
                     }
 
-                    UI.confirm('<input type="text" id="superadmin" class="nui-focus border-muted-300 text-white placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 pe-4 ps-4 rounded" placeholder="Enter username that will receive owner access..." autofocus />', 'Accept', function () {
+                    UI.confirm('<input type="text" id="superadmin" class="nui-focus border-muted-300 text-white placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 pe-4 ps-4 rounded" placeholder="输入将获得所有者访问权限的用户名..." autofocus />', 'Accept', function () {
 							const name = $("#superadmin").val();
 							if (name.length) {
                                 notifyResult(true);

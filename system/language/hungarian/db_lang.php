@@ -8,7 +8,7 @@
  * @license		http://opensource.org/licenses/MIT	MIT License
  * @link		https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str']		= 'A megadott karaterláncből nem sikerült megállapítani az adatbázis beállításait.';
 $lang['db_unable_to_connect']			= 'Nem sikerült az adatbázishoz kapcsolódni a megadott beállításokkal.';

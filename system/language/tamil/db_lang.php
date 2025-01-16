@@ -1,13 +1,6 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str'] = 'நீங்கள் சமர்ப்பித்த இணைப்பு சரம் அடிப்படையில் தரவுத்தள அமைப்புகளை தீர்மானிக்க முடியவில்லை';
 $lang['db_unable_to_connect'] = 'கொடுக்க்ப்பட்ட அமைப்புகளை பயன்படுத்தி தங்களது தரவுதள சேவையகத்துடன் இணைப்பை ஏற்படுத்த முடியவில்லை.';

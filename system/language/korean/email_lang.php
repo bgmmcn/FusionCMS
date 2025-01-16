@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['email_must_be_array'] = '이메일 체크함수는 반드시 배열이어야 합니다.';
 $lang['email_invalid_address'] = '유효하지 않은 이메일 입니다: %s';

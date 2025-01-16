@@ -8,7 +8,7 @@
  * @license   http://opensource.org/licenses/MIT MIT License
  * @link      https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['form_validation_required']              = 'Pole {field} je povinné.';
 $lang['form_validation_isset']                 = 'Pole {field} musí obsahovať hodnotu.';

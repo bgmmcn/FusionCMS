@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set'] = 'Không thể tìm thấy biến được gọi userfile.';
 $lang['upload_file_exceeds_limit'] = 'Các tập tin tải lên vượt quá kích thước giới hạn ở cấu hình PHP.';

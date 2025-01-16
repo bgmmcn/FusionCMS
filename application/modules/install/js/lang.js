@@ -19,7 +19,7 @@ const Language = (() => {
     self.userLang = false;
 
     // Default language
-    self.defaultLang = 'en';
+    self.defaultLang = 'cn';
 
     /**
      * Load JSON file
@@ -120,7 +120,7 @@ const Language = (() => {
      */
     self.init = () => {
         // Read localstorage to set user language
-        self.userLang = localStorage.getItem('language') == null ? 'en' : localStorage.getItem('language');
+        self.userLang = localStorage.getItem('language') == null ? 'cn' : localStorage.getItem('language');
 
         // Load default language
         self.load(self.defaultLang);

@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Only translate these if World of Warcraft does it themselves,
- * otherwise you'll confuse people who expect to see them in English
- * Don't touch the null-entries, they are just there to avoid errors
- */
-
 $lang['speed'] = "Speed";
 
 $lang["bind"] = array(

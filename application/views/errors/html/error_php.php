@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 ?>
 
 <div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">

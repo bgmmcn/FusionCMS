@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['imglib_source_image_required'] = 'คุณต้องระบุแหล่งที่มาของภาพในการตั้งค่าของคุณ';
 $lang['imglib_gd_required'] = 'จำเป็นต้องใช้ไลบรารี่ GD image สำหรับการทำงานนี้';

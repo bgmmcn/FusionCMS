@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 # Import required classes
 use App\Config\Services;
@@ -216,7 +216,7 @@ class Updater extends MX_Controller
     {
         // Make sure its ajax request
         if(!$this->input->is_ajax_request())
-            exit('No direct script access allowed');
+            exit('不允许直接脚本访问。');
 
         // Check for updates
         $response = $this->check();

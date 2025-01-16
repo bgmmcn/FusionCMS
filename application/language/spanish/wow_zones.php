@@ -1,9 +1,5 @@
 <?php
 
-/**
- * The zones are exported from Area DBC 11.0.5.56487
- */
-
 $lang['zones'] = [
     1 => "Dun Morogh",
     2 => "Playa Larga",

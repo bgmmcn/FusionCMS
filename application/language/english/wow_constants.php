@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Only translate these if World of Warcraft does it themselves,
- * otherwise you'll confuse people who expect to see them in English
- */
-
 $lang['races'] = array(
     1 => "Human",
     2 => "Orc",

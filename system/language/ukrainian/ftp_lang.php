@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection'] = 'Неможливо знайти дійсний ідентифікатор з’єднання. Будь ласка, переконайтесь, що з’єднання встановлено, перш ніж виконувати будь-які операції з файлами.';
 $lang['ftp_unable_to_connect'] = 'Неможливо підключитися до FTP сервера, використовуючи надане ім’я хосту.';

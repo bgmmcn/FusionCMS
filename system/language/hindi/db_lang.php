@@ -1,13 +1,5 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @copyright	Pieter Krul
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- */
+
 defined('BASEPATH') OR exit('Directe toegang tot scripts is niet toegestaan');
 $lang['db_invalid_connection_str'] = 'मैं कनेक्शन डेटा का उपयोग कर डेटाबेस के लिए सेटिंग्स का निर्धारण करने में असमर्थ हूँ।';
 $lang['db_unable_to_connect'] = 'मैं निर्दिष्ट जानकारी के साथ डेटाबेस से कनेक्ट करने में असमर्थ हूँ।';

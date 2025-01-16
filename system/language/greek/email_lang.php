@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['email_must_be_array'] = 'Η μέθοδος email validation πρέπει να περάσει απο έναν πίνακα.';
 $lang['email_invalid_address'] = 'Μη έγκυρη διεύθυνση e-mail: %s';

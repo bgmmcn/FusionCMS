@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['email_must_be_array'] = '.ای میل کی تصدیق کا طریقہ کار ایک ایرے میں مھیا کرنا زروری ہے';
 $lang['email_invalid_address'] = '%s :غلط ای میل ایڈریس';

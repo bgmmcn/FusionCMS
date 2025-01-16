@@ -7,12 +7,12 @@ use CodeIgniter\Config\BaseConfig;
 class App extends BaseConfig
 {
     /**
-     * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
-     * If you want to accept multiple Hostnames, set this.
+     * 允许的站点URL中的主机名，除了baseURL中的主机名之外。
+     * 如果您希望接受多个主机名，请设置此项。
      *
-     * E.g.,
-     * When your site URL (base_url()) is 'http://example.com/', and your site
-     * also accepts 'http://media.example.com/' and 'http://accounts.example.com/':
+     * 例如，
+     * 当您的站点URL（base_url()）是'http://example.com/'，并且您的站点
+     * 还接受'http://media.example.com/'和'http://accounts.example.com/':
      *     ['media.example.com', 'accounts.example.com']
      *
      * @var list<string>
@@ -21,146 +21,129 @@ class App extends BaseConfig
 
     /**
      * --------------------------------------------------------------------------
-     * Index File
+     * 索引文件
      * --------------------------------------------------------------------------
      *
-     * Typically, this will be your `index.php` file, unless you've renamed it to
-     * something else. If you have configured your web server to remove this file
-     * from your site URIs, set this variable to an empty string.
+     * 通常，这将是您的`index.php`文件，除非您已将其重命名为其他名称。如果您已配置Web服务器以从站点URI中删除此文件，请将此变量设置为空字符串。
      */
     public string $indexPage = 'index.php';
 
     /**
      * --------------------------------------------------------------------------
-     * URI PROTOCOL
+     * URI协议
      * --------------------------------------------------------------------------
      *
-     * This item determines which server global should be used to retrieve the
-     * URI string. The default setting of 'REQUEST_URI' works for most servers.
-     * If your links do not seem to work, try one of the other delicious flavors:
+     * 此项目确定应使用哪个服务器全局变量来检索URI字符串。默认设置'REQUEST_URI'适用于大多数服务器。
+     * 如果您的链接似乎不起作用，请尝试其他美味的选项：
      *
-     *  'REQUEST_URI': Uses $_SERVER['REQUEST_URI']
-     * 'QUERY_STRING': Uses $_SERVER['QUERY_STRING']
-     *    'PATH_INFO': Uses $_SERVER['PATH_INFO']
+     *  'REQUEST_URI': 使用$_SERVER['REQUEST_URI']
+     * 'QUERY_STRING': 使用$_SERVER['QUERY_STRING']
+     *    'PATH_INFO': 使用$_SERVER['PATH_INFO']
      *
-     * WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
+     * 警告：如果将此设置为'PATH_INFO'，URI将始终被URL解码！
      */
     public string $uriProtocol = 'REQUEST_URI';
 
     /*
     |--------------------------------------------------------------------------
-    | Allowed URL Characters
+    | 允许的URL字符
     |--------------------------------------------------------------------------
     |
-    | This lets you specify which characters are permitted within your URLs.
-    | When someone tries to submit a URL with disallowed characters they will
-    | get a warning message.
+    | 这允许您指定URL中允许的字符。当有人尝试提交包含不允许字符的URL时，他们将
+    | 收到警告消息。
     |
-    | As a security measure you are STRONGLY encouraged to restrict URLs to
-    | as few characters as possible.
+    | 作为安全措施，强烈建议您将URL限制为尽可能少的字符。
     |
-    | By default, only these are allowed: `a-z 0-9~%.:_-`
+    | 默认情况下，只允许这些字符：`a-z 0-9~%.:_-`
     |
-    | Set an empty string to allow all characters -- but only if you are insane.
+    | 设置为空字符串以允许所有字符 - 但只有在您疯狂的情况下。
     |
-    | The configured value is actually a regular expression character group
-    | and it will be used as: '/\A[<permittedURIChars>]+\z/iu'
+    | 配置的值实际上是一个正则表达式字符组
+    | 它将被用作：'/\A[<permittedURIChars>]+\z/iu'
     |
-    | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
+    | 不要更改此设置，除非您完全理解其后果！
     |
     */
     public string $permittedURIChars = 'a-z 0-9~%.:_\-';
 
     /**
      * --------------------------------------------------------------------------
-     * Default Locale
+     * 默认区域设置
      * --------------------------------------------------------------------------
      *
-     * The Locale roughly represents the language and location that your visitor
-     * is viewing the site from. It affects the language strings and other
-     * strings (like currency markers, numbers, etc), that your program
-     * should run under for this request.
+     * 区域设置大致代表访问者查看站点的语言和位置。它会影响语言字符串和其他
+     * 字符串（如货币标记，数字等），您的程序应在此请求下运行。
      */
-    public string $defaultLocale = 'en';
+    public string $defaultLocale = 'cn';
 
     /**
      * --------------------------------------------------------------------------
-     * Negotiate Locale
+     * 协商区域设置
      * --------------------------------------------------------------------------
      *
-     * If true, the current Request object will automatically determine the
-     * language to use based on the value of the Accept-Language header.
+     * 如果为true，当前请求对象将根据Accept-Language标头的值自动确定
+     * 要使用的语言。
      *
-     * If false, no automatic detection will be performed.
+     * 如果为false，将不会执行自动检测。
      */
     public bool $negotiateLocale = false;
 
     /**
      * --------------------------------------------------------------------------
-     * Supported Locales
+     * 支持的区域设置
      * --------------------------------------------------------------------------
      *
-     * If $negotiateLocale is true, this array lists the locales supported
-     * by the application in descending order of priority. If no match is
-     * found, the first locale will be used.
+     * 如果$negotiateLocale为true，此数组列出了应用程序支持的区域设置，
+     * 按优先级降序排列。如果未找到匹配项，将使用第一个区域设置。
      *
-     * IncomingRequest::setLocale() also uses this list.
+     * IncomingRequest::setLocale()也使用此列表。
      *
      * @var list<string>
      */
-    public array $supportedLocales = ['en'];
+    public array $supportedLocales = ['cn'];
 
     /**
      * --------------------------------------------------------------------------
-     * Application Timezone
+     * 应用程序时区
      * --------------------------------------------------------------------------
      *
-     * The default timezone that will be used in your application to display
-     * dates with the date helper, and can be retrieved through app_timezone()
+     * 这是应用程序中用于显示日期的默认时区，
+     * 可以通过app_timezone()函数获取。
      *
-     * @see https://www.php.net/manual/en/timezones.php for list of timezones
-     *      supported by PHP.
+     * @see https://www.php.net/manual/en/timezones.php 以获取PHP支持的时区列表。
      */
     public string $appTimezone = 'UTC';
 
     /**
      * --------------------------------------------------------------------------
-     * Default Character Set
+     * 默认字符集
      * --------------------------------------------------------------------------
      *
-     * This determines which character set is used by default in various methods
-     * that require a character set to be provided.
+     * 这确定了在各种需要提供字符集的方法中默认使用的字符集。
      *
-     * @see http://php.net/htmlspecialchars for a list of supported charsets.
+     * @see http://php.net/htmlspecialchars 以获取支持的字符集列表。
      */
     public string $charset = 'UTF-8';
 
     /**
      * --------------------------------------------------------------------------
-     * Force Global Secure Requests
+     * 强制全局安全请求
      * --------------------------------------------------------------------------
      *
-     * If true, this will force every request made to this application to be
-     * made via a secure connection (HTTPS). If the incoming request is not
-     * secure, the user will be redirected to a secure version of the page
-     * and the HTTP Strict Transport Security (HSTS) header will be set.
+     * 如果为true，这将强制对该应用程序的每个请求都通过安全连接（HTTPS）进行。如果传入的请求不安全，用户将被重定向到安全版本的页面，并且将设置HTTP严格传输安全（HSTS）标头。
      */
     public bool $forceGlobalSecureRequests = false;
 
     /**
      * --------------------------------------------------------------------------
-     * Reverse Proxy IPs
+     * 反向代理IP
      * --------------------------------------------------------------------------
      *
-     * If your server is behind a reverse proxy, you must whitelist the proxy
-     * IP addresses from which CodeIgniter should trust headers such as
-     * X-Forwarded-For or Client-IP in order to properly identify
-     * the visitor's IP address.
+     * 如果您的服务器位于反向代理之后，您必须将代理的IP地址列入白名单，以便CodeIgniter能够信任诸如X-Forwarded-For或Client-IP之类的标头，从而正确识别访问者的IP地址。
      *
-     * You need to set a proxy IP address or IP address with subnets and
-     * the HTTP header for the client IP address.
+     * 您需要设置代理的IP地址或子网以及客户端IP地址的HTTP标头。
      *
-     * Here are some examples:
+     * 以下是一些示例：
      *     [
      *         '10.0.1.200'     => 'X-Forwarded-For',
      *         '192.168.5.0/24' => 'X-Real-IP',
@@ -172,16 +155,12 @@ class App extends BaseConfig
 
     /**
      * --------------------------------------------------------------------------
-     * Content Security Policy
+     * 内容安全策略
      * --------------------------------------------------------------------------
      *
-     * Enables the Response's Content Secure Policy to restrict the sources that
-     * can be used for images, scripts, CSS files, audio, video, etc. If enabled,
-     * the Response object will populate default values for the policy from the
-     * `ContentSecurityPolicy.php` file. Controllers can always add to those
-     * restrictions at run time.
+     * 启用响应的内容安全策略，以限制可用于图像、脚本、CSS文件、音频、视频等的来源。如果启用，响应对象将从`ContentSecurityPolicy.php`文件中填充策略的默认值。控制器可以在运行时随时添加这些限制。
      *
-     * For a better understanding of CSP, see these documents:
+     * 为了更好地理解CSP，请参阅以下文档：
      *
      * @see http://www.html5rocks.com/en/tutorials/security/content-security-policy/
      * @see http://www.w3.org/TR/CSP/

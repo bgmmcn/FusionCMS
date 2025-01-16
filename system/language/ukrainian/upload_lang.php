@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set'] = "Неможливо знайти змінну з ім’ям userfile в масиві POST.";
 $lang['upload_file_exceeds_limit'] = "Розмір завантаженого файлу перевищує максимально допустимий розмір, вказаний у файлі конфігурації PHP.";

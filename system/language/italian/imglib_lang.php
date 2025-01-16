@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['imglib_source_image_required'] = 'Occorre specificare una immagine nelle preferenze.';
 $lang['imglib_gd_required'] = 'La libreria GD è necessaria per utilizzare questa funzionalità.';

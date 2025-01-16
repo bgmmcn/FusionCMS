@@ -1,19 +1,12 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['migration_none_found'] = '不需迁移。  ';
-$lang['migration_not_found'] = '无法根据版本号找到迁移方法： %s。';
-$lang['migration_sequence_gap'] = '版本迁移存在鸿沟：%s。';
-$lang['migration_multiple_version'] = '多个迁移对应同一版本号：%s。';
-$lang['migration_class_doesnt_exist'] = '无法找到迁移类 "%s"。';
-$lang['migration_missing_up_method'] = '无法找到迁移类 "%s" 中的 "up" 方法。';
-$lang['migration_missing_down_method'] = '无法找到迁移类 "%s" 中的 " 方法。';
-$lang['migration_invalid_filename'] = '无效的迁移文件名："%s"。';
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
+
+$lang['migration_none_found'] = '没有找到任何迁移文件。';
+$lang['migration_not_found'] = '没有找到版本号为 %s 的迁移文件。';
+$lang['migration_sequence_gap'] = '在版本号 %s 附近的迁移序列中存在缺口。';
+$lang['migration_multiple_version'] = '存在多个版本号为 %s 的迁移文件。';
+$lang['migration_class_doesnt_exist'] = '找不到名为 "%s" 的迁移类。';
+$lang['migration_missing_up_method'] = '名为 "%s" 的迁移类缺少 "up" 方法。';
+$lang['migration_missing_down_method'] = '名为 "%s" 的迁移类缺少 "down" 方法。';
+$lang['migration_invalid_filename'] = '迁移文件 "%s" 的文件名无效。';

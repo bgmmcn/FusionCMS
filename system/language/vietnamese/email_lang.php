@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['email_must_be_array'] = 'Phương thức xác thực email phải được truyền qua một mảng.';
 $lang['email_invalid_address'] = 'Địa chỉ email hợp lệ (ví dụ: name@example.com): %s';

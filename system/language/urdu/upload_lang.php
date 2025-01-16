@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT Lic ense
  * @link http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set']	= '.کے نام کا ایل پوسٹ ویریبل ڈھونڈنا ممکن نہیں ہو سکا userfile';
 $lang['upload_file_exceeds_limit']	= '.کی کنفگریشن فائل میں مختص سائز سے بڑھ گئی ہے PHP اپلوڈ کردہ فائل کا سائز';

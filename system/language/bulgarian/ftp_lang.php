@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection'] = 'Не може да бъде намерена валидна връзка. Моля, проверете дали сте се свързали преди да извършите някакви действия с файла.';
 $lang['ftp_unable_to_connect'] = 'Не може да се свърже с вашия FTP сървър чрез предоставения хост.';

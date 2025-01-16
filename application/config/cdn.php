@@ -1,26 +1,22 @@
 <?php
 
+// 如果没有定义 BASEPATH，则退出脚本
 if (! defined('BASEPATH')) {
-    exit('No direct script access allowed');
+    exit('不允许直接脚本访问。');
 }
-
-/**
- * @package FusionCMS
- * @version 6.0
- * @link    https://github.com/FusionWowCMS/FusionCMS
- */
 
 /*
 |--------------------------------------------------------------------------
-| CDN system
+| CDN 系统
 |--------------------------------------------------------------------------
 |
-| If activated, static files (js/css/images) are loaded via the FusionCMS CDN system
-| The geologically closest server to the player is selected for this
-| This should speed up the loading time of the website
+| 如果激活，静态文件（js/css/images）将通过 FusionCMS CDN 系统加载
+| 为此，将选择地理位置最接近玩家的服务器
+| 这应该会加快网站的加载时间
 |
-| Only default theme. Files from other themes can be hosted on request.
+| 仅支持默认主题。其他主题的文件可以根据请求托管
 */
 
 $config['cdn'] = false;
 $config['cdn_link'] = "https://cdn.google.com/";
+

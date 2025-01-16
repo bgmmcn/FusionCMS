@@ -2,7 +2,7 @@
 
 if (!defined('BASEPATH'))
 {
-    exit('No direct script access allowed');
+    exit('不允许直接脚本访问。');
 }
 
 use MX\CI;

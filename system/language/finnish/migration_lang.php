@@ -35,7 +35,7 @@
  * @since	Version 3.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['migration_none_found'] = 'No migrations were found / Siirtoja ei löydy.';
 $lang['migration_not_found'] = 'No migration could be found with the version number: %s. Versionumerolla %s ei löytynyt siirtoa';

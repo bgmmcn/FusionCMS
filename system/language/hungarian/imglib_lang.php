@@ -8,7 +8,7 @@
  * @license		http://opensource.org/licenses/MIT	MIT License
  * @link		https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['imglib_source_image_required']	= 'Meg kell adnia egy kép forrást a beállításoknál.';
 $lang['imglib_gd_required']				= 'Ehhez a funkcióhoz a GD képkönyvtárra van szükség.';

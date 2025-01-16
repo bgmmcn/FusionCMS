@@ -35,7 +35,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['profiler_database'] = 'tietokanta';
 $lang['profiler_controller_info'] = 'CLASS/METHOD';

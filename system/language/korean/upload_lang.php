@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set'] = '전송된 데이터가 없습니다. FILE 필드명을 확인하세요.';
 $lang['upload_file_exceeds_limit'] = '서버에 설정된 업로드 용량을 초과하였습니다.';

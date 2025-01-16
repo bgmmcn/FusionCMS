@@ -3,7 +3,7 @@
 use MX\CI;
 use CI_Config;
 
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') or exit('不允许直接脚本访问。');
 
 /**
  * Modular Extensions - HMVC

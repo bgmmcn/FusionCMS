@@ -2,28 +2,28 @@
 <div class="tabs">
     <ul class="nav nav-tabs mb-2">
 	    <li class="nav-item mx-1">
-			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl active" href="#realms" data-bs-target="#realms" data-bs-toggle="tab">Realms</a>
+			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl active" href="#realms" data-bs-target="#realms" data-bs-toggle="tab">领域</a>
         </li>
         <li class="nav-item mx-1">
-			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#website" data-bs-target="#website" data-bs-toggle="tab">Website</a>
+			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#website" data-bs-target="#website" data-bs-toggle="tab">网站</a>
         </li>
         <li class="nav-item mx-1">
-			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#smtp" data-bs-target="#smtp" data-bs-toggle="tab">SMTP</a>
+			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#smtp" data-bs-target="#smtp" data-bs-toggle="tab">邮件</a>
         </li>
         <li class="nav-item mx-1">
-			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#performance" data-bs-target="#performance" data-bs-toggle="tab">Performance</a>
+			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#performance" data-bs-target="#performance" data-bs-toggle="tab">性能</a>
         </li>
 		<li class="nav-item mx-1">
-			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#social_media" data-bs-target="#social_media" data-bs-toggle="tab">Social Media</a>
+			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#social_media" data-bs-target="#social_media" data-bs-toggle="tab">社交</a>
         </li>
 		<li class="nav-item mx-1">
-			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#cdn" data-bs-target="#cdn" data-bs-toggle="tab">CDN</a>
+			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#cdn" data-bs-target="#cdn" data-bs-toggle="tab">加速</a>
         </li>
 		<li class="nav-item mx-1">
-			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#security" data-bs-target="#security" data-bs-toggle="tab">Security</a>
+			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#security" data-bs-target="#security" data-bs-toggle="tab">安全</a>
         </li>
 		<li class="nav-item mx-1">
-			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#wow_db" data-bs-target="#wow_db" data-bs-toggle="tab">Wow Database</a>
+			<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-xl" href="#wow_db" data-bs-target="#wow_db" data-bs-toggle="tab">调用</a>
 		</li>
     </ul>
 
@@ -472,7 +472,7 @@
             </div>
 
 			<div class="form-group row">
-			<label class="col-sm-2 col-form-label" for="has_smtp">Enable password recovery (requires SMTP server)</label>
+			<label class="col-sm-2 col-form-label" for="has_smtp">启用密码恢复（需要SMTP服务器）</label>
 			<div class="col-sm-10">
 			<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" id="has_smtp">
 				<option value="1" {if $config.has_smtp}selected{/if}>Yes</option>
@@ -482,7 +482,7 @@
             </div>
 
 			<div class="form-group row mb-3">
-			<label class="col-sm-2 col-form-label" for="vote_reminder">Enable vote reminder popup</label>
+			<label class="col-sm-2 col-form-label" for="vote_reminder">启用投票提醒弹出</label>
 			<div class="col-sm-10">
 			<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" id="vote_reminder" onChange="Settings.toggleVoteReminder(this)">
 				<option value="1" {if $config.vote_reminder}selected{/if}>Yes</option>
@@ -514,7 +514,7 @@
         <div class="tab-pane" id="smtp">
         <form role="form" onSubmit="Settings.saveSmtpSettings(); return false">
 			<div class="form-group row mb-1">
-			<label class="col-sm-2 col-form-label" for="use_own_smtp_settings">Use own SMTP settings (enter them below)</label>
+			<label class="col-sm-2 col-form-label" for="use_own_smtp_settings">使用自己的 SMTP 设置（在下方输入）</label>
 			<div class="col-sm-10">
 			<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" id="use_own_smtp_settings" onChange="Settings.toggleSMTPusage(this)">
 				<option value="1" {if $config.use_own_smtp_settings}selected{/if}>Yes</option>
@@ -605,7 +605,7 @@
         <div class="tab-pane" id="performance">
           <form role="form" onSubmit="Settings.savePerformanceSettings(); return false">
 			<div class="form-group row">
-			<label class="col-sm-2 col-form-label" for="disable_visitor_graph" data-toggle="tooltip" data-placement="bottom" title="If you have many visitors, the admin panel will become very slow because of the statistics graph - disabling it will help a lot">Disable dashboard visitor graph <a>(?)</a></label>
+			<label class="col-sm-2 col-form-label" for="disable_visitor_graph" data-toggle="tooltip" data-placement="bottom" title="If you have many visitors, the admin panel will become very slow because of the statistics graph - disabling it will help a lot">禁用仪表盘访客图表 <a>(?)</a></label>
 			<div class="col-sm-10">
 			<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" name="disable_visitor_graph" id="disable_visitor_graph">
 				<option value="true" {if $config.disable_visitor_graph}selected{/if}>Yes</option>
@@ -614,7 +614,7 @@
 			</div>
 			</div>
 			<div class="form-group row">
-			<label class="col-sm-2 col-form-label" for="disable_realm_status" data-toggle="tooltip" data-placement="bottom" title="If you have many visitors, the admin panel will become very slow because of the statistics graph - disabling it will help a lot">Disable realms status <a>(?)</a></label>
+			<label class="col-sm-2 col-form-label" for="disable_realm_status" data-toggle="tooltip" data-placement="bottom" title="If you have many visitors, the admin panel will become very slow because of the statistics graph - disabling it will help a lot">禁用领域状态 <a>(?)</a></label>
 			<div class="col-sm-10">
 			<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" name="disable_realm_status" id="disable_realm_status">
 				<option value="true" {if $config.disable_realm_status}selected{/if}>Yes</option>
@@ -624,7 +624,7 @@
 			</div>
 
 			<div class="form-group row mb-3">
-			<label class="col-sm-2 col-form-label" for="cache">Cache on?</label>
+			<label class="col-sm-2 col-form-label" for="cache">启用缓存？</label>
 			<div class="col-sm-10">
 			<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" name="cache" id="cache">
 				<option value="true" {if $config.cache}selected{/if}>Yes</option>
@@ -633,7 +633,7 @@
 			</div>
 			</div>
 			<div class="form-group row">
-			<label class="col-sm-2 col-form-label" for="enable_minify_js" data-toggle="tooltip" data-placement="bottom" title="If you have many visitors, the admin panel will become very slow because of the statistics graph - disabling it will help a lot">Enable minify javascript <a>(?)</a></label>
+			<label class="col-sm-2 col-form-label" for="enable_minify_js" data-toggle="tooltip" data-placement="bottom" title="If you have many visitors, the admin panel will become very slow because of the statistics graph - disabling it will help a lot">启用 JavaScript 代码压缩 <a>(?)</a></label>
 			<div class="col-sm-10">
 			<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" name="enable_minify_js" id="enable_minify_js">
 				<option value="true" {if $config.enable_minify_js}selected{/if}>Yes</option>
@@ -642,7 +642,7 @@
 			</div>
 			</div>
 			<div class="form-group row">
-			<label class="col-sm-2 col-form-label" for="enable_minify_css" data-toggle="tooltip" data-placement="bottom" title="If you have many visitors, the admin panel will become very slow because of the statistics graph - disabling it will help a lot">Enable minify css <a>(?)</a></label>
+			<label class="col-sm-2 col-form-label" for="enable_minify_css" data-toggle="tooltip" data-placement="bottom" title="If you have many visitors, the admin panel will become very slow because of the statistics graph - disabling it will help a lot">启用 CSS 代码压缩 <a>(?)</a></label>
 			<div class="col-sm-10">
 			<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" name="enable_minify_css" id="enable_minify_css">
 				<option value="true" {if $config.enable_minify_css}selected{/if}>Yes</option>
@@ -657,28 +657,28 @@
 		<div class="tab-pane" id="social_media">
           <form role="form" onSubmit="Settings.saveSocialMedia(); return false">
 			<div class="form-group row">
-			<label class="col-sm-2 col-form-label" for="fb_link">Facebook</label>
+			<label class="col-sm-2 col-form-label" for="fb_link">抖音</label>
 			<div class="col-sm-10">
 				<input class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="url" id="fb_link" placeholder="https://" value="{$config.facebook}"/>
 			</div>
             </div>
 
 			<div class="form-group row">
-			<label class="col-sm-2 col-form-label" for="twitter_link">Twitter</label>
+			<label class="col-sm-2 col-form-label" for="twitter_link">抖音</label>
 			<div class="col-sm-10">
 				<input class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="url" id="twitter_link" placeholder="https://" value="{$config.twitter}"/>
 			</div>
             </div>
 
 			<div class="form-group row">
-			<label class="col-sm-2 col-form-label" for="yt_link">Youtube</label>
+			<label class="col-sm-2 col-form-label" for="yt_link">抖音</label>
 			<div class="col-sm-10">
 				<input class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="url" id="yt_link" placeholder="https://" value="{$config.youtube}"/>
 			</div>
             </div>
 
 			<div class="form-group row mb-3">
-			<label class="col-sm-2 col-form-label" for="discord_link">Discord</label>
+			<label class="col-sm-2 col-form-label" for="discord_link">抖音</label>
 			<div class="col-sm-10">
 				<input class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="url" id="discord_link" placeholder="https://" value="{$config.discord}"/>
 			</div>
@@ -715,12 +715,12 @@
         <form role="form" onSubmit="Settings.saveSecurity(); return false">
 			<div class="form-group row">
 				<div class="col-sm-6 mb-3">
-					<label class="col-form-label" for="captcha">Use captcha? (Recommended: yes), Enable <a href="http://www.google.com/recaptcha/admin" target="_blank">Google Captcha</a> (optional)</label>
+					<label class="col-form-label" for="captcha">使用验证码？（推荐：是），启用<a href =“ http://www.google.com/recaptcha/admin” target =“ _ blank”> 谷歌验证码 </a>（可选）</label>
 					<select onChange="if(this.value == 'recaptcha' || this.value == 'recaptcha3'){ $('#captcha_site_key').fadeIn(150); } else { $('#captcha_site_key').fadeOut(150); }if(this.value == 'recaptcha' || this.value == 'recaptcha3'){ $('#captcha_secret_key').fadeIn(150); } else { $('#captcha_secret_key').fadeOut(150); }if(this.value == 'recaptcha'){ $('#captcha_theme').fadeIn(150); } else { $('#captcha_theme').fadeOut(150); }" class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" id="captcha">
 						<option value="recaptcha" {if $config.captcha_type == 'recaptcha'}selected{/if}>Google Reaptcha v2</option>
 						<option value="recaptcha3" {if $config.captcha_type == 'recaptcha3'}selected{/if}>Google Reaptcha v3</option>
 						<option value="inbuilt" {if $config.captcha_type == 'inbuilt'}selected{/if}>Image Captcha</option>
-						<option value="disabled" {if !$config.use_captcha}selected{/if}>Disable</option>
+						<option value="disabled" {if !$config.use_captcha}selected{/if}>禁用</option>
 					</select>
 				</div>
 				<div id="captcha_theme" class="col-sm-6 mb-3" {if $config.captcha_type != 'recaptcha'}style="display:none"{/if}>
@@ -746,7 +746,7 @@
 				</div>
 
 				<div class="col-sm-6 mb-3">
-					<label class="col-form-label" for="captcha_attemps">Captcha attemps (default: 3)</label>
+					<label class="col-form-label" for="captcha_attemps">验证码尝试（默认值：3）</label>
 					<div data-plugin-spinner data-plugin-options='{ "min": 0, "max": 9999 }'>
 						<div class="input-group">
 							<input class="spinner-input form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="text" id="captcha_attemps" value="{$config.captcha_attemps}"/>
@@ -763,7 +763,7 @@
 				</div>
 
 				<div class="col-sm-6 mb-3">
-					<label class="col-form-label" for="block_attemps">Block attemps</label>
+					<label class="col-form-label" for="block_attemps">阻止尝试</label>
 					<div data-plugin-spinner data-plugin-options='{ "min": 0, "max": 9999 }'>
 						<div class="input-group">
 							<input class="spinner-input form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="text" id="block_attemps" value="{$config.block_attemps}"/>
@@ -780,7 +780,7 @@
 				</div>
 
 				<div class="col-sm-6 mb-3">
-					<label class="col-form-label" for="block_duration">Block duration in minutes (default: 15)</label>
+					<label class="col-form-label" for="block_duration">阻止时长（以分钟为单位，默认值：15）</label>
 					<div data-plugin-spinner data-plugin-options='{ "min": 0, "max": 9999 }'>
 						<div class="input-group">
 							<input class="spinner-input form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="text" id="block_duration" value="{$config.block_duration}"/>
@@ -804,7 +804,7 @@
 		<div class="tab-pane" id="wow_db">
 			<form role="form" onSubmit="Settings.saveWowDatabase(); return false">
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label" for="api_item_icons">API link to get item icons</label>
+					<label class="col-sm-2 col-form-label" for="api_item_icons">API链接获取物品图标</label>
 					<div class="col-sm-10">
 						<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" id="api_item_icons" onChange="Settings.toggleWowDB(this)">
 							<option disabled>Select a Wow database</option>
@@ -816,13 +816,13 @@
 				</div>
 
 				<div class="form-group row" id="toggle_wowdb" {if $config.api_item_custom == false}style="display:none;"{/if}>
-					<label class="col-sm-2 col-form-label" for="custom_link">Custom DB Link</label>
+					<label class="col-sm-2 col-form-label" for="custom_link">自定义数据库链接</label>
 					<div class="col-sm-10">
 						<input class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="url" id="custom_link" placeholder="https://" value="{$config.api_item_icons}"/>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label" for="api_item_data">API link to get item data</label>
+					<label class="col-sm-2 col-form-label" for="api_item_data">API链接获取物品数据</label>
 					<div class="col-sm-10">
 						<select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" id="api_item_data">
 							<option disabled>Select a WowHead database</option>
@@ -833,7 +833,7 @@
 					</div>
 				</div>
 
-				<button class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md" type="submit">Save</button>
+				<button class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md" type="submit">保存</button>
 			</form>
 		</div>
     </div>

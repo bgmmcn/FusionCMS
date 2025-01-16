@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['email_must_be_array']         = "O método de validação e-mail requer como parâmetro um array.";
 $lang['email_invalid_address']       = "Endereço de e-mail inválido: %s";

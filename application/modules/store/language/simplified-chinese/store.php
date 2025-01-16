@@ -1,0 +1,46 @@
+<?php
+
+$lang['item_store'] = "物品商店";
+$lang['cant_afford'] = "您买不起这个！";
+$lang['go_back'] = "返回";
+$lang['error_offline'] = "很抱歉，我们试图联系的领域似乎处于离线状态。您的积分已恢复。请稍后再试。";
+$lang['error_character'] = "我们无法将物品发送给您，因为您没有角色。您的积分已恢复。";
+$lang['error_character_exists'] = "输入的角色不存在。";
+$lang['error_character_not_mine'] = "输入的角色不属于您。";
+$lang['error_character_not_offline'] = "输入的角色未离线。请将角色退出游戏并重试。";
+$lang['error_no_console'] = "很抱歉，但此物品设计用于的领域不支持控制台命令。请向管理员报告此问题。";
+$lang['error_query'] = "很抱歉，我们无法执行此操作。请向管理员报告此问题。";
+$lang['checkout'] = "结账";
+$lang['buying'] = "您正在购买";
+$lang['total_of'] = "共计";
+$lang['vp'] = "VP";
+$lang['dp'] = "DP";
+$lang['no_character'] = "您没有角色";
+$lang['sort_by'] = "排序方式";
+$lang['default'] = "默认";
+$lang['name'] = "名称";
+$lang['price'] = "价格";
+$lang['item_quality'] = "物品品质";
+$lang['all_items'] = "所有物品";
+$lang['poor'] = "劣质";
+$lang['common'] = "普通";
+$lang['uncommon'] = "不常见";
+$lang['rare'] = "稀有";
+$lang['epic'] = "史诗";
+$lang['legendary'] = "传说";
+$lang['artifact'] = "神器";
+$lang['heirloom'] = "传家宝";
+$lang['filter'] = "按名称过滤...";
+$lang['cart'] = "购物车";
+$lang['items'] = "件物品";
+$lang['empty_cart'] = "您的购物车是空的";
+$lang['checkout'] = "结账";
+$lang['max'] = "最大化所有组";
+$lang['min'] = "最小化所有组";
+$lang['hide'] = "隐藏组";
+$lang['show'] = "显示组";
+$lang['loading'] = "正在加载...";
+$lang['want_to_buy'] = "您确定要购买这些物品吗？";
+$lang['yes'] = "是";
+$lang['free_items'] = "您不能购买花费 0 VP 或 DP 的物品。";
+

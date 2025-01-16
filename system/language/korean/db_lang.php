@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str'] = '입력하신 connection_string 정보로 연결할 수 없습니다.';
 $lang['db_unable_to_connect'] = 'config/databases.php의 정보로 연결할 수 없습니다. 입력값을 확인하세요.';

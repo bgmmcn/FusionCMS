@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['imglib_source_image_required']	= '.آپ کے لئے لازم ہے کے سیٹنگز میں تصویر کا ٹھکانہ باتیں';
 $lang['imglib_gd_required']		= '.امیج لائبریری کا ہونا ضروری ہے GD اس سہولت تو استعمال کرنے کے لیے';

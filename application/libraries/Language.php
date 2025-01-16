@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+    exit('不允许直接脚本访问。');
 }
 
 /**
@@ -44,7 +44,7 @@ class Language
         $this->defaultLanguage = $this->CI->config->item('language');
 
         if (!is_dir("application/language/" . $this->defaultLanguage)) {
-            $this->defaultLanguage = "english";
+            $this->defaultLanguage = "simplified-chinese";
 
             if (!is_dir("application/language/" . $this->defaultLanguage)) {
                 show_error("The actual default language <b>" . $this->CI->config->item('language') . "</b> does not exist, and neither does English. Please install at least one language.");
@@ -73,7 +73,7 @@ class Language
             $language = $this->defaultLanguage;
 
             if (!is_dir("application/language/" . $language)) {
-                $language = "english";
+                $language = "simplified-chinese";
 
                 if (!is_dir("application/language/" . $language)) {
                     show_error("The requested language <b>" . $realLanguage . "</b> doesn't exist and the actual default language <b>" . $this->CI->config->item('language') . "</b> does not exist either, and nor does English. Please install at least one language.");

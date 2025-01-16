@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection']		= 'មិនអាចរកទីតាំងលេខសម្គាល់ការតភ្ជាប់ត្រឹមត្រូវ។ សូមបញ្ជាក់អ្នកត្រូវបានតភ្ជាប់មុនពេលដំណើរការទម្រង់ឯកសារណាមួយ។';
 $lang['ftp_unable_to_connect']		= 'មិនអាចតភ្ជាប់ទៅម៉ាស៊ីន FTP របស់អ្នកដោយប្រើឈ្មោះម៉ាស៊ីនដែលបានផ្តល់នេះទេ។';

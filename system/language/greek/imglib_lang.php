@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['imglib_source_image_required'] = 'Πρέπει να καθορίσετε μια πηγή εικόνας στις προτιμήσεις σας.';
 $lang['imglib_gd_required'] = 'Tο GD image library πακέτο είναι απαραίτητο για αυτήν την ενέργεια.';

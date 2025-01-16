@@ -1,3 +1,3 @@
-<?php
-
-$config['zones'] = lang("zones", "wow_zones");
+<?php
+
+$config['zones'] = lang("zones", "wow_zones");

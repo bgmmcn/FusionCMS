@@ -1,12 +1,5 @@
 <?php
-/**
-* System messages translation for CodeIgniter(tm)
-*
-* @author	CodeIgniter community
-* @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
-* @license	http://opensource.org/licenses/MIT MIT License
-* @link	https://codeigniter.com
-*/
+
 defined('BASEPATH') OR exit('थेट स्क्रिप्ट प्रवेश परवानगी नाही');
 $lang['ftp_no_connection']		= 'वैध कनेक्शन आयडी शोधण्यात असमर्थ. कोणतीही फाइल रूटीन करण्यापूर्वी आपण कनेक्ट असल्याचे सुनिश्चित करा.';
 $lang['ftp_unable_to_connect']		= 'दिलेले होस्टनाव वापरुन आपल्या FTP सर्व्हरशी कनेक्ट करण्यात असमर्थ.';

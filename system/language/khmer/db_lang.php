@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str']      = 'មិនអាចកំណត់លក្ខណៈប្រព័ន្ធផ្ទុកទិន្នន័យដោយផ្អែកទៅលើ Connection string ។';
 $lang['db_unable_to_connect']           = 'មិនអាចភ្ជាប់ទៅកាន់ប្រព័ន្ធផ្ទុកទិន្នន័យបានទេ។';

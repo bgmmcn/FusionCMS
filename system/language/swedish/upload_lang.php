@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set']	= 'Kan inte finna POST-variabeln "userfile".';
 $lang['upload_file_exceeds_limit']	= 'Den uppladdade filen är större än vad PHP-konfigurationen tillåter.';

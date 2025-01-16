@@ -1,13 +1,5 @@
 <?php
-/**
-* System messages translation for CodeIgniter(tm)
-*
-* @author	CodeIgniter community
-* @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
-* @copyright	Pieter Krul
-* @license	http://opensource.org/licenses/MIT MIT License
-* @link	https://codeigniter.com
-*/
+
 defined('BASEPATH') OR exit('स्क्रिप्टमध्ये थेट प्रवेश करण्यास परवानगी नाही');
 $lang['email_must_be_array'] = 'ईमेल प्रमाणीकरण पद्धत ऐरेमध्ये पाठविली जाणे आवश्यक आहे.';
 $lang['email_invalid_address'] = 'अवैध ईमेल पत्ता आहे:% s';

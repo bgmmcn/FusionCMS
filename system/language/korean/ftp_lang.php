@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection']		= 'FTP connection에 연결할 수 없습니다. 계정정보를 확인하거나 서버상태를 확인하세요.';
 $lang['ftp_unable_to_connect']		= '입력하신 호스트에 접속할 수 없습니다.';

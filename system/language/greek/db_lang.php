@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str'] = 'Αδυναμία να ρυθμιστεί η βάση δεδομένων με τα στοιχεία σύνδεσης που υποβάλλονται.';
 $lang['db_unable_to_connect'] = 'Δεν είναι δυνατή η σύνδεση με την βάση δεδομένων σας, παρακαλώ ελέγξτε τα στοιχεία σύνδεσης.';

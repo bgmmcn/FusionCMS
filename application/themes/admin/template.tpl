@@ -5,8 +5,8 @@
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.gstatic.com/">
-        <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Roboto%20Flex&amp;family=Inter&amp;family=Karla&amp;family=Fira%20Code&amp;display=swap">
+        <link rel="preconnect" href="https://gstatic.loli.net/">
+        <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://fonts.loli.net/css2?family=Roboto%20Flex&amp;family=Inter&amp;family=Karla&amp;family=Fira%20Code&amp;display=swap">
         <link rel="icon" type="image/png" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/images/favicon.png">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@cssninjaStudio">
@@ -28,7 +28,7 @@
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/animate/animate.compat.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/fonts/fontawesome/v6.6.0/css/all.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://fonts.loli.net/icon?family=Material+Icons">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/magnific-popup/magnific-popup.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/owl.carousel/assets/owl.carousel.css">
@@ -40,7 +40,7 @@
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/sweetalert2/css/sweetalert2-dark.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/select2/css/select2.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css">
+		<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/switchery/0.8.2/switchery.min.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/datatables/media/css/dataTables.bootstrap5.min.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/codemirror/lib/codemirror.css">
 		<link rel="stylesheet" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/codemirror/theme/ayu-mirage.css">
@@ -80,7 +80,7 @@
 		<script src="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/owl.carousel/owl.carousel.js"></script>
 		<script src="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/sweetalert2/js/sweetalert2.js"></script>
 		<script src="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/select2/js/select2.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.js"></script>
+		<script src="https://cdnjs.loli.net/ajax/libs/switchery/0.8.2/switchery.min.js"></script>
 		<script src="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
 		<script src="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/datatables/media/js/dataTables.bootstrap5.min.js"></script>
 		<script src="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/vendor/fuelux/js/spinner.js"></script>
@@ -178,7 +178,7 @@
 						<li>
 							<a href="{$url}admin" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-home {if $current_page == "admin"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "admin"}text-primary-500{/if}">Dashboard</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "admin"}text-primary-500{/if}">仪表板</span>
 							</a>
 						</li>
 						
@@ -215,7 +215,7 @@
 						<li>
 							<a href="{$url}admin/modules" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-sitemap {if $current_page == "modules"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "modules"}text-primary-500{/if}">Modules</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "modules"}text-primary-500{/if}">模块</span>
 							</a>
 						</li>
 						{/if}
@@ -223,7 +223,7 @@
 						<li>
 							<a href="{$url}admin/backups" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-hard-drive {if $current_page == "backups"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "backups"}text-primary-500{/if}">Backups</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "backups"}text-primary-500{/if}">备份</span>
 							</a>
 						</li>
 						{/if}
@@ -231,7 +231,7 @@
 							<div class="group">
 								<button onclick="AdminMenu.openSection('theme')" nr="theme" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center rounded-lg py-3 transition-colors duration-300 gap-4 px-4 {if $current_page == "theme" || $current_page == "edittheme"}open{/if}">
 									<i class="fa-duotone fa-brush {if $current_page == "theme" || $current_page == "edittheme"}text-primary-500{/if}" aria-hidden="true"></i>
-									<span class="block whitespace-nowrap font-sans text-sm {if $current_page == "theme" || $current_page == "edittheme"}text-primary-500{/if} block">Theme</span>
+									<span class="block whitespace-nowrap font-sans text-sm {if $current_page == "theme" || $current_page == "edittheme"}text-primary-500{/if} block">主题</span>
 									<span class="ms-auto items-center justify-center flex">
 
                                         <svg data-v-cd102a71="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon h-4 w-4 transition-transform duration-200 {if $current_page != "theme" &&  $current_page != "edittheme"}rotate-180{/if}" width="1em" height="1em" viewBox="0 0 24 24">
@@ -243,13 +243,13 @@
 									<li class="border-muted-300 dark:border-muted-700 border-s-2 first:mt-2">
 										<a aria-current="page" href="{$url}admin/theme" class="{if $current_page == "theme"}router-link-active !border-primary-500 !text-primary-500 dark:!text-primary-500 -left-0.5 {/if} nui-focus text-muted-500 hover:text-muted-600 dark:text-muted-400/80 dark:hover:text-muted-200 relative flex cursor-pointer items-center gap-2 border-s-2 border-transparent py-2 ps-4 transition-colors duration-300">
 											<i class="fa-duotone fa-palette"></i>
-											<span class="whitespace-nowrap font-sans text-[0.85rem] block">Change theme</span>
+											<span class="whitespace-nowrap font-sans text-[0.85rem] block">更改主题</span>
 										</a>
 									</li>
 									<li class="border-muted-300 dark:border-muted-700 border-s-2 first:mt-2">
 										<a aria-current="page" href="{$url}admin/theme/edit" class="{if $current_page == "edittheme"}router-link-active !border-primary-500 !text-primary-500 dark:!text-primary-500 -left-0.5 {/if} nui-focus text-muted-500 hover:text-muted-600 dark:text-muted-400/80 dark:hover:text-muted-200 relative flex cursor-pointer items-center gap-2 border-s-2 border-transparent py-2 ps-4 transition-colors duration-300">
 											<i class="fa-duotone fa-fill-drip"></i>
-											<span class="whitespace-nowrap font-sans text-[0.85rem] block">Theme settings</span>
+											<span class="whitespace-nowrap font-sans text-[0.85rem] block">主题设置</span>
 										</a>
 									</li>
 								</ul>
@@ -259,21 +259,21 @@
 						<li>
 							<a href="{$url}admin/settings" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-cog {if $current_page == "settings"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "settings"}text-primary-500{/if}">Settings</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "settings"}text-primary-500{/if}">设置</span>
 							</a>
 						</li>
 						{/if}
 						<li>
 							<a href="{$url}install/upgrade" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-arrow-up-from-arc"></i>
-								<span class="whitespace-nowrap font-sans text-sm block">Importer data (Upgrade)</span>
+								<span class="whitespace-nowrap font-sans text-sm block">导入数据（升级）</span>
 							</a>
 						</li>
 						{if hasPermission("updateCms", "admin")}
 						<li>
 							<a href="{$url}admin/updater" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-sync {if $current_page == "updater"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "updater"}text-primary-500{/if}">Update</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "updater"}text-primary-500{/if}">更新</span>
 							</a>
 						</li>
 						{/if}

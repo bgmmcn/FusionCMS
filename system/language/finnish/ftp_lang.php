@@ -35,7 +35,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection']		= 'Voimassa olevaa yhteystunnusta ei löydy. Varmista, että yhteys on muodostettu, ennen kuin suoritat tiedostorutiineja.';
 $lang['ftp_unable_to_connect']		= 'Ei voida muodostaa yhteyttä FTP-palvelimeen käyttämällä annettua isäntänimeä.';

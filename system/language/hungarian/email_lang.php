@@ -8,7 +8,7 @@
  * @license		http://opensource.org/licenses/MIT	MIT License
  * @link		https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['email_must_be_array']			= 'Az email validációs metódusnak tömböt kell átadni.';
 $lang['email_invalid_address']			= 'Érvénytelen email cím: %s';

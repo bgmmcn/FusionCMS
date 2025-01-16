@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection']		= '.پتہ لگانے سے قاصر. لہذا درخواست ہے کے آپ اس بات کو یقینی بنا لیں کے فائلز کے معمولات سے پہلے آپ کنیکٹیڈ ہوں ID درست کنکشن';
 $lang['ftp_unable_to_connect']		= '.سرور سے رابطہ ممکن نہیں FTP کو استعمال کرتے ہوئے hostname آپکے دیے گئے';

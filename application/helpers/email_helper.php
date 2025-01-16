@@ -1,6 +1,6 @@
 <?php
 
-if (! defined('BASEPATH')) exit('No direct script access allowed');
+if (! defined('BASEPATH')) exit('不允许直接脚本访问。');
 
 use App\Config\Services;
 

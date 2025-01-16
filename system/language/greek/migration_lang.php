@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['migration_none_found'] = 'Δεν βρέθηκαν migrations.';
 $lang['migration_not_found'] = 'Όχι migrations, θα μπορούσε να βρεθεί με τον αριθμό έκδοσης: %s.';

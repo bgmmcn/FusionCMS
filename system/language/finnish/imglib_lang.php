@@ -35,7 +35,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['imglib_source_image_required'] = 'Sinun on määritettävä lähdekuva asetuksissasi.';
 $lang['imglib_gd_required'] = 'Tätä ominaisuutta varten tarvitaan GD-kuvakirjasto.';

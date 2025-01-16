@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['form_validation_required']		= ' Trường {field} là bắt buộc.';
 $lang['form_validation_isset']			= ' Trường {field} phải có một giá trị.';

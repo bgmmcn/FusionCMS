@@ -1,7 +1,7 @@
 <?php
 
-$config['store_subject'] = "Item delivery!";
-$config['store_body'] = "Thank you for supporting our server, here are your ordered items!";
-$config['success_message'] = "Your order has been processed. You may need to log out to receive your items. In case you don't receive your order with in 5 minutes, please contact a game master.";
+$config['store_subject'] = "物品交付！";
+$config['store_body'] = "感谢您支持我们的服务器，这是您订购的物品！";
+$config['success_message'] = "您的订单已处理。您可能需要注销才能收到您的物品。如果您在 5 分钟内没有收到您的订单，请联系游戏管理员。";
 
 $config['minimize_groups_by_default'] = true;

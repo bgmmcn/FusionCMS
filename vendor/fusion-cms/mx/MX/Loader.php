@@ -5,7 +5,7 @@ use CI_Loader;
 use App\Config\Database;
 use CodeIgniter\Database\CI_DB;
 
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') or exit('不允许直接脚本访问。');
 
 defined('EXT') or define('EXT', '.php');
 

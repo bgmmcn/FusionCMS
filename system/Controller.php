@@ -23,7 +23,7 @@ use CodeIgniter\Typography\Typography;
 use Encryption\Encryption;
 use Smarty\Smarty;
 
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') or exit('不允许直接脚本访问。');
 
 /**
  * Application Controller Class

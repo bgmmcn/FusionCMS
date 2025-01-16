@@ -1,13 +1,6 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection']          = 'Cari qoşulma ID si tapılmadı. Hər hansı fayl əməliyyatı etməzdən əvvəl qoşulmanı yoxlayın.';
 $lang['ftp_unable_to_connect']      = 'Verilən server adı ilə FTP serverə bağlanılmadı';

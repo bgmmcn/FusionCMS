@@ -8,7 +8,7 @@
  * @license   http://opensource.org/licenses/MIT MIT License
  * @link      https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection']       = 'Nebolo nájdené platné ID spojenia. Uistite sa, že máte otvorené pripojenie predtým ako začnete akúkoľvek manipuláciu so súbormi.';
 $lang['ftp_unable_to_connect']   = 'Nie je možné pripojiť sa k FTP serveru zo zadanou adresou.';

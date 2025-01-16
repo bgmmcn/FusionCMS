@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str'] = 'Không thể xác định các giá trị bạn chỉnh trên Cơ Sở Dữ Liệu.';
 $lang['db_unable_to_connect'] = 'Không thể kết nối tới Cơ Sở Dữ Liệu (Kiểm tra cấu hình).';

@@ -7,7 +7,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['migration_none_found'] = 'Di chuyển không được tìm thấy.';
 $lang['migration_not_found'] = 'Di chuyển không được tìm thấy với phiên bản: %s.';

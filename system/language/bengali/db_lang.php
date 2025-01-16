@@ -1,13 +1,5 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @copyright	Pieter Krul
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- */
+
 defined('BASEPATH') OR exit('Directe toegang tot scripts is niet toegestaan');
 $lang['db_invalid_connection_str'] = 'আপনার দেয়া কানেসশন তথ্যনুযায়ী, ডেটাবেইসের সেটিং মিল হয় নি।';
 $lang['db_unable_to_connect'] = 'সরবরাহকৃত তথ্যানুযায়ী আপনার ডেটাবেস সার্ভারে যোগাযোগ সম্ভব নয়।';

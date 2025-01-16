@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set'] = 'Не може да се намери променлива с името на файла.';
 $lang['upload_file_exceeds_limit'] = 'Каченият файл надвишава максимално допустимия размер описан в конфигурационния файл.';

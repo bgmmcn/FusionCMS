@@ -8,7 +8,7 @@
  * @license		http://opensource.org/licenses/MIT	MIT License
  * @link		https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set']		= 'A userfile POST változó nem található.';
 $lang['upload_file_exceeds_limit']		= 'A feltöltött fájl mérete nagyobb, mint amit a PHP konfigurációs fájl beállítása engedélyez.';

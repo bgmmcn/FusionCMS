@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ut_test_name']		= 'ឈ្មេាះ​សាកល្បង';
 $lang['ut_test_datatype']	= 'ប្រភេទទិន្នន័យសាកល្បង';

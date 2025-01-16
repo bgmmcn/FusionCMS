@@ -49,7 +49,7 @@ class Armory extends MX_Controller
     public function search()
     {
         if (!$this->input->is_ajax_request()) {
-            die('No direct script access allowed');
+            die('不允许直接脚本访问。');
         }
 
         $this->form_validation->set_rules('realm', 'realm', 'trim|required|min_length[1]|max_length[3]|integer');

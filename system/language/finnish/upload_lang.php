@@ -35,7 +35,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set'] = 'Unable to find a post variable called userfile.';
 $lang['upload_file_exceeds_limit'] = 'Lähetetty tiedosto ylittää PHP-määritystiedostossa sallitun enimmäiskoon.';

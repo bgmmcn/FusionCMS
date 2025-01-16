@@ -11,7 +11,7 @@ var Settings = {
 		{
 			Swal.fire({
 				icon: 'error',
-				title: 'Oops...',
+				title: '错误...',
 				text: 'You must always have at least one realm!',
 			})
 		}
@@ -135,7 +135,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: id,
 				})
 			}
@@ -181,7 +181,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: result,
 				})
 			}
@@ -232,7 +232,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: response,
 				})
 			}
@@ -268,7 +268,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: response,
 				})
 			}
@@ -301,7 +301,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: response,
 				})
 			}
@@ -334,7 +334,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: response,
 				})
 			}
@@ -364,7 +364,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: response,
 				})
 			}
@@ -391,7 +391,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: "success",
-					title: "Security settings has been saved!",
+					title: "安全设置已保存！",
 				});
 			}
 			else
@@ -399,7 +399,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: response,
 				})
 			}
@@ -427,7 +427,7 @@ var Settings = {
 			{
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: response,
 				})
 			}
@@ -538,7 +538,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: data,
 				})
 			}
@@ -567,7 +567,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: data,
 				})
 			}
@@ -601,7 +601,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: data,
 				})
 			}
@@ -630,7 +630,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: data,
 				})
 			}
@@ -807,7 +807,7 @@ var Settings = {
 			{
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误...',
 					text: response,
 				})
 			}

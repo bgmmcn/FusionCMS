@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set'] = 'Αδυναμία να βρεθεί απεσταλμένη μεταβλητή ονομαζόμενη userfile.';
 $lang['upload_file_exceeds_limit'] = 'Το αρχείο που μεταφορτώθηκε υπερβαίνει το ανώτερο επιτρεπτό μέγεθος που έχει το αρχείο ρυθμήσεων της PHP.';

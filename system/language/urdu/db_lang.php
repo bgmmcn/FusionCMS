@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link http://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str']	= '.آپ کی جمع کردہ کنکشن سٹرنگ کی بنیاد پر ڈیٹابیس کی ترتیبات کا تعین کرنا ممکن نہیں';
 $lang['db_unable_to_connect'] = '.فراہم کی گئی ترتیبات کا استعمال کرتے ہوئے آپ کے ڈیٹا بیس سرور سے رابطہ ممکن نہیں';

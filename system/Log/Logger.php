@@ -298,7 +298,7 @@ class Logger implements LoggerInterface
             // Only add protection to php files
             if ($this->fileExt === 'php')
             {
-                $msg .= "<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>\n\n";
+                $msg .= "<?php defined('BASEPATH') OR exit('不允许直接脚本访问。'); ?>\n\n";
             }
         }
 

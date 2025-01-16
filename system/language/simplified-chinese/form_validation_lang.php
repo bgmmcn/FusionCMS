@@ -1,40 +1,34 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['form_validation_required'] = '{field} 不能为空。';
-$lang['form_validation_isset'] = '{field} 不能为空。';
-$lang['form_validation_valid_email'] = '{field} 必须是一个有效的 E-mail地址。';
-$lang['form_validation_valid_emails'] = '{field} 必须都是有效的 E-mail地址。';
-$lang['form_validation_valid_url'] = '{field} 必须是一个有效的 URL。';
-$lang['form_validation_valid_ip'] = '{field} 必须是一个有效的 IP地址。';
-$lang['form_validation_min_length'] = '{field} 不能少于 {param}位。';
-$lang['form_validation_max_length'] = '{field} 不能超过 {param}位。';
-$lang['form_validation_exact_length'] = '{field} 长度必须为 {param}位。';
-$lang['form_validation_alpha'] = '{field} 只能使用字母。';
-$lang['form_validation_alpha_numeric'] = '{field} 只能使用字母和数字。';
-$lang['form_validation_alpha_numeric_spaces'] = '{field} 只能使用字母、数字和空格。';
-$lang['form_validation_alpha_dash'] = '{field} 只能使用字母、数字、下划线和破折号';
-$lang['form_validation_numeric'] = '{field} 只能是数值。';
-$lang['form_validation_is_numeric'] = '{field} 只能是数值。';
-$lang['form_validation_integer'] = '{field} 只能是数字。';
-$lang['form_validation_regex_match'] = '{field} 格式错误。';
-$lang['form_validation_matches'] = '{field} 必须是{param}。';
-$lang['form_validation_differs'] = '{field} 不能是{param}。';
-$lang['form_validation_is_unique'] = '{field} 不能重复。';
-$lang['form_validation_is_natural'] = '{field} 必须是数值。';
-$lang['form_validation_is_natural_no_zero'] = '{field} 必须是不为0的数值。';
-$lang['form_validation_decimal'] = '{field} 必须是数值。';
-$lang['form_validation_less_than'] = '{field} 必须小于 {param}。';
-$lang['form_validation_less_than_equal_to'] = '{field} 必须小于等于 {param}。';
-$lang['form_validation_greater_than'] = '{field} 字段的值必须大于 {param}。';
-$lang['form_validation_greater_than_equal_to'] = '{field} 必须大于等于 {param}。';
-$lang['form_validation_error_message_not_set'] = ' 没有{field}的错误消息。';
-$lang['form_validation_in_list'] = '{field} 必须是 {param}之一。'; 
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
+
+$lang['form_validation_required']		= '字段 {field} 是必需的。';
+$lang['form_validation_isset']			= '字段 {field} 必须有值。';
+$lang['form_validation_valid_email']		= '字段 {field} 必须包含一个有效的电子邮件地址。';
+$lang['form_validation_valid_emails']		= '字段 {field} 必须包含所有有效的电子邮件地址。';
+$lang['form_validation_valid_url']		= '字段 {field} 必须包含一个有效的 URL。';
+$lang['form_validation_valid_ip']		= '字段 {field} 必须包含一个有效的 IP 地址。';
+$lang['form_validation_valid_base64']		= '字段 {field} 必须包含一个有效的 Base64 字符串。';
+$lang['form_validation_min_length']		= '字段 {field} 的长度必须至少为 {param} 个字符。';
+$lang['form_validation_max_length']		= '字段 {field} 的长度不能超过 {param} 个字符。';
+$lang['form_validation_exact_length']		= '字段 {field} 的长度必须正好为 {param} 个字符。';
+$lang['form_validation_alpha']			= '字段 {field} 只能包含字母字符。';
+$lang['form_validation_alpha_numeric']		= '字段 {field} 只能包含字母数字字符。';
+$lang['form_validation_alpha_numeric_spaces']	= '字段 {field} 只能包含字母数字字符和空格。';
+$lang['form_validation_alpha_dash']		= '字段 {field} 只能包含字母数字字符、下划线和破折号。';
+$lang['form_validation_numeric']		= '字段 {field} 必须只包含数字。';
+$lang['form_validation_is_numeric']		= '字段 {field} 必须只包含数字字符。';
+$lang['form_validation_integer']		= '字段 {field} 必须包含一个整数。';
+$lang['form_validation_regex_match']		= '字段 {field} 的格式不正确。';
+$lang['form_validation_matches']		= '字段 {field} 与字段 {param} 不匹配。';
+$lang['form_validation_differs']		= '字段 {field} 必须与字段 {param} 不同。';
+$lang['form_validation_is_unique'] 		= '字段 {field} 必须包含一个唯一的值。';
+$lang['form_validation_is_natural']		= '字段 {field} 必须只包含数字。';
+$lang['form_validation_is_natural_no_zero']	= '字段 {field} 必须只包含数字，且必须大于零。';
+$lang['form_validation_decimal']		= '字段 {field} 必须包含一个小数。';
+$lang['form_validation_less_than']		= '字段 {field} 必须包含一个小于 {param} 的数字。';
+$lang['form_validation_less_than_equal_to']	= '字段 {field} 必须包含一个小于或等于 {param} 的数字。';
+$lang['form_validation_greater_than']		= '字段 {field} 必须包含一个大于 {param} 的数字。';
+$lang['form_validation_greater_than_equal_to']	= '字段 {field} 必须包含一个大于或等于 {param} 的数字。';
+$lang['form_validation_error_message_not_set']	= '无法访问与您的字段名称 {field} 相对应的错误消息。';
+$lang['form_validation_in_list']		= '字段 {field} 必须是以下之一：{param}。';

@@ -1,9 +1,5 @@
 <?php
 
-/**
- * The zones are exported from Map DBC 11.0.5.56487
- */
-
 $lang['maps'] = [
     0 => "Eastern Kingdoms",
     1 => "Kalimdor",

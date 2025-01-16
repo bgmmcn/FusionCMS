@@ -2,7 +2,7 @@
 
 use CI_Lang;
 
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') or exit('不允许直接脚本访问。');
 
 defined('EXT') or define('EXT', '.php');
 

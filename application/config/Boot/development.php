@@ -2,33 +2,33 @@
 
 /*
  |--------------------------------------------------------------------------
- | ERROR DISPLAY
+ | 错误显示
  |--------------------------------------------------------------------------
- | In development, we want to show as many errors as possible to help
- | make sure they don't make it to production. And save us hours of
- | painful debugging.
+ | 在开发过程中，我们希望显示尽可能多的错误，以帮助
+ | 确保它们不会进入生产环境。并为我们节省数小时的
+ | 痛苦调试。
  |
- | If you set 'display_errors' to '1', CI4's detailed error report will show.
+ | 如果将 'display_errors' 设置为 '1'，CI4 的详细错误报告将显示。
  */
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 /*
  |--------------------------------------------------------------------------
- | DEBUG BACKTRACES
+ | 调试回溯
  |--------------------------------------------------------------------------
- | If true, this constant will tell the error screens to display debug
- | backtraces along with the other error information. If you would
- | prefer to not see this, set this value to false.
+ | 如果为 true，这个常量将告诉错误屏幕显示调试
+ | 回溯以及其他错误信息。如果你不想看到这个，
+ | 将这个值设置为 false。
  */
 defined('SHOW_DEBUG_BACKTRACE') || define('SHOW_DEBUG_BACKTRACE', true);
 
 /*
  |--------------------------------------------------------------------------
- | DEBUG MODE
+ | 调试模式
  |--------------------------------------------------------------------------
- | Debug mode is an experimental flag that can allow changes throughout
- | the system. This will control whether Kint is loaded, and a few other
- | items. It can always be used within your own application too.
+ | 调试模式是一个实验性的标志，可以允许在整个系统中进行更改。
+ | 这将控制是否加载 Kint，以及其他一些项目。
+ | 它也可以随时在你自己的应用程序中使用。
  */
 defined('CI_DEBUG') || define('CI_DEBUG', true);

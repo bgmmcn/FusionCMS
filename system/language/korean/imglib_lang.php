@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['imglib_source_image_required'] = '원본 이미지를 지정하세요.';
 $lang['imglib_gd_required'] = '서버에 GD 이미지 라이브러리가 지원되지 않습니다.';

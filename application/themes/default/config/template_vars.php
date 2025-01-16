@@ -4,7 +4,7 @@
 use MX\CI;
 
 # Make sure we're in CI
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 // Load theme assets
 require(T_ROOT_PATH . 'config' . DS . 'template_assets' . PHP);

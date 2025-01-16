@@ -8,7 +8,7 @@
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['ftp_no_connection'] = 'Impossible trobar una ID de connecció vàlida. Siusplau comprova que estàs connectat abans d\'intentar qualsevol rutina d\'operació de fitxers.';
 $lang['ftp_unable_to_connect'] = 'Impossible connectar amb el servidor FTP utilitzant el nom d\'equip proporcionat.';

@@ -1,13 +1,6 @@
 <?php
-/**
- * System messages translation for CodeIgniter(tm)
- *
- * @author	CodeIgniter community
- * @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- */
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['upload_userfile_not_set'] = 'userfile नामक एक पोस्ट वेरिएबल पाने में असमर्थ।';
 $lang['upload_file_exceeds_limit'] = 'अपलोड की गई फ़ाइल अपने PHP कॉन्फ़िगरेशन फाइल में अधिकतम स्वीकृत आकार से अधिक है।';

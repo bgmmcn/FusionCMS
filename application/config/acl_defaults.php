@@ -2,32 +2,35 @@
 
 /*
 |--------------------------------------------------------------------------
-| Guest Rank
+| 访客等级
 |--------------------------------------------------------------------------
 |
-| ['default_guest_group'] This defines the group ID (see acl_groups table) of the guest group
+| ['default_guest_group'] 这个定义了访客组的组ID（参见acl_groups表）
 |
 */
+
 $config['default_guest_group'] = 1;
 
 /*
 |--------------------------------------------------------------------------
-| Player Rank
+| 玩家等级
 |--------------------------------------------------------------------------
 |
-| ['default_player_group'] This defines the group ID (see acl_groups table) of the player group
+| ['default_player_group'] 这个定义了玩家组的组ID（参见acl_groups表）
 |
 */
+
 $config['default_player_group'] = 2;
 
 /*
 |--------------------------------------------------------------------------
-| Owner Rank
+| 管理员等级
 |--------------------------------------------------------------------------
 |
-| ['default_owner_group'] This defines the group ID (see acl_groups table) of the owner group
+| ['default_owner_group'] 这个定义了管理员组的组ID（参见acl_groups表）
 |
-| Only used during the installation to assign owner access to one account
+| 仅在安装期间使用，用于将管理员访问权限分配给一个账号
 |
 */
+
 $config['default_owner_group'] = 8;

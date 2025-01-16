@@ -29,8 +29,8 @@ class News_model extends CI_Model
             return [
                 [
                     'id'           => 0,
-                    'headline'     => 'Welcome to your new FusionCMS powered website!',
-                    'content'      => 'Your website has been successfully installed and we, the FusionCMS team, sincerely hope that you will have a nice time using it.<div><br></div><div>To proceed, log into the administrator panel using an administrator account and the security code you specified during the installation.</div><div><br></div><br><div>Best regards,</div><div>the FusionCMS team</div>',
+                    'headline'     => '欢迎来到单刷.中国！',
+                    'content'      => '服务器同步国服正式服版本，日常修复问题，资料片渐进锁定，当前进度经典旧世，等级上限30级，不支持Win7和老CPU架构，拾取绑定改装备绑定或使用绑定。无冷却、无消耗、无读条、无充能、无公共冷却。',
                     'author_id'    => 0,
                     'timestamp'    => time(),
                     'type'         => 0,

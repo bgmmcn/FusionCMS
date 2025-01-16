@@ -1,13 +1,5 @@
 <?php
-/**
-* System messages translation for CodeIgniter(tm)
-*
-* @author	CodeIgniter community
-* @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
-* @copyright	Pieter Krul
-* @license	http://opensource.org/licenses/MIT MIT License
-* @link	https://codeigniter.com
-*/
+
 defined('BASEPATH') OR exit('स्क्रिप्टमध्ये थेट प्रवेश करण्यास परवानगी नाही');
 $lang['date_year'] = 'वर्ष';
 $lang['date_years'] = 'वर्षे';

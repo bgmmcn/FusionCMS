@@ -1,22 +1,35 @@
 <?php
 
+
 if (! defined('BASEPATH')) {
-    exit('No direct script access allowed');
+
+    exit('不允许直接脚本访问。');
+
 }
 
-/**
- * @package FusionCMS
- * @version 6.0
- * @link    https://github.com/FusionWowCMS/FusionCMS
- */
+
+
+
+
+
 
 /*
+
 |--------------------------------------------------------------------------
+
 | Social media links
+
 |--------------------------------------------------------------------------
+
 */
 
+
+
 $config['facebook'] = "https://facebook.com";
+
 $config['twitter'] = "https://twitter.com";
+
 $config['youtube'] = "https://youtube.com";
+
 $config['discord'] = "https://discord.com";
+

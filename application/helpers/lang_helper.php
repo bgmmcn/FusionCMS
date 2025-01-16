@@ -1,4 +1,4 @@
-<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (! defined('BASEPATH')) exit('不允许直接脚本访问。');
 
 /**
  * Short-command to get the current language name

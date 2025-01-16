@@ -79,7 +79,7 @@ class Auth extends MX_Controller
     public function checkLogin()
     {
         if (!$this->input->is_ajax_request()) {
-            die('No direct script access allowed');
+            die('不允许直接脚本访问。');
         }
 
         $use_captcha = $this->config->item('use_captcha');
@@ -262,7 +262,7 @@ class Auth extends MX_Controller
     public function checkTotp()
     {
         if (!$this->input->is_ajax_request())
-            exit('No direct script access allowed');
+            exit('不允许直接脚本访问。');
 
         $digit = $this->input->post('digit');
 

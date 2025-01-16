@@ -1,13 +1,6 @@
 <?php
-/**
-* System messages translation for CodeIgniter(tm)
-*
-* @author	CodeIgniter community
-* @copyright	Copyright (c) 2014-2019, British Columbia Institute of Technology (https://bcit.ca/)
-* @license	http://opensource.org/licenses/MIT MIT License
-* @link	https://codeigniter.com
-*/
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['db_invalid_connection_str'] = 'Hindi matukoy ang mga setting ng database batay sa connection string na iyong isinumite.';
 $lang['db_unable_to_connect'] = 'Hindi nagawang kumonekta sa iyong database server gamit ang mga ibinigay na setting.';

@@ -2,53 +2,54 @@
 
 /**
  *
- * Enable captcha for site
+ * 启用网站的验证码
  *
  */
-$config['use_captcha'] = true;
+$config['use_captcha'] = false;
 
 /**
  *
- * What type of captcha?
+ * 验证码的类型？
  *
  * 'recaptcha'  = Google Recaptcha v2
  * 'recaptcha3' = Google Recaptcha v3
- * 'inbuilt'    = inbuilt captcha system
+ * 'inbuilt'    = 内置验证码系统
  *
  */
-$config["captcha_type"] = 'inbuilt';
+$config['captcha_type'] = "inbuilt";
 
 /**
  *
- * After how many tries should a captcha pop up?
+ * 经过多少次尝试后应该弹出验证码？
  *
  */
 $config['captcha_attemps'] = 3;
 
 /**
  *
- * After how many tries should we block an IP address?
- * How many minutes should an IP address remain blocked?
+ * 经过多少次尝试后我们应该阻止一个IP地址？
+ * 一个IP地址应该被阻止多少分钟？
  *
  */
 $config['block_attemps'] = 5;
-$config['block_duration'] = 15;
+$config['block_duration'] = 5;
 
 /**
  *
- * The site key
- * get site key @ www.google.com/recaptcha/admin
+ * 网站密钥
+ * 在 www.google.com/recaptcha/admin 获取网站密钥
  *
  */
-$config["recaptcha_site_key"] = "";
+$config['recaptcha_site_key'] = false;
 
 /**
  *
- * The secret key
- * get secret key @ www.google.com/recaptcha/admin
+ * 密钥
+ * 在 www.google.com/recaptcha/admin 获取密钥
  *
  */
-$config["recaptcha_secret_key"] = "";
+$config['recaptcha_secret_key'] = false;
 
-// Theme
-$config['recaptcha_theme'] = 'dark'; // dark - light
+// 主题
+$config['recaptcha_theme'] = "dark"; // dark - light
+
