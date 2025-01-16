@@ -224,7 +224,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "Website settings have been saved!",
+					title: "网站设置已保存！",
 				});
 			}
 			else
@@ -260,7 +260,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "SMTP settings have been saved!",
+					title: "SMTP 设置已保存！",
 				});
 			}
 			else
@@ -293,7 +293,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "Performance settings have been saved!",
+					title: "性能设置已保存！",
 				});
 			}
 			else
@@ -326,7 +326,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: "success",
-					title: "Social media links have been saved!",
+					title: "社交媒体链接已保存！",
 				});
 			}
 			else
@@ -356,7 +356,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: "success",
-					title: "CDN have been saved!",
+					title: "CDN 设置已保存！",
 				});
 			}
 			else
@@ -420,7 +420,7 @@ var Settings = {
 			{
 				Swal.fire({
 					icon: "success",
-					title: "Wow Database configs have been saved!",
+					title: "Wow 数据库配置已保存！",
 				});
 			}
 			else
@@ -593,7 +593,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "Theme settings have been saved!",
+					title: "主题设置已保存！",
 				});
 			}
 			else
@@ -622,7 +622,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "Theme settings have been saved!",
+					title: "主题设置已保存！",
 				});
 			}
 			else
@@ -800,7 +800,7 @@ var Settings = {
 			{
 				Swal.fire({
 					icon: "success",
-					title: "Auth configs have been saved!",
+					title: "认证配置已保存！",
 				});
 			}
 			else
