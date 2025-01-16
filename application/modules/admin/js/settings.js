@@ -530,7 +530,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "The settings have been saved!",
+					title: "设置已保存！",
 				});
 			}
 			else
@@ -559,7 +559,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "The settings have been saved!",
+					title: "设置已保存！",
 				});
 			}
 			else
