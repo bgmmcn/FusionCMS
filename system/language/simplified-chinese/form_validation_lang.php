@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('不允许直接脚本访问。');
 
 $lang['form_validation_required']		= '字段 {field} 是必需的。';
 $lang['form_validation_isset']			= '字段 {field} 必须有值。';
-$lang['form_validation_valid_email']		= '字段 {field} 必须包含一个有效的电子邮件地址。';
-$lang['form_validation_valid_emails']		= '字段 {field} 必须包含所有有效的电子邮件地址。';
+$lang['form_validation_valid_email']		= '字段 {field} 必须包含一个有效的邮箱地址。';
+$lang['form_validation_valid_emails']		= '字段 {field} 必须包含所有有效的邮箱地址。';
 $lang['form_validation_valid_url']		= '字段 {field} 必须包含一个有效的 URL。';
 $lang['form_validation_valid_ip']		= '字段 {field} 必须包含一个有效的 IP 地址。';
 $lang['form_validation_valid_base64']		= '字段 {field} 必须包含一个有效的 Base64 字符串。';

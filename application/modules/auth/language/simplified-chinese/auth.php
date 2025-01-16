@@ -1,7 +1,7 @@
 <?php
 
 //登录
-$lang["login_label_user"] = "用户名";
+$lang["login_label_user"] = "账号";
 $lang["login_label_password"] = "密码";
 $lang["login_label_captcha"] = "验证码";
 $lang["login_label_remember"] = "记住我";

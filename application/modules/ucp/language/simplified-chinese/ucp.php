@@ -8,13 +8,13 @@ $lang['account_characters'] = "账号角色";
 $lang['nickname'] = "昵称";
 $lang['change_nickname'] = "更改昵称";
 
-$lang['username'] = "用户名";
+$lang['username'] = "账号";
 
 $lang['location'] = "位置";
 $lang['change_location'] = "更改位置";
 
-$lang['email'] = "电子邮件";
-$lang['change_email'] = "更改电子邮件";
+$lang['email'] = "邮箱";
+$lang['change_email'] = "更改邮箱";
 
 $lang['password'] = "密码";
 $lang['change_password'] = "更改密码";
