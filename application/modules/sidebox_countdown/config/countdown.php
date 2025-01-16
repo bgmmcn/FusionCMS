@@ -1,5 +1,5 @@
 <?php
 
-$config['Date_Timestamp'] = 1731859200;
+$config['Date_Timestamp'] = 1735488000;
 
-$config['text'] = '开服倒计时';
+$config['text'] = "春节";
