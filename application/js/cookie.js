@@ -25,8 +25,8 @@ $(document).ready(function() {
 			text: '本网站使用 cookies 以确保您在我们的网站上获得最佳体验。',
 			showDenyButton: true,
 			showCancelButton: false,
-			confirmButtonText: 'Accept',
-			denyButtonText: 'Cancel',
+			confirmButtonText: '接受',
+			denyButtonText: '取消',
 			backdrop: true,
 			allowOutsideClick: () => {
 				const popup = Swal.getPopup();
