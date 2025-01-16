@@ -6,7 +6,7 @@
 !*/cache/index.html
 !*/cache/.htaccess
 
-application/config/database.php
+application/config/Database.php
 application/config/fusion.php
 writable/*
 
