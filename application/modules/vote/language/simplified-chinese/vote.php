@@ -8,5 +8,5 @@ $lang['remaining'] = "剩余";
 $lang['voting_point'] = "投票点";
 $lang['voting_points'] = "投票点";
 $lang['hours_remaining'] = "剩余小时";
-$lang['already_voted'] = "你已经投过票了";
+$lang['already_voted'] = "您已经投过票了";
 

@@ -21,8 +21,8 @@ function setCookie(c_name,value,exdays) {
 $(document).ready(function() {
 	if (getCookie("acceptCookies") == null){
 		Swal.fire({
-			title: 'Do you like Cookies?',
-			text: 'This website uses cookies to ensure you get the best experience on our website.',
+			title: '您喜欢饼干吗？',
+			text: '本网站使用 cookies 以确保您在我们的网站上获得最佳体验。',
 			showDenyButton: true,
 			showCancelButton: false,
 			confirmButtonText: 'Accept',

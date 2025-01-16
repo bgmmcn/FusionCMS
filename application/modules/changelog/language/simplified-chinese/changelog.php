@@ -3,7 +3,7 @@
 $lang['changelog_title'] = "更新日志";
 $lang['changes_made_on'] = "更新于";
 $lang['no_changes'] = "暂无更新。";
-$lang['change_info'] = "你做了什么？";
+$lang['change_info'] = "您做了什么？";
 $lang['category_name'] = "类别名称";
 $lang['new_change'] = "新更新";
 $lang['new_category'] = "新类别";
