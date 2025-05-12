@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.loli.net/css?family=Nunito:400,600,700&display=swap" rel="stylesheet">
     </head>
 
     <body style="font-family: Nunito, sans-serif; font-size: 15px; font-weight: 400;">
