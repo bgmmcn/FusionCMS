@@ -9,7 +9,7 @@ class Settings extends MX_Controller
 
     public function __construct()
     {
-        // Make sure to load the administrator library!
+        // 确保加载管理员库
         $this->load->library('administrator');
 
         parent::__construct();
@@ -27,8 +27,8 @@ class Settings extends MX_Controller
 
     public function index()
     {
-        // Change the title
-        $this->administrator->setTitle("Settings");
+        // 设置页面标题
+        $this->administrator->setTitle("系统设置");
 
         $config['title'] = $this->config->item('title');
         $config['server_name'] = $this->config->item('server_name');
@@ -43,14 +43,14 @@ class Settings extends MX_Controller
         $config['reminder_interval'] = $this->config->item('reminder_interval');
         $config['has_smtp'] = $this->config->item('has_smtp');
 
-        // Performance
+        // 性能配置
         $config['disable_visitor_graph'] = $this->config->item('disable_visitor_graph');
         $config['disable_realm_status'] = $this->config->item('disable_realm_status');
         $config['cache'] = $this->config->item('cache');
         $config['enable_minify_js'] = $this->config->item('enable_minify_js');
         $config['enable_minify_css'] = $this->config->item('enable_minify_css');
 
-        // SMTP
+        // SMTP配置
         $config['use_own_smtp_settings'] = $this->config->item('use_own_smtp_settings');
         $config['smtp_protocol'] = $this->config->item('smtp_protocol');
         $config['smtp_sender'] = $this->config->item('smtp_sender');
@@ -60,17 +60,17 @@ class Settings extends MX_Controller
         $config['smtp_port'] = $this->config->item('smtp_port');
         $config['smtp_crypto'] = $this->config->item('smtp_crypto');
 		
-		// Social Media links
+		// 社交媒体链接
         $config['facebook'] = $this->config->item('facebook');
         $config['twitter'] = $this->config->item('twitter');
         $config['youtube'] = $this->config->item('youtube');
         $config['discord'] = $this->config->item('discord');
 
-		// CDN
+		// CDN配置
         $config['cdn_value'] = $this->config->item('cdn');
         $config['cdn_link'] = $this->config->item('cdn_link');
 		
-        // Security
+        // 安全配置
         $config['use_captcha'] = $this->config->item('use_captcha');
         $config['captcha_type'] = $this->config->item('captcha_type');
         $config['recaptcha_theme'] = $this->config->item('recaptcha_theme');
@@ -80,17 +80,17 @@ class Settings extends MX_Controller
         $config['block_attemps'] = $this->config->item('block_attemps');
         $config['block_duration'] = $this->config->item('block_duration');
 
-        // API link to get item icons
+        // API链接获取物品图标
         $config['api_item_icons'] = $this->config->item('api_item_icons');
         $config['api_item_custom'] = $this->config->item('api_item_custom');
         $config['wow_db'] = $this->config->item('wow_db');
 
-        // API link to get item data
+        // API链接获取物品数据
         $config['api_item_data'] = $this->config->item('api_item_data');
         $config['api_item_data_custom'] = $this->config->item('api_item_data_custom');
         $config['wow_item_db'] = $this->config->item('wow_item_db');
 
-        // auth configuration
+        // 认证配置
         $config['account_encryption'] = $this->config->item('account_encryption');
         $config['rbac'] = $this->config->item('rbac');
         $config['battle_net'] = $this->config->item('battle_net');
@@ -98,7 +98,7 @@ class Settings extends MX_Controller
         $config['totp_secret'] = $this->config->item('totp_secret');
         $config['totp_secret_name'] = $this->config->item('totp_secret_name');
 
-        // Prepare my data
+        // 准备数据
         $data = [
             'url' => $this->template->page_url,
             'realms' => $this->realms->getRealms(),
@@ -107,13 +107,13 @@ class Settings extends MX_Controller
             'config' => $config
         ];
 
-        // Load my view
+        // 加载视图模板
         $output = $this->template->loadPage("settings.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Settings', $output);
+        // 将内容放入管理面板
+        $content = $this->administrator->box('系统配置', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出页面内容
         $this->administrator->view($content, false, "modules/admin/js/settings.js");
     }
 
@@ -147,7 +147,7 @@ class Settings extends MX_Controller
             $this->external_account_model->setExpansion($this->input->post('max_expansion'));
         }
 
-        die('yes');
+        die('成功');
     }
 
     public function savePerformance()
@@ -165,7 +165,7 @@ class Settings extends MX_Controller
         $fusionConfig->save();
         $fusionConfig2->save();
 
-        die('yes');
+        die('成功');
     }
 
     public function saveSmtp()
@@ -183,7 +183,7 @@ class Settings extends MX_Controller
 
         $fusionConfig->save();
 
-        die('yes');
+        die('成功');
     }
 
     public function mailDebug()
@@ -206,11 +206,11 @@ class Settings extends MX_Controller
         $this->email->setFrom($this->config->item('smtp_sender'), $this->config->item('server_name'));
         $this->email->setTo($this->user->getEmail());
 
-        $this->email->setSubject('Test mail');
-        $this->email->setMessage('Looks like your mail configuration is working!');
+        $this->email->setSubject('测试邮件');
+        $this->email->setMessage('您的邮件配置似乎正常工作！');
 
         if ($this->email->send()) {
-            die(json_encode(array("success" => "Please check your spam folder.")));
+            die(json_encode(array("success" => "请检查您的垃圾邮件箱。")));
         } else {
             $error = $this->email->printDebugger(['headers']);
             die(json_encode(array("error" => $error)));
@@ -228,7 +228,7 @@ class Settings extends MX_Controller
 
         $fusionConfig->save();
 
-        die('yes');
+        die('成功');
     }
 
     public function saveWowDatabase()
@@ -244,11 +244,11 @@ class Settings extends MX_Controller
         $fusionConfig->set('api_item_data', $api_item_data);
 
         if ((empty($api_item_icons) && empty($custom_link)) || ($api_item_icons == 'custom') && empty($custom_link))
-            die('The link cannot be empty');
+            die('链接不能为空');
 
         $fusionConfig->save();
 
-        die('yes');
+        die('成功');
     }
 
 	public function saveCDN()
@@ -260,7 +260,7 @@ class Settings extends MX_Controller
 
         $fusionConfig->save();
 
-        die('yes');
+        die('成功');
     }
 	
 	public function saveSecurity()
@@ -278,7 +278,7 @@ class Settings extends MX_Controller
 
         $fusionConfig->save();
 
-        die('yes');
+        die('成功');
     }
 
     public function saveAuthConfig()
@@ -294,6 +294,6 @@ class Settings extends MX_Controller
 
         $fusionConfig->save();
 
-        die('yes');
+        die('成功');
     }
 }
