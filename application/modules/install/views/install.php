@@ -10,7 +10,7 @@
 
 		<script src="//cdnjs.loli.net/ajax/libs/Kraken/3.8.2/js/html5.min.js"></script>
 		<script src="<?= base_url() ?>node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+        <script src="//ajax.loli.net/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 		<script src="<?= base_url() . $INSTALL_PATH ?>js/lang.js"></script>
 		<script src="<?= base_url() . $INSTALL_PATH ?>js/ui.js"></script>
