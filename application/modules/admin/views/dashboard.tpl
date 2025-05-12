@@ -1,4 +1,3 @@
-
                         <div class="grid grid-cols-12 gap-4">
                             <div class="ltablet:col-span-9 col-span-12 lg:col-span-9">
 								<div class="bg-primary-700 rounded-xl px-6 py-12 mb-6">
@@ -9,35 +8,35 @@
 													<img src="{$avatar}" class="max-h-full max-w-full object-cover shadow-sm dark:border-transparent h-16 w-16">
 												</div>
 											</div>
-											<h2 class="font-heading text-3xl font-bold leading-none ltablet:!text-2xl text-white"><span>Welcome back, {$nickname}.</span></h2>
+											<h2 class="font-heading text-3xl font-bold leading-none ltablet:!text-2xl text-white"><span>欢迎回来， {$nickname}。</span></h2>
 										</div>
 										<div class="flex h-full flex-1 flex-col px-4 sm:px-6">
-											<h2 class="font-heading text-base font-semibold leading-tight mb-1 text-white"><span>Shortcuts</span></h2>
-											<p class="font-alt text-xs font-normal leading-tight mb-3"><span class="text-white"> Frequently used shortcuts: </span></p>
+											<h2 class="font-heading text-base font-semibold leading-tight mb-1 text-white"><span>快捷方式</span></h2>
+											<p class="font-alt text-xs font-normal leading-tight mb-3"><span class="text-white"> 常用快捷方式： </span></p>
 											<div class="mt-auto flex gap-2">
 												<div class="relative inline-flex shrink-0 items-center justify-center outline-none h-10 w-10 nui-mask nui-mask-blob">
-												    <a href="{$url}changelog/admin" data-toggle="tooltip" data-placement="top" title="ChangeLog">
+												    <a href="{$url}changelog/admin" data-toggle="tooltip" data-placement="top" title="变更日志">
 														<div class="flex h-full w-full items-center justify-center overflow-hidden text-center transition-all duration-300">
 															<i class="fs-4 fa-duotone fa-list-ul"></i>
 														</div>
 													</a>
 												</div>
 												<div class="relative inline-flex shrink-0 items-center justify-center outline-none h-10 w-10 nui-mask nui-mask-blob">
-												    <a href="{$url}admin/cachemanager" data-toggle="tooltip" data-placement="top" title="Manage cache">
+												    <a href="{$url}admin/cachemanager" data-toggle="tooltip" data-placement="top" title="缓存管理">
 														<div class="flex h-full w-full items-center justify-center overflow-hidden text-center transition-all duration-300">
 															<i class="fs-4 fa-duotone fa-box-archive"></i>
 														</div>
 													</a>
 												</div>
 												<div class="relative inline-flex shrink-0 items-center justify-center outline-none h-10 w-10 nui-mask nui-mask-blob">
-												    <a href="{$url}page/admin" data-toggle="tooltip" data-placement="top" title="Custom pages">
+												    <a href="{$url}page/admin" data-toggle="tooltip" data-placement="top" title="自定义页面">
 														<div class="flex h-full w-full items-center justify-center overflow-hidden text-center transition-all duration-300">
 															<i class="fs-4 fa-duotone fa-window"></i>
 														</div>
 													</a>
 												</div>
 												<div class="relative inline-flex shrink-0 items-center justify-center outline-none h-10 w-10 nui-mask nui-mask-blob">
-												    <a href="{$url}admin/modules" data-toggle="tooltip" data-placement="top" title="Modules">
+												    <a href="{$url}admin/modules" data-toggle="tooltip" data-placement="top" title="模块">
 														<div class="flex h-full w-full items-center justify-center overflow-hidden text-center transition-all duration-300">
 															<i class="fs-4 fa-duotone fa-sitemap"></i>
 														</div>
@@ -46,9 +45,9 @@
 											</div>
 										</div>
 										<div class="border-primary-300/60 flex h-full flex-1 flex-col px-4 sm:border-l sm:px-6">
-											<h2 class="font-heading text-base font-semibold leading-tight mb-1 text-white"><span>Articles</span></h2>
-											<p class="font-alt text-xs font-normal leading-tight mb-3"><span class="text-white"> Submit a new article to your users. </span></p>
-											<div class="mt-auto"><a href="{$url}news/admin" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md pull-right is-button rounded is-button-default w-full"><span>News articles</span></a></div>
+											<h2 class="font-heading text-base font-semibold leading-tight mb-1 text-white"><span>文章</span></h2>
+											<p class="font-alt text-xs font-normal leading-tight mb-3"><span class="text-white"> 提交新文章给您的用户。 </span></p>
+											<div class="mt-auto"><a href="{$url}news/admin" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md pull-right is-button rounded is-button-default w-full"><span>新闻文章</span></a></div>
 										</div>
 									</div>
 								</div>
@@ -57,7 +56,7 @@
                                         <div class="col-span-12 md:col-span-12">
                                             <div class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative w-full border bg-white transition-all duration-300 rounded-xl p-6 mb-3 alert">
                                                 <div class="mb-4 flex items-center justify-between">
-                                                    <h3 class="font-heading text-sm font-semibold leading-tight text-muted-800 dark:text-white"><span>{lang('important', 'dashboard')} !</span><span class="badge bg-danger mx-2">{lang('new', 'dashboard')}</span></h3>
+                                                    <h3 class="font-heading text-sm font-semibold leading-tight text-muted-800 dark:text-white"><span>{lang('重要', 'dashboard')} !</span><span class="badge bg-danger mx-2">{lang('新', 'dashboard')}</span></h3>
                                                     <div class="relative">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon text-muted-400 h-4 w-4" width="1em" height="1em" viewBox="0 0 24 24">
                                                         	<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9m4.3 13a1.94 1.94 0 0 0 3.4 0"></path>
@@ -65,7 +64,7 @@
                                                         <div class="absolute -end-0.5 top-0.5"><span class="relative flex h-2 w-2"><span class="bg-primary-400 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span><span class="bg-primary-500 relative inline-flex h-2 w-2 rounded-full"></span></span></div>
                                                     </div>
                                                 </div>
-                                                <p class="font-alt text-xs font-normal leading-normal leading-normal"><span class="text-muted-400">{lang('update_available', 'dashboard')}<br>{lang('update_download', 'dashboard')} <a href="{$url}admin/updater" class="alert-link">{lang('here', 'dashboard')}</a></span></p>
+                                                <p class="font-alt text-xs font-normal leading-normal leading-normal"><span class="text-muted-400">{lang('更新可用', 'dashboard')}<br>{lang('更新下载', 'dashboard')} <a href="{$url}admin/updater" class="alert-link">{lang('这里', 'dashboard')}</a></span></p>
                                             </div>
                                         </div>
 								    </div>
@@ -75,7 +74,7 @@
                                         <div class="col-span-12 md:col-span-12">
                                             <div class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative w-full border bg-white transition-all duration-300 rounded-xl p-6 mb-3 alert">
                                                 <div class="mb-4 flex items-center justify-between">
-                                                    <h3 class="font-heading text-sm font-semibold leading-tight text-muted-800 dark:text-white"><span>{lang('important', 'dashboard')} !</span><span class="badge bg-danger mx-2">{lang('new', 'dashboard')}</span></h3>
+                                                    <h3 class="font-heading text-sm font-semibold leading-tight text-muted-800 dark:text-white"><span>{lang('重要', 'dashboard')} !</span><span class="badge bg-danger mx-2">{lang('新', 'dashboard')}</span></h3>
                                                     <div class="relative">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon text-muted-400 h-4 w-4" width="1em" height="1em" viewBox="0 0 24 24">
                                                         	<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9m4.3 13a1.94 1.94 0 0 0 3.4 0"></path>
@@ -83,7 +82,7 @@
                                                         <div class="absolute -end-0.5 top-0.5"><span class="relative flex h-2 w-2"><span class="bg-primary-400 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span><span class="bg-primary-500 relative inline-flex h-2 w-2 rounded-full"></span></span></div>
                                                     </div>
                                                 </div>
-                                                <p class="font-alt text-xs font-normal leading-normal leading-normal"><span class="text-muted-400">{lang('theme_old', 'dashboard')}<br>{lang('theme_old_detail', 'dashboard')}</span></p>
+                                                <p class="font-alt text-xs font-normal leading-normal leading-normal"><span class="text-muted-400">{lang('主题旧', 'dashboard')}<br>{lang('主题旧详细', 'dashboard')}</span></p>
                                             </div>
                                         </div>
 								    </div>
@@ -94,7 +93,7 @@
 
                                             <div class="mb-1 flex items-center justify-between">
                                                 <h5 class="font-heading text-sm font-medium leading-tight text-muted-500 dark:text-muted-400">
-                                                    <span>Income this month</span>
+                                                    <span>本月收入</span>
                                                 </h5>
                                                 <div class="relative inline-flex shrink-0 items-center justify-center h-8 w-8 rounded-full bg-success-100 text-success-500 dark:bg-success-500/20 dark:text-success-400 dark:border-success-500 dark:border-2">
 
@@ -129,7 +128,7 @@
                                                         </g>
                                                     </svg>
 												{/if}
-                                                <span class="text-muted-400 text-xs">since last month</span>
+                                                <span class="text-muted-400 text-xs">自上月以来</span>
                                             </div>
 
                                         </div>
@@ -139,7 +138,7 @@
 
                                             <div class="mb-1 flex items-center justify-between">
                                                 <h5 class="font-heading text-sm font-medium leading-tight text-muted-500 dark:text-muted-400">
-                                                    <span>Votes this month</span>
+                                                    <span>本月投票</span>
                                                 </h5>
                                                 <div class="relative inline-flex shrink-0 items-center justify-center h-8 w-8 rounded-full bg-yellow-100 text-yellow-500 dark:border-2 dark:border-yellow-500 dark:bg-yellow-500/20 dark:text-yellow-400">
 
@@ -174,7 +173,7 @@
                                                         </g>
                                                     </svg>
 												{/if}
-                                                <span class="text-muted-400 text-xs">since last month</span>
+                                                <span class="text-muted-400 text-xs">自上月以来</span>
                                             </div>
 
                                         </div>
@@ -184,14 +183,14 @@
 
                                             <div class="mb-1 flex items-center justify-between">
                                                 <h5 class="font-heading text-sm font-medium leading-tight text-muted-500 dark:text-muted-400">
-                                                    <span>Registrations this month</span>
+                                                    <span>本月注册</span>
                                                 </h5>
                                                 <div class="relative inline-flex shrink-0 items-center justify-center h-8 w-8 rounded-full bg-primary-100 text-primary-500 dark:bg-primary-500/20 dark:text-primary-400 dark:border-primary-500 dark:border-2">
 
                                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon h-5 w-5" style="" width="1em" height="1em" viewBox="0 0 256 256" data-v-cd102a71>
                                                         <g fill="currentColor">
-                                                            <path d="M136 69.09v101.82l-93.76 28.76A8 8 0 0 1 32 192V48a8 8 0 0 1 10.24-7.67Z" opacity=".2"/>
-                                                            <path d="m220.54 86.66l-176.06-54A16 16 0 0 0 24 48v144a16 16 0 0 0 16 16a16 16 0 0 0 4.52-.65L128 181.73V192a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-29.9l28.54-8.75A16.09 16.09 0 0 0 232 138v-36a16.09 16.09 0 0 0-11.46-15.34ZM128 165l-88 27V48l88 27Zm48 27h-32v-15.18l32-9.82Zm40-54h-.11L144 160.08V79.92l71.89 22h.11v36Z"/>
+                                                            <path d="m94.81 192l-29.45 22.24a8 8 0 0 1-12.81-4.51L40.19 154.1a8 8 0 0 1 1.66-6.86l30.31-36.33C71 134.25 76.7 161.43 94.81 192Zm119.34-44.76l-30.31-36.33c1.21 23.34-4.54 50.52-22.65 81.09l29.45 22.24a8 8 0 0 0 12.81-4.51l12.36-55.63a8 8 0 0 0-1.66-6.86Z" opacity=".2"/>
+                                                            <path d="M152 224a8 8 0 0 1-8 8h-32a8 8 0 0 1 0-16h32a8 8 0 0 1 8 8Zm-24-112a12 12 0 1 0-12-12a12 12 0 0 0 12 12Zm95.62 43.83l-12.36 55.63a16 16 0 0 1-25.51 9.11L158.51 200h-61l-27.26 20.57a16 16 0 0 1-25.51-9.11l-12.36-55.63a16.09 16.09 0 0 1 3.32-13.71l28.56-34.26a123.07 123.07 0 0 1 8.57-36.67c12.9-32.34 36-52.63 45.37-59.85a16 16 0 0 1 19.6 0c9.34 7.22 32.47 27.51 45.37 59.85a123.07 123.07 0 0 1 8.57 36.67l28.56 34.26a16.09 16.09 0 0 1 3.32 13.71ZM99.43 184h57.14c21.12-37.54 25.07-73.48 11.74-106.88C156.55 47.64 134.49 29 128 24c-6.51 5-28.57 23.64-40.33 53.12c-13.31 33.4-9.36 69.34 11.76 106.88Zm-15 5.85q-16.15-29.35-19.6-57.69L48 152.36L60.36 208l.18-.13ZM208 152.36l-16.83-20.2q-3.42 28.28-19.56 57.69l23.85 18l.18.13Z"/>
                                                         </g>
                                                     </svg>
 
@@ -219,7 +218,7 @@
                                                         </g>
                                                     </svg>
 												{/if}
-                                                <span class="text-muted-400 text-xs">since last month</span>
+                                                <span class="text-muted-400 text-xs">自上月以来</span>
                                             </div>
 
                                         </div>
@@ -229,24 +228,24 @@
                                         <div class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative w-full border bg-white transition-all duration-300 rounded-md p-6" id="graphSelectorWrapper">
                                             <div class="flex gap-8">
                                                 <div>
-                                                    <span class="text-muted-400 font-sans text-xs">Unique this month</span>
+                                                    <span class="text-muted-400 font-sans text-xs">本月唯一</span>
                                                     <p class="text-primary-500 font-sans text-lg font-medium"> {$unique.month} </p>
                                                 </div>
                                                 <div>
-                                                    <span class="text-muted-400 font-sans text-xs">Views today</span>
+                                                    <span class="text-muted-400 font-sans text-xs">今日浏览量</span>
                                                     <p class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"> {$views.today} </p>
                                                 </div>
                                                 <div>
-                                                    <span class="text-muted-400 font-sans text-xs">Views this month</span>
+                                                    <span class="text-muted-400 font-sans text-xs">本月浏览量</span>
                                                     <p class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"> {$views.month} </p>
                                                 </div>
                                             </div>
                                             <h2>
-                                                Visitors:
+                                                访客：
                                                 <small class="float-end">
                                                     <select class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-600 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer w-full cursor-pointer appearance-none border bg-white font-sans focus:shadow-lg px-2 pe-9 h-10 py-2 text-sm leading-5 px-3 pe-6 rounded px-3" id="graphSelector">
-                                                        <option value="Monthly">Monthly</option>
-                                                        <option value="Daily" selected>Daily</option>
+                                                        <option value="Monthly">月度</option>
+                                                        <option value="Daily" selected>日常</option>
                                                     </select>
                                                 </small>
                                             </h2>
@@ -290,10 +289,10 @@
         {/foreach}];
     const options = {
         series: [{
-            name: 'Views of this year',
+            name: '今年浏览量',
             data: thisYearMonthlyData
         },{
-            name: 'Views of last year',
+            name: '去年浏览量',
             data: lastYearMonthData
         }],
         chart: {
@@ -313,7 +312,7 @@
             curve: 'smooth'
         },
         xaxis: {
-            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+            categories: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
         },
         legend: {
             position: 'top'
@@ -337,13 +336,13 @@
 
     const options2 = {
         series: [{
-            name: 'Views of this month',
+            name: '本月浏览量',
             data: thisMonthDailyData
         },{
-            name: 'Views of last month',
+            name: '上月浏览量',
             data: lastMonthDailyData
         },{
-            name: 'Views of two month ago',
+            name: '两个月前浏览量',
             data: twoMonthAgoDailyData
         }],
         colors: ['#8b5cf6', '#0ea5e9', '#14b8a6'],
@@ -431,7 +430,7 @@
                                         <div>
                                             <div class="mb-4 flex items-center justify-between">
                                                 <h3 class="font-heading text-sm font-semibold leading-tight text-muted-800 dark:text-white">
-                                                    <span>System information</span>
+                                                    <span>系统信息</span>
                                                 </h3>
                                             </div>
                                             <div>
@@ -439,7 +438,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> PHP version </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> PHP版本 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$php_version}</span></div>
                                                         </a>
@@ -447,7 +446,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> CodeIgniter version </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> CodeIgniter版本 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$ci_version}</span></div>
                                                         </a>
@@ -455,7 +454,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> Smarty version </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> Smarty版本 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$smarty_version}</span></div>
                                                         </a>
@@ -463,7 +462,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> CMS version </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> CMS版本 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$version}</span></div>
                                                         </a>
@@ -471,7 +470,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> OS </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> 操作系统 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$os}</span></div>
                                                         </a>
@@ -487,7 +486,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> Server Software </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> 服务器软件 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$server_software}</span></div>
                                                         </a>
@@ -495,7 +494,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> Page speed </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> 页面速度 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$benchmark}</span></div>
                                                         </a>
@@ -503,7 +502,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> Memory usage </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> 内存使用 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$memory_usage}</span></div>
                                                         </a>
@@ -516,7 +515,7 @@
                                         <div>
                                             <div class="mb-4 flex items-center justify-between">
                                                 <h3 class="font-heading text-sm font-semibold leading-tight text-muted-800 dark:text-white">
-                                                    <span>Theme information</span>
+                                                    <span>主题信息</span>
                                                 </h3>
                                             </div>
                                             <div>
@@ -524,7 +523,7 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> Name </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> 名称 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$theme.name}</span></div>
                                                         </a>
@@ -532,14 +531,14 @@
                                                     <li>
                                                         <a class="router-link-active router-link-exact-active group flex items-center justify-between">
                                                             <p class="font-alt text-sm font-normal leading-normal leading-normal">
-                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> Author </span>
+                                                                <span class="text-muted-500 dark:text-muted-400 group-hover:text-primary-500 transition-colors duration-300"> 作者 </span>
                                                             </p>
                                                             <div class="bg-muted-200 dark:bg-muted-700 text-muted-500 dark:text-muted-200 flex h-7 w-auto items-center justify-center rounded-full text-xs p-2"><span>{$theme.author}</span></div>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         {if hasPermission("changeTheme")}
-                                                            <a href="{$url}admin/theme" class="router-link-active router-link-exact-active bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline">Change theme</a>
+                                                            <a href="{$url}admin/theme" class="router-link-active router-link-exact-active bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline">更换主题</a>
                                                         {/if}
                                                     </li>
                                                 </ul>
@@ -551,16 +550,16 @@
                                     <div class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 relative w-full border bg-white transition-all duration-300 rounded-md p-6">
                                         <div class="mb-10 flex items-center justify-between">
                                             <h3 class="font-heading text-base font-semibold leading-tight text-muted-800 dark:text-white">
-                                                <span>Realm: {$realm->getName()}</span>
+                                                <span>领域：{$realm->getName()}</span>
                                             </h3>
                                         </div>
 											<div class="mb-6">
 												<div>
 													<div class="semi-donut text-muted-500 dark:text-muted-400 m-2" style="--percentage : {$realm->getPercentage()};">
 														{if $realm->isOnline()}
-															<span>Online</span>
+															<span>在线</span>
 														{else}
-															<span>Offline</span>
+															<span>离线</span>
 														{/if}
 													</div>
 												</div>
@@ -568,11 +567,11 @@
                                         <div class="mt-auto">
                                             <div class="border-muted-200 dark:border-muted-700 flex w-full border-t pt-4 text-center">
                                                 <div class="border-muted-200 dark:border-muted-700 flex-1 border-r px-2">
-                                                    <span class="text-muted-400 font-sans text-xs"> Total players online </span>
+                                                    <span class="text-muted-400 font-sans text-xs"> 在线玩家总数 </span>
                                                     <p class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"> {$realm->getOnline()} </p>
                                                 </div>
                                                 <div class="flex-1 px-2">
-                                                    <span class="text-muted-400 font-sans text-xs"> Uptime </span>
+                                                    <span class="text-muted-400 font-sans text-xs"> 运行时间 </span>
                                                     <p class="text-muted-800 dark:text-muted-100 font-sans text-lg font-medium"> {if $realm->isOnline()} {$uptimes[$realm->getId()]} {else} 0 {/if}</p>
                                                 </div>
                                             </div>
@@ -590,7 +589,7 @@
             $.get(Config.URL + "admin/checkSoap", function(data) {
                 try {
                     if(data.includes("Something")) {
-                        $("#soapcheck").html('<div class="relative"><div class="nui-card nui-card-curved nui-card-white p-6"><div class="flex w-full flex-col gap-4 sm:flex-row"><svg data-v-26e5b7b0="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon h-10 w-10 shrink-0" width="1em" height="1em" viewBox="0 0 256 256"><defs><linearGradient id="iconifyVue0" x1="99.687%" x2="39.836%" y1="15.801%" y2="97.438%"><stop offset="0%" stop-color="#0052CC"></stop><stop offset="92.3%" stop-color="#2684FF"></stop></linearGradient></defs><path fill="url(#iconifyVue0)" d="M75.793 117.95c-3.82-4.08-9.77-3.85-12.367 1.342L.791 244.565a7.488 7.488 0 0 0 6.697 10.838h87.228a7.22 7.22 0 0 0 6.699-4.14c18.808-38.89 7.413-98.018-25.622-133.314Z"></path><path fill="#2681FF" d="M121.756 4.011c-35.033 55.505-32.721 116.979-9.646 163.13l42.06 84.121a7.488 7.488 0 0 0 6.697 4.14h87.227a7.488 7.488 0 0 0 6.697-10.838S137.445 9.837 134.493 3.964c-2.64-5.258-9.344-5.33-12.737.047Z"></path></svg><div><h4 class="nui-heading nui-heading-md nui-weight-semibold nui-lead-tight after:text-muted-800 mb-4 dark:text-white"><span class="text-danger-500">Soap Checker</span></h4><p class="nui-paragraph nui-paragraph-sm nui-weight-normal nui-lead-normal"><span class="text-danger-500 line-clamp-4"><strong>Oh no!</strong><br/> Looks like a realm has a soap problem!</span></p><div class="flex items-center justify-between pt-4"><div class="flex gap-2"><a href="'+ Config.URL +'admin/checkSoap" class="router-link-active router-link-exact-active bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"> Details </a></div></div></div></div></div></div>');
+                        $("#soapcheck").html('<div class="relative"><div class="nui-card nui-card-curved nui-card-white p-6"><div class="flex w-full flex-col gap-4 sm:flex-row"><svg data-v-26e5b7b0="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon h-10 w-10 shrink-0" width="1em" height="1em" viewBox="0 0 256 256"><defs><linearGradient id="iconifyVue0" x1="99.687%" x2="39.836%" y1="15.801%" y2="97.438%"><stop offset="0%" stop-color="#0052CC"></stop><stop offset="92.3%" stop-color="#2684FF"></stop></linearGradient></defs><path fill="url(#iconifyVue0)" d="M75.793 117.95c-3.82-4.08-9.77-3.85-12.367 1.342L.791 244.565a7.488 7.488 0 0 0 6.697 10.838h87.228a7.22 7.22 0 0 0 6.699-4.14c18.808-38.89 7.413-98.018-25.622-133.314Z"></path><path fill="#2681FF" d="M121.756 4.011c-35.033 55.505-32.721 116.979-9.646 163.13l42.06 84.121a7.488 7.488 0 0 0 6.697 4.14h87.227a7.488 7.488 0 0 0 6.697-10.838S137.445 9.837 134.493 3.964c-2.64-5.258-9.344-5.33-12.737.047Z"></path></svg><div><h4 class="nui-heading nui-heading-md nui-weight-semibold nui-lead-tight after:text-muted-800 mb-4 dark:text-white"><span class="text-danger-500">Soap Checker</span></h4><p class="nui-paragraph nui-paragraph-sm nui-weight-normal nui-lead-normal"><span class="text-danger-500 line-clamp-4"><strong>哦不！</strong><br/> 看起来一个领域有一个soap问题！</span></p><div class="flex items-center justify-between pt-4"><div class="flex gap-2"><a href="'+ Config.URL +'admin/checkSoap" class="router-link-active router-link-exact-active bg-muted-100 hover:bg-muted-200 dark:bg-muted-700 dark:hover:bg-muted-900 text-primary-500 rounded-lg px-4 py-2 font-sans text-sm font-medium underline-offset-4 transition-colors duration-300 hover:underline"> 详情 </a></div></div></div></div></div></div>');
                     }
                 } catch(e) {
                     console.log(e);
