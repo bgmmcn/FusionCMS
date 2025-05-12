@@ -3,14 +3,14 @@
 use MX\MX_Controller;
 
 /**
- * Backups Controller Class
- * @property cms_model $cms_model cms_model Class
+ * 备份管理控制器类
+ * @property cms_model $cms_model cms_model 类
  */
 class Backups extends MX_Controller
 {
     public function __construct()
     {
-        // Make sure to load the administrator library!
+        // 确保加载管理员库
         $this->load->library('administrator');
         $this->load->helper('download');
         $this->load->model('cms_model');
@@ -26,30 +26,31 @@ class Backups extends MX_Controller
 
     public function index()
     {
-        // Change the title
-        $this->administrator->setTitle("Backups");
+        // 设置页面标题
+        $this->administrator->setTitle("备份管理");
 
         $backups = $this->cms_model->getBackups();
 
+        // 加载备份配置
         $config['auto_backups'] = $this->config->item('auto_backups');
         $config['backups_interval'] = $this->config->item('backups_interval');
         $config['backups_time'] = $this->config->item('backups_time');
         $config['backups_max_keep'] = $this->config->item('backups_max_keep');
 
-        // Prepare my data
+        // 准备视图数据
         $data = [
             'backups' => $backups,
             'config' => $config,
             'url' => $this->template->page_url
         ];
 
-        // Load my view
+        // 加载视图模板
         $output = $this->template->loadPage("backups.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Backups', $output);
+        // 将内容放入管理面板
+        $content = $this->administrator->box('备份管理系统', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出页面内容
         $this->administrator->view($content, false, "modules/admin/js/backups.js");
     }
 
@@ -64,11 +65,11 @@ class Backups extends MX_Controller
         requirePermission("editBackupSettings");
 
         if (!is_numeric($this->input->post('backups_interval')) || !is_numeric($this->input->post('backups_max_keep'))) {
-            die('Only numbers allowed');
+            die('只允许输入数字');
         }
 
         if ($this->input->post('backups_time') == 'hour' && $this->input->post('backups_interval') > 24) {
-            die('A day only has 24 hours');
+            die('一天只有24小时');
         }
 
         $fusionConfig = new ConfigEditor("application/config/backups.php");
@@ -80,7 +81,7 @@ class Backups extends MX_Controller
 
         $fusionConfig->save();
 
-        die('yes');
+        die('配置已保存');
     }
 
     public function download($id)
@@ -92,7 +93,7 @@ class Backups extends MX_Controller
         if (file_exists($file)) {
             force_download($file, null);
         } else {
-            die("File doesn't exist");
+            die("文件不存在");
         }
     }
 
@@ -105,9 +106,9 @@ class Backups extends MX_Controller
         $this->cms_model->deleteBackups($id);
         if (file_exists($file)) {
             unlink($file);
-            die('yes');
+            die('删除成功');
         } else {
-            die("File doesn't exist");
+            die("文件不存在");
         }
     }
 
@@ -121,14 +122,14 @@ class Backups extends MX_Controller
         $zipfile = $zip->open('writable/backups/' . $name . '.zip');
 
         if ($zipfile === true) {
-            // Unzip path
+            // 解压路径
             $extractpath = "writable/backups/";
 
-            // Extract file
+            // 解压文件
             $zip->extractTo($extractpath);
             $zip->close();
         } else {
-            die('Extract failed. Check file permissions');
+            die('解压失败，请检查文件权限');
         }
 
         $sqlfile = 'writable/backups/' . $name . '.sql';
@@ -144,10 +145,10 @@ class Backups extends MX_Controller
                 }
             }
         } else {
-            die("SQL file doesn't exist!");
+            die("SQL文件不存在！");
         }
 
         unlink('writable/backups/' . $name . '.sql');
-        die('yes');
+        die('恢复成功');
     }
 }
