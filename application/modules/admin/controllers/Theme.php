@@ -6,7 +6,7 @@ class Theme extends MX_Controller
 {
     public function __construct()
     {
-        // Make sure to load the administrator library!
+        // 确保加载管理员库！
         $this->load->library('administrator');
 
         parent::__construct();
@@ -18,23 +18,23 @@ class Theme extends MX_Controller
 
     public function index()
     {
-        // Change the title
-        $this->administrator->setTitle("Select theme");
+        // 更改标题
+        $this->administrator->setTitle("选择主题");
 
-        // Prepare my data
+        // 准备数据
         $data = array(
             'url' => $this->template->page_url,
             'themes' => $this->getThemes(),
             'current_theme' => $this->config->item('theme')
         );
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage("theme.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Select theme', $output);
+        // 将视图放入带标题的主框中
+        $content = $this->administrator->box('选择主题', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, "modules/admin/css/theme.css", "modules/admin/js/theme.js");
     }
 
@@ -46,7 +46,7 @@ class Theme extends MX_Controller
         foreach ($themes as $value) {
             $value = preg_replace("/application\/themes\/([A-Za-z_-]*)/", "$1", $value);
 
-            //Check if folder
+            // 检查是否为目录
             if (!is_dir("application/themes/" . $value)) {
                 continue;
             }
@@ -55,7 +55,7 @@ class Theme extends MX_Controller
                 $manifest = json_decode(file_get_contents("application/themes/" . $value . "/manifest.json"), true);
                 $manifest['folderName'] = $value;
 
-				// Check if the module has any configs
+				// 检查模块是否有配置
 				if ($this->hasConfigs($value)) {
 					$manifest['has_configs'] = true;
 				} else {
@@ -81,7 +81,7 @@ class Theme extends MX_Controller
     public function set($theme = false)
     {
         if (!$theme || !file_exists("application/themes/" . $theme)) {
-            die('Invalid theme');
+            die('无效的主题');
         }
 
         $fusionConfig = new ConfigEditor("application/config/fusion.php");
@@ -92,6 +92,6 @@ class Theme extends MX_Controller
         $this->cache->delete('search/*.cache');
         $this->cache->delete('minify/*');
 
-        die('yes');
+        die('成功');
     }
 }
