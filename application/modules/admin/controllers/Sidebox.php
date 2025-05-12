@@ -3,8 +3,8 @@
 use MX\MX_Controller;
 
 /**
- * Sidebox Controller Class
- * @property sidebox_model $sidebox_model sidebox_model Class
+ * 侧边栏控制器类
+ * @property sidebox_model $sidebox_model 侧边栏模型类
  */
 class Sidebox extends MX_Controller
 {
@@ -12,12 +12,13 @@ class Sidebox extends MX_Controller
 
     public function __construct()
     {
-        // Make sure to load the administrator library!
+        // 加载管理员库
         $this->load->library('administrator');
         $this->load->model('sidebox_model');
 
         parent::__construct();
 
+        // 验证侧边栏查看权限
         requirePermission("viewSideboxes");
     }
 
@@ -25,8 +26,8 @@ class Sidebox extends MX_Controller
     {
         $this->sideboxModules = $this->getSideboxModules();
 
-        // Change the title
-        $this->administrator->setTitle("Sideboxes");
+        // 设置页面标题
+        $this->administrator->setTitle("侧边栏管理");
 
         $sideboxes = $this->sidebox_model->getSideboxes();
 
@@ -34,10 +35,13 @@ class Sidebox extends MX_Controller
         {
             foreach ($sideboxes as $key => $value)
             {
+                // 本地化显示名称
                 $sideboxes[$key]['name'] = $this->sideboxModules["sidebox_" . $value['type']]['name'];
 
+                // 本地化显示名称
                 $sideboxes[$key]['displayName'] = langColumn($sideboxes[$key]['displayName']);
 
+                // 显示名称长度限制
                 if (strlen($sideboxes[$key]['displayName']) > 15)
                 {
                     $sideboxes[$key]['displayName'] = mb_substr($sideboxes[$key]['displayName'], 0, 15) . '...';
@@ -45,20 +49,20 @@ class Sidebox extends MX_Controller
             }
         }
 
-        // Prepare my data
+        // 准备视图数据
         $data = array(
             'url' => $this->template->page_url,
             'sideboxes' => $sideboxes,
             'sideboxModules' => $this->sideboxModules
         );
 
-        // Load my view
+        // 加载模板文件
         $output = $this->template->loadPage("sidebox/sidebox.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('', $output);
+        // 将内容放入管理面板
+        $content = $this->administrator->box('侧边栏列表', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 渲染最终页面
         $this->administrator->view($content, false, "modules/admin/js/sidebox.js");
     }
 
@@ -81,10 +85,10 @@ class Sidebox extends MX_Controller
 
     public function create_submit()
     {
-        // Make sure visitor has required permissions
+        // 验证添加侧边栏权限
         requirePermission('addSideboxes');
 
-        // Prepare sidebox data
+        // 准备侧边栏数据
         $data = [
             'type'        => preg_replace('/sidebox_/', '', $this->input->post('type')),
             'pages'       => $this->input->post('pages'),
@@ -92,35 +96,35 @@ class Sidebox extends MX_Controller
             'displayName' => $this->input->post('displayName')
         ];
 
-        // Validate pages
+        // 验证页面
         if(!$data['pages'] || !is_array($data['pages']))
-            die('Select at least one page.');
+            die('请选择至少一个页面.');
 
-        // Format pages
+        // 格式化页面
         $data['pages'] = json_encode($data['pages'], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
 
-        // Make sure `displayName` filled
+        // 验证显示名称
         if(!$data['displayName'])
-            die('Name can\'t be empty');
+            die('名称不能为空');
 
-        // Add sidebox
+        // 添加侧边栏
         $id = $this->sidebox_model->add($data);
 
-        // Set sidebox permission (if required)
+        // 设置侧边栏权限（如果需要）
         if($this->input->post('visibility') == 'group')
             $this->sidebox_model->setPermission($id);
 
-        // Handle custom sidebox text
+        // 处理自定义侧边栏文本
         if($data['type'] == 'custom')
         {
-            // Grab sidebox text
+            // 获取侧边栏文本
             $text = $this->input->post('content', false);
 
-            // Make sure `text` filled
+            // 验证文本
             if(!$text)
-                die('Content can\'t be empty');
+                die('内容不能为空');
 
-            // Add sidebox (custom text)
+            // 添加自定义侧边栏文本
             $this->sidebox_model->addCustom($text);
         }
 
@@ -129,63 +133,63 @@ class Sidebox extends MX_Controller
 
     public function new()
     {
-        // Make sure visitor has required permissions
+        // 验证编辑侧边栏权限
         requirePermission('editSideboxes');
 
-        // Set the title
-        $this->administrator->setTitle('Add Sidebox');
+        // 设置页面标题
+        $this->administrator->setTitle('添加侧边栏');
 
-        // Fill sidebox modules
+        // 加载侧边栏模块
         $this->sideboxModules = $this->getSideboxModules();
 
-        // Prepare page data
+        // 准备页面数据
         $data = array(
             'url'            => $this->template->page_url,
             'pages'          => self::getModules(),
             'sideboxModules' => $this->sideboxModules
         );
 
-        // Load page view
+        // 加载页面模板
         $output = $this->template->loadPage('sidebox/add_sidebox.tpl', $data);
 
-        // Put page view in the main box with a headline
+        // 将内容放入管理面板
         $content = $this->administrator->box('', $output);
 
-        // Output page content. The method accepts the same arguments as template->view
+        // 渲染最终页面
         $this->administrator->view($content, false, 'modules/admin/js/sidebox.js');
     }
 
     public function edit($id = false)
     {
-        // Make sure visitor has required permissions
+        // 验证编辑侧边栏权限
         requirePermission('editSideboxes');
 
-        // Invalid id
+        // 验证ID
         if(!is_numeric($id) || !$id)
             die();
 
-        // Get sidebox data
+        // 获取侧边栏数据
         $sidebox           = $this->sidebox_model->getSidebox($id);
         $sideboxCustomText = $this->sidebox_model->getCustomText($id);
 
-        // Invalid sidebox
+        // 验证侧边栏
         if(!$sidebox)
-            show_error('There is no sidebox with ID ' . $id, 400);
+            show_error('没有找到ID为 ' . $id . ' 的侧边栏', 400);
 
-        // Format pages
+        // 格式化页面
         $sidebox['pages'] = json_decode($sidebox['pages'], true);
 
-        // Validate pages
+        // 验证页面
         if(!$sidebox['pages'] || !is_array($sidebox['pages']))
             $sidebox['pages'] = [];
 
-        // Set the title
+        // 设置页面标题
         $this->administrator->setTitle(langColumn($sidebox['displayName']));
 
-        // Fill sidebox modules
+        // 加载侧边栏模块
         $this->sideboxModules = $this->getSideboxModules();
 
-        // Prepare page data
+        // 准备页面数据
         $data = array(
             'url'               => $this->template->page_url,
             'pages'             => self::getModules(),
@@ -194,13 +198,13 @@ class Sidebox extends MX_Controller
             'sideboxCustomText' => $sideboxCustomText
         );
 
-        // Load page view
+        // 加载页面模板
         $output = $this->template->loadPage('sidebox/edit_sidebox.tpl', $data);
 
-        // Put page view in the main box with a headline
+        // 将内容放入管理面板
         $content = $this->administrator->box('', $output);
 
-        // Output page content. The method accepts the same arguments as template->view
+        // 渲染最终页面
         $this->administrator->view($content, false, 'modules/admin/js/sidebox.js');
     }
 
@@ -238,14 +242,14 @@ class Sidebox extends MX_Controller
 
     public function save($id = false)
     {
-        // Make sure visitor has required permissions
+        // 验证编辑侧边栏权限
         requirePermission('editSideboxes');
 
-        // Invalid id
+        // 验证ID
         if(!$id || !is_numeric($id))
-            die('No ID');
+            die('没有ID');
 
-        // Prepare sidebox data
+        // 准备侧边栏数据
         $data = [
             'type'        => preg_replace('/sidebox_/', '', $this->input->post('type')),
             'pages'       => $this->input->post('pages'),
@@ -253,29 +257,29 @@ class Sidebox extends MX_Controller
             'displayName' => $this->input->post('displayName'),
         ];
 
-        // Validate pages
+        // 验证页面
         if(!$data['pages'] || !is_array($data['pages']))
-            die('Select at least one page.');
+            die('请选择至少一个页面.');
 
-        // Format pages
+        // 格式化页面
         $data['pages'] = json_encode($data['pages'], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
 
-        // Make sure everythings filled
+        // 验证数据
         foreach($data as $value)
             if(!$value)
-                die('The fields can\'t be empty');
+                die('字段不能为空');
 
-        // Save changes
+        // 保存修改
         $this->sidebox_model->edit($id, $data);
 
-        // Handle custom sidebox text
+        // 处理自定义侧边栏文本
         if($data['type'] == 'custom')
             $this->sidebox_model->editCustom($id, $this->input->post('content', false));
 
-        // Check for sidebox permission
+        // 检查侧边栏权限
         $hasPermission = $this->sidebox_model->hasPermission($id);
 
-        // Set sidebox permission
+        // 设置侧边栏权限
         if($this->input->post('visibility') == 'group' && !$hasPermission)
         {
             $this->sidebox_model->setPermission($id);
@@ -301,29 +305,29 @@ class Sidebox extends MX_Controller
     }
 
     /**
-     * Get modules
-     * Returns available modules
+     * 获取模块
+     * 返回可用模块
      *
      * @return array $modules
      */
     private static function getModules()
     {
-        // Modules: Initialize
+        // 模块：初始化
         $modules = [];
 
-        // Blacklist: Initialize
+        // 黑名单：初始化
         $blacklist = ['admin', 'api', 'icon'];
 
-        // Modules: Get
+        // 模块：获取
         if(!empty($modules = glob(realpath(APPPATH) . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . '*', GLOB_ONLYDIR)))
         {
-            // Loop through modules
+            // 循环模块
             foreach($modules as $key => $module)
             {
-                // Grab trailing name component
+                // 获取模块名称
                 $modules[$key] = basename($modules[$key]);
 
-                // Filter
+                // 过滤
                 if(in_array($modules[$key], $blacklist) || strpos($modules[$key], 'sidebox_') === 0)
                     unset($modules[$key]);
             }
