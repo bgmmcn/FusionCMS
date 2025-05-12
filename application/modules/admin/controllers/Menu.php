@@ -3,8 +3,8 @@
 use MX\MX_Controller;
 
 /**
- * Menu Controller Class
- * @property menu_model $menu_model menu_model Class
+ * 菜单管理控制器
+ * @property menu_model $menu_model 菜单模型类
  */
 class Menu extends MX_Controller
 {
@@ -15,36 +15,38 @@ class Menu extends MX_Controller
         $this->load->library("administrator");
         $this->load->model("menu_model");
 
+        // 验证菜单查看权限
         requirePermission("viewMenuLinks");
     }
 
     /**
-     * Loads the page
+     * 加载菜单管理页面
      */
     public function index()
     {
-        //Set the title to menu
-        $this->administrator->setTitle("Menu links");
+        // 设置页面标题
+        $this->administrator->setTitle("菜单链接管理");
 
         $links = $this->menu_model->getMenuLinks();
 
         if ($links) {
             foreach ($links as $key => $value) {
-                // Shorten the link if necessary
+                // 缩短长链接显示
                 if (strlen($value['link']) > 12) {
                     $links[$key]['link_short'] = mb_substr($value['link'], 0, 12) . '...';
                 } else {
                     $links[$key]['link_short'] = $value['link'];
                 }
 
-                // Add the website path if internal link
+                // 为内部链接添加网站路径前缀
                 if (!preg_match("/https?:\/\//", $value['link'])) {
                     $links[$key]['link'] = $this->template->page_url . $value['link'];
                 }
 
+                // 加载多语言名称
                 $links[$key]['name'] = langColumn($links[$key]['name']);
 
-                // Shorten the name if necessary
+                // 缩短长名称显示
                 if (strlen($links[$key]['name']) > 15) {
                     $links[$key]['name'] = mb_substr($links[$key]['name'], 0, 15) . '...';
                 }
@@ -57,25 +59,26 @@ class Menu extends MX_Controller
             }
         }
 
-        // Prepare my data
+        // 准备数据
         $data = array(
             'url' => $this->template->page_url,
             'links' => $links,
             'pages' => $pages
         );
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage("menu/menu.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Menu links', $output);
+        // 将视图放入主框架中
+        $content = $this->administrator->box('菜单链接管理', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, "modules/admin/js/menu.js");
     }
 
     public function create()
     {
+        // 验证添加菜单权限
         requirePermission("addMenuLinks");
 
         $name = $this->input->post('name');
@@ -85,18 +88,18 @@ class Menu extends MX_Controller
         $dropdown = $this->input->post('dropdown');
         $parent_id = $this->input->post('parent_id');
 
-		$array = json_decode($name, true);
+        $array = json_decode($name, true);
 
-		foreach ($array as $key => $value)
-		{
-			if (empty($value))
-			{
-				die("$key name can't be empty");
-			}
-		}
+        foreach ($array as $key => $value)
+        {
+            if (empty($value))
+            {
+                die("$key 名称不能为空");
+            }
+        }
 
         if (empty($link)) {
-            die("Link can't be empty");
+            die("链接不能为空");
         }
 
         $id = $this->menu_model->add($name, $link, $type, $side, $dropdown, $parent_id);
@@ -110,17 +113,19 @@ class Menu extends MX_Controller
 
     public function delete($id)
     {
+        // 验证删除菜单权限
         requirePermission("deleteMenuLinks");
 
         if ($this->menu_model->delete($id)) {
             die("success");
         } else {
-            die("An error occurred while trying to delete this menu link.");
+            die("删除菜单失败");
         }
     }
 
     public function edit($id = false)
     {
+        // 验证编辑菜单权限
         requirePermission("editMenuLinks");
 
         if (!is_numeric($id) || !$id) {
@@ -130,33 +135,34 @@ class Menu extends MX_Controller
         $link = $this->menu_model->getMenuLink($id);
 
         if (!$link) {
-            show_error("There is no link with ID " . $id, 400);
+            show_error("菜单不存在", 400);
 
             die();
         }
 
-        // Change the title
+        // 设置页面标题
         $this->administrator->setTitle(langColumn($link['name']));
 
-        // Prepare my data
+        // 准备数据
         $data = array(
             'url' => $this->template->page_url,
             'links' => $this->menu_model->getMenuLinks(),
             'link' => $link
         );
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage("menu/edit_menu.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/menu">Menu links</a> &rarr; ' . langColumn($link['name']), $output);
+        // 将视图放入主框架中
+        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/menu">菜单链接管理</a> &rarr; ' . langColumn($link['name']), $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, "modules/admin/js/menu.js");
     }
 
     public function move($id = false, $direction = false)
     {
+        // 验证编辑菜单权限
         requirePermission("editMenuLinks");
 
         if (!$id || !$direction) {
@@ -185,6 +191,7 @@ class Menu extends MX_Controller
 
     public function save($id = false)
     {
+        // 验证编辑菜单权限
         requirePermission("editMenuLinks");
 
         if (!$id || !is_numeric($id)) {
