@@ -11,20 +11,20 @@ var Settings = {
 		{
 			Swal.fire({
 				icon: 'error',
-				title: 'Oops...',
-				text: 'You must always have at least one realm!',
+				title: '错误',
+				text: '必须保留至少一个服务器！',
 			})
 		}
 		else
 		{
 			Swal.fire({
-				title: 'Do you really want to delete this realm?',
-				text: "You won't be able to revert this!",
+				title: '确认删除服务器？',
+				text: "此操作不可撤销！",
 				icon: 'warning',
 				showCancelButton: true,
 				confirmButtonColor: '#3085d6',
 				cancelButtonColor: '#d33',
-				confirmButtonText: 'Yes, delete it!'
+				confirmButtonText: '确认删除'
 			}).then((result) => {
 			if (result.isConfirmed) {
 				$("#realm_count").html(parseInt($("#realm_count").html()) - 1);
@@ -135,7 +135,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: id,
 				})
 			}
@@ -181,7 +181,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: result,
 				})
 			}
@@ -224,7 +224,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "Website settings have been saved!",
+					title: "网站设置已保存！",
 				});
 			}
 			else
@@ -232,7 +232,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: response,
 				})
 			}
@@ -260,7 +260,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "SMTP settings have been saved!",
+					title: "SMTP配置已保存！",
 				});
 			}
 			else
@@ -268,7 +268,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: response,
 				})
 			}
@@ -293,7 +293,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "Performance settings have been saved!",
+					title: "性能设置已保存！",
 				});
 			}
 			else
@@ -301,7 +301,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: response,
 				})
 			}
@@ -326,7 +326,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: "success",
-					title: "Social media links have been saved!",
+					title: "社交媒体链接已保存！",
 				});
 			}
 			else
@@ -334,7 +334,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: response,
 				})
 			}
@@ -356,7 +356,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: "success",
-					title: "CDN have been saved!",
+					title: "CDN配置已保存！",
 				});
 			}
 			else
@@ -364,7 +364,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: response,
 				})
 			}
@@ -391,7 +391,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: "success",
-					title: "Security settings has been saved!",
+					title: "安全设置已保存！",
 				});
 			}
 			else
@@ -399,7 +399,7 @@ var Settings = {
 				console.log(values);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: response,
 				})
 			}
@@ -420,14 +420,14 @@ var Settings = {
 			{
 				Swal.fire({
 					icon: "success",
-					title: "Wow Database configs have been saved!",
+					title: "数据库配置已保存！",
 				});
 			}
 			else
 			{
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: response,
 				})
 			}
@@ -467,7 +467,7 @@ var Settings = {
 				} else {
 					Swal.fire({
 					icon: "success",
-					title: 'Mail sent!',
+					title: '邮件已发送！',
 					text: data['success'],
 				})
 				}
@@ -530,7 +530,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "The settings have been saved!",
+					title: "设置已保存！",
 				});
 			}
 			else
@@ -538,7 +538,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: data,
 				})
 			}
@@ -559,7 +559,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "The settings have been saved!",
+					title: "设置已保存！",
 				});
 			}
 			else
@@ -567,7 +567,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: data,
 				})
 			}
@@ -593,7 +593,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "Theme settings have been saved!",
+					title: "主题设置已保存！",
 				});
 			}
 			else
@@ -601,7 +601,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: data,
 				})
 			}
@@ -622,7 +622,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: "success",
-					title: "Theme settings have been saved!",
+					title: "主题设置已保存！",
 				});
 			}
 			else
@@ -630,7 +630,7 @@ var Settings = {
 				console.log(data);
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: data,
 				})
 			}
@@ -800,14 +800,14 @@ var Settings = {
 			{
 				Swal.fire({
 					icon: "success",
-					title: "Auth configs have been saved!",
+					title: "认证配置已保存！",
 				});
 			}
 			else
 			{
 				Swal.fire({
 					icon: 'error',
-					title: 'Oops...',
+					title: '错误',
 					text: response,
 				})
 			}
