@@ -3,19 +3,20 @@
 use MX\MX_Controller;
 
 /**
- * Realmmanager Controller Class
- * @property realm_model $realm_model realm_model Class
+ * 游戏服务器管理控制器
+ * @property realm_model $realm_model 服务器模型类
  */
 class Realmmanager extends MX_Controller
 {
     public function __construct()
     {
-        // Make sure to load the administrator library!
+        // 加载管理后台库
         $this->load->library('administrator');
         $this->load->model('realm_model');
 
         parent::__construct();
 
+        // 验证服务器管理权限
         requirePermission("editSystemSettings");
     }
 
@@ -27,10 +28,10 @@ class Realmmanager extends MX_Controller
 
         $realm = $this->realms->getRealm($id);
 
-        // Change the title
+        // 设置页面标题
         $this->administrator->setTitle($realm->getName());
 
-        // Prepare my data
+        // 准备视图数据
         $data = array(
             'url' => $this->template->page_url,
             'realm' => $realm,
@@ -46,13 +47,16 @@ class Realmmanager extends MX_Controller
             'expansions' => $this->realms->getExpansions()
         );
 
-        // Load my view
+        // 加载编辑模板
         $output = $this->template->loadPage("edit_realm.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box("<a href='" . $this->template->page_url . "admin/settings'>Settings</a> &rarr; " . $realm->getname(), $output);
+        // 构建面包屑导航
+        $content = $this->administrator->box(
+            '<a href="' . $this->template->page_url . 'admin/settings">设置</a> &rarr; ' . $realm->getName(),
+            $output
+        );
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 渲染页面
         $this->administrator->view($content, false, "modules/admin/js/settings.js");
     }
 
@@ -99,19 +103,19 @@ class Realmmanager extends MX_Controller
         $data['override_port_world'] = $this->input->post('override_port_world');
 
         if (!is_numeric($data['cap'])) {
-            die('Cap must be a number');
+            die('容量必须是数字');
         }
 
         if (!is_numeric($data['expansion'])) {
-            die('expansion must be a number');
+            die('扩展必须是数字');
         }
 
         if (!is_numeric($data['realm_port'])) {
-            die('Port must be a number');
+            die('端口必须是数字');
         }
 
         if (!file_exists("application/emulators/" . $data['emulator'] . ".php")) {
-            die('Invalid emulator');
+            die('无效的模拟器');
         }
 
         $id = $this->realm_model->create($data);
@@ -158,27 +162,27 @@ class Realmmanager extends MX_Controller
         $data['console_port'] = $this->input->post('console_port');
 
         if (!is_numeric($data['cap'])) {
-            die('Cap must be a number');
+            die('容量必须是数字');
         }
 
         if (!is_numeric($data['expansion'])) {
-            die('expansion must be a number');
+            die('扩展必须是数字');
         }
 
         if (!is_numeric($data['realm_port'])) {
-            die('Port must be a number');
+            die('端口必须是数字');
         }
 
         if (!is_numeric($data['console_port'])) {
-            die('Console port must be a number');
+            die('控制台端口必须是数字');
         }
 
         if (!file_exists("application/emulators/" . $data['emulator'] . ".php")) {
-            die('Invalid emulator');
+            die('无效的模拟器');
         }
 
         $this->realm_model->save($id, $data);
 
-        die('success');
+        die('保存成功！');
     }
 }
