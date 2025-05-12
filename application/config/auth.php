@@ -13,9 +13,9 @@ if (! defined('BASEPATH')) {
 
 $config['account_encryption'] = "SRP6"; // SPH, SRP, SRP6
 
-$config['rbac'] = true;
+$config['rbac'] = false;
 
-$config['battle_net'] = true;
+$config['battle_net'] = false;
 
 $config['battle_net_encryption'] = "SPH"; // SRP6_V2, SRP6_V1, SPH
 
