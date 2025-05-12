@@ -20,14 +20,17 @@ class Admin extends MX_Controller
         requirePermission("view");
     }
 
+    /**
+     * 显示管理控制台首页
+     */
     public function index()
     {
         $benchmark = Services::timer(true);
         $benchmark->start('admin_execution');
 
-        $this->administrator->setTitle("Dashboard");
+        $this->administrator->setTitle("管理控制台");
 
-        // Load realm objects
+        // 加载领域对象
         $realms = $this->realms->getRealms();
 
         $uptimes = $this->flush_uptime($realms);
@@ -80,11 +83,14 @@ class Admin extends MX_Controller
 
         $output = $this->template->loadPage("dashboard.tpl", $data);
 
-        $content = $this->administrator->box('Dashboard', $output);
+        $content = $this->administrator->box('管理控制台', $output);
 
         $this->administrator->view($content, false);
     }
 
+    /**
+     * 获取唯一访问量
+     */
     private function getUnique()
     {
         $data['today'] = $this->dashboard_model->getUnique("today");
@@ -93,6 +99,9 @@ class Admin extends MX_Controller
         return $data;
     }
 
+    /**
+     * 获取浏览量
+     */
     private function getViews()
     {
         $data['today'] = $this->dashboard_model->getViews("today");
@@ -101,6 +110,9 @@ class Admin extends MX_Controller
         return $data;
     }
 
+    /**
+     * 获取收入
+     */
     private function getIncome()
     {
         $data['this'] = $this->dashboard_model->getIncome("this");
@@ -110,6 +122,9 @@ class Admin extends MX_Controller
         return $data;
     }
 
+    /**
+     * 获取投票量
+     */
     private function getVotes()
     {
         $data['this'] = $this->dashboard_model->getVotes("this");
@@ -119,6 +134,9 @@ class Admin extends MX_Controller
         return $data;
     }
 
+    /**
+     * 获取注册量
+     */
     private function getSignups()
     {
         $data['today'] = $this->dashboard_model->getSignupsDaily("today");
@@ -140,6 +158,9 @@ class Admin extends MX_Controller
         return $data;
     }
 
+    /**
+     * 获取月度图表数据
+     */
     private function graphMonthly($ago = 0)
     {
         if ($this->config->item('disable_visitor_graph'))
@@ -200,14 +221,17 @@ class Admin extends MX_Controller
             $data = $fullGraph;
 
             if ($ago == 0)
-                $this->cache->save('dashboard_monthly', $data, 60 * 60 * 24 * 15); // Every two weeks
+                $this->cache->save('dashboard_monthly', $data, 60 * 60 * 24 * 15); // 每两周
             else
-                $this->cache->save('dashboard_monthly_'.$ago.'_year_ago', $data, 60 * 60 * 24 * 9 * 30); // every 9 months
+                $this->cache->save('dashboard_monthly_'.$ago.'_year_ago', $data, 60 * 60 * 24 * 9 * 30); // 每9个月
         }
 
         return $data;
     }
     
+    /**
+     * 获取日度图表数据
+     */
     private function graphDaily($ago = 0)
     {
         if ($this->config->item('disable_visitor_graph'))
@@ -280,11 +304,14 @@ class Admin extends MX_Controller
         return $data;
     }
 
+    /**
+     * 检查SOAP扩展
+     */
     public function checkSoap()
     {
         if (!extension_loaded('soap'))
         {
-            show_error('SOAP not installed', 501);
+            show_error('SOAP扩展未安装', 501);
         }
 
         $realms = $this->realms->getRealms();
@@ -298,6 +325,9 @@ class Admin extends MX_Controller
         }
     }
 	
+	/**
+	 * 获取领域状态
+	 */
 	public function realmstatus()
     {
         $data = array(
@@ -309,11 +339,17 @@ class Admin extends MX_Controller
         die($out);
     }
 
+    /**
+     * 销毁会话
+     */
     public function destroySession()
     {
         Services::session()->remove('admin_access');
     }
 
+    /**
+     * 获取通知
+     */
     public function notifications($count = false)
     {
         if ($count)
@@ -336,6 +372,9 @@ class Admin extends MX_Controller
         }
     }
 
+    /**
+     * 标记通知为已读
+     */
     public function markReadNotification($id, $all = false)
     {
         if ($all)
@@ -350,6 +389,9 @@ class Admin extends MX_Controller
         }
     }
 
+    /**
+     * 获取领域运行时间
+     */
     private function flush_uptime($realms)
     {
         $uptimes = array();
@@ -359,6 +401,9 @@ class Admin extends MX_Controller
         return $uptimes;
     }
 
+    /**
+     * 获取运行时间
+     */
     private function uptime($realm_id)
     {
         $this->connection = $this->load->database("account", true);
@@ -372,10 +417,13 @@ class Admin extends MX_Controller
 
             return $this->format_interval($difference);
         } else {
-            return "Offline";
+            return "离线";
         }
     }
 
+    /**
+     * 格式化时间间隔
+     */
     private function format_interval(DateInterval $interval)
     {
         $result = "";
@@ -401,6 +449,9 @@ class Admin extends MX_Controller
         return $result;
     }
 
+    /**
+     * 获取最新版本
+     */
     private function getLatestVersion(): bool
     {
         $response = Services::curlrequest()->get('https://raw.githubusercontent.com/FusionWowCMS/FusionCMS/master/application/config/version.php');
@@ -416,6 +467,9 @@ class Admin extends MX_Controller
         return false;
     }
 
+	/**
+	 * 获取操作系统名称
+	 */
 	private function getOsName(): string
 	{
         if (strtoupper(substr(PHP_OS_FAMILY, 0, 3)) === 'WIN') {
