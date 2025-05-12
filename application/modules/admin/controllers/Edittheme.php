@@ -10,7 +10,7 @@ class EditTheme extends MX_Controller
 
     public function __construct()
     {
-        // Make sure to load the administrator library!
+        // 确保加载管理员库
         $this->load->library('administrator');
 
         parent::__construct();
@@ -21,21 +21,21 @@ class EditTheme extends MX_Controller
     }
 
     /**
-     * Output the configs
+     * 输出配置界面
      *
      * @param String $theme
      */
     public function index($theme = false)
     {
-        // Make sure the theme exists and has configs
+        // 验证主题是否存在且包含配置
         if (!$theme) {
             $theme = $this->config->item('theme');
         }
-        // Make sure the theme exists and has configs
+        // 再次验证主题有效性
         if (!file_exists("application/themes/" . $theme . "/")
             || !$this->hasConfigs($theme)
         ) {
-            die();
+            die('无效的主题配置');
         }
 
         $this->theme = $theme;
@@ -43,7 +43,7 @@ class EditTheme extends MX_Controller
         $this->loadTheme();
         $this->loadConfigs();
 
-        // Change the title
+        // 修改标题
         $this->administrator->setTitle($this->manifest['name']);
 
         $data = array(
@@ -52,29 +52,29 @@ class EditTheme extends MX_Controller
             "url" => $this->template->page_url
         );
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage("config_theme.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/theme">Theme</a> &rarr; Edit Config ' . $this->manifest['name'], $output);
+        // 将视图放入主框架中
+        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/theme">主题</a> &rarr; 编辑配置 ' . $this->manifest['name'], $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, "modules/admin/js/settings.js");
     }
 
     /**
-     * Load the theme manifest
+     * 加载主题清单
      */
     private function loadTheme()
     {
         $this->manifest = @file_get_contents("application/themes/" . $this->theme . "/manifest.json");
 
         if (!$this->manifest) {
-            die("The theme <b>" . $this->theme . "</b> is missing manifest.json");
+            die("主题 <b>" . $this->theme . "</b> 缺少 manifest.json 文件");
         } else {
             $this->manifest = json_decode($this->manifest, true);
 
-            // Add the theme folder name as name if none was specified
+            // 如果主题名称未指定，则使用主题文件夹名称作为名称
             if (!array_key_exists("name", $this->manifest)) {
                 $this->manifest['name'] = ucfirst($this->theme);
             }
@@ -82,7 +82,7 @@ class EditTheme extends MX_Controller
     }
 
     /**
-     * Load the theme configs
+     * 加载主题配置
      */
     private function loadConfigs()
     {
@@ -96,13 +96,13 @@ class EditTheme extends MX_Controller
     }
 
     /**
-     * Load the config into the function variable scope and assign it to the configs array
+     * 加载配置文件并将其赋值给 configs 数组
      */
     private function getConfig($file)
     {
         include($file);
 
-        // Skip! don't list this file
+        // 跳过不需要显示的配置文件
         if(isset($config) && isset($config['force_hidden']) && $config['force_hidden'])
             return;
 
@@ -120,7 +120,7 @@ class EditTheme extends MX_Controller
     }
 
     /**
-     * Get the config name out of the path
+     * 获取配置名称
      *
      * @param  String $path
      * @return String
@@ -133,7 +133,7 @@ class EditTheme extends MX_Controller
     public function save($theme = false, $name = false)
     {
         if (!$name || !$theme || !$this->configExists($theme, $name)) {
-            die("Invalid theme or config name");
+            die("无效的主题或配置名称");
         } else {
             if ($this->input->post()) {
                 $fusionConfig = new ConfigEditor("application/themes/" . $theme . "/config/" . $name . ".php");
@@ -146,7 +146,7 @@ class EditTheme extends MX_Controller
 
                 die("yes");
             } else {
-                die("No data to set");
+                die("没有数据需要保存");
             }
         }
     }
@@ -154,7 +154,7 @@ class EditTheme extends MX_Controller
     public function saveSource($theme = false, $name = false)
     {
         if (!$name || !$theme || !$this->configExists($theme, $name)) {
-            die("Invalid theme or config name");
+            die("无效的主题或配置名称");
         } else {
             if ($this->input->post("source")) {
                 $file = fopen("application/themes/" . $theme . "/config/" . $name . ".php", "w");
@@ -167,7 +167,7 @@ class EditTheme extends MX_Controller
 
                 die("yes");
             } else {
-                die("No data to set");
+                die("没有数据需要保存");
             }
         }
     }
