@@ -3,12 +3,12 @@
 use MX\MX_Controller;
 
 /**
- * Logging Controller Class
- * @property logging_model $logging_model logging_model Class
+ * 日志控制器类
+ * @property logging_model $logging_model 日志模型类
  */
 class Logging extends MX_Controller
 {
-    private $logsToLoad = 10; // 10 at the time
+    private $logsToLoad = 10; // 每次加载10条日志
 
     public function __construct()
     {
@@ -21,12 +21,12 @@ class Logging extends MX_Controller
     }
 
     /**
-     * Loads the page
+     * 加载日志页面
      */
     public function index()
     {
-        //Set the title to menu
-        $this->administrator->setTitle("Logs");
+        // 设置页面标题
+        $this->administrator->setTitle("日志");
 
         $logs = $this->dblogger->getLogs("", 0, 10);
 
@@ -37,20 +37,20 @@ class Logging extends MX_Controller
             }
         }
 
-        // Prepare my data
+        // 准备数据
         $data = array(
-            'logs' => $logs, // Get the logs from 0 till 10
+            'logs' => $logs, // 获取前10条日志
             'modules' => $this->administrator->getEnabledModules(),
             'show_more' => $this->dblogger->getLogCount() - count((array)$logs)
         );
 
-        // Load my view
+        // 加载日志模板
         $output = $this->template->loadPage("logging/logging.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Website logs', $output);
+        // 将日志模板放入主框架中
+        $content = $this->administrator->box('网站日志', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, "modules/admin/js/logging.js");
     }
 
@@ -62,7 +62,7 @@ class Logging extends MX_Controller
 
         $extraLogCount -= $this->logsToLoad;
 
-        // Validation, checking is done in the model.
+        // 数据验证已在模型中完成
         $logs = $this->dblogger->getLogs("", $offset, $count);
 
         if ($logs)
@@ -73,32 +73,32 @@ class Logging extends MX_Controller
         }
 
         if ($logs) {
-            // Prepare my data
+            // 准备分页数据
             $data = array(
                 'logs' => $logs,
                 'show_more' => $extraLogCount
             );
 
-            // Load my view
+            // 加载日志条目模板
             $output = $this->template->loadPage("logging/logging_found.tpl", $data);
 
             die($output);
         } else {
-            die("<span>No results</span>");
+            die("<span>无更多结果</span>");
         }
     }
 
     /**
-     * Applies search for the given parameters.
-     * POST: module the module name
-     * POST: search the on search text, username,ip,userid
+     * 根据给定参数执行日志搜索
+     * POST参数 module: 模块名称
+     * POST参数 search: 搜索内容（用户名、IP、用户ID等）
      */
     public function search()
     {
         $module = $this->input->post('module');
         $search = $this->input->post('search');
 
-        // Validation, checking is done in the model.
+        // 数据验证已在模型中完成
         $logs = $this->logging_model->findLogs($search, $module);
 
         if ($logs)
@@ -109,18 +109,18 @@ class Logging extends MX_Controller
         }
 
         if ($logs) {
-            // Prepare my data
+            // 准备数据
             $data = array(
                 'logs' => $logs,
                 'show_more' => ''
             );
 
-            // Load my view
+            // 加载日志条目模板
             $output = $this->template->loadPage("logging/logging_found.tpl", $data);
 
             die($output);
         } else {
-            die("<span>No results</span>");
+            die("<span>无结果</span>");
         }
     }
 }
