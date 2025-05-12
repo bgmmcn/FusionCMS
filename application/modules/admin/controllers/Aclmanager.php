@@ -5,7 +5,7 @@ use MX\MX_Controller;
 class Aclmanager extends MX_Controller
 {
     /**
-     * Perform permission check and initialize the administrator library
+     * 执行权限检查并初始化管理员库
      */
     public function __construct()
     {
@@ -17,25 +17,26 @@ class Aclmanager extends MX_Controller
     }
 
     /**
-     * Display the ACL manager frontpage
+     * 显示权限管理首页
      */
     public function index()
     {
-        // Get the template
+        // 加载视图模板
         $output = $this->template->loadPage("aclmanager/index.tpl");
 
-        // Output the content
-        $output = $this->administrator->box("User groups &amp; permissions", $output);
+        // 输出内容到管理面板
+        $output = $this->administrator->box("用户组与权限管理", $output);
         $this->administrator->view($output, "modules/admin/css/aclmanager.css");
     }
 
-    // --- Group related methods ---
+    // --- 用户组相关方法 ---
 
     /**
-     * Manage the groups
+     * 管理用户组
      */
     public function groups()
     {
+        // 准备视图数据
         $data = [
             "groups" => $this->acl_model->getGroups(),
             "modules" => $this->getAllRoles(),
@@ -52,13 +53,18 @@ class Aclmanager extends MX_Controller
             }
         }
 
+        // 加载视图模板
         $output = $this->template->loadPage("aclmanager/groups.tpl", $data);
 
-        $output = $this->administrator->box("<a href='" . pageURL . "admin/aclmanager'>User groups &amp; permissions</a> &rarr; Groups", $output);
+        // 输出到管理面板
+        $output = $this->administrator->box("<a href='" . pageURL . "admin/aclmanager'>用户组与权限管理</a> &rarr; 用户组", $output);
 
         $this->administrator->view($output, "modules/admin/css/aclmanager.css", "modules/admin/js/groups.js");
     }
 
+    /**
+     * 编辑用户组
+     */
     public function editGroup($id = false)
     {
         requirePermission("editPermissions");
@@ -70,15 +76,15 @@ class Aclmanager extends MX_Controller
         $group = $this->acl_model->getGroup($id);
 
         if (!$group) {
-            show_error("There is no group with ID " . $id, 400);
+            show_error("没有找到ID为 " . $id . " 的用户组", 400);
 
             die();
         }
 
-        // Change the title
+        // 修改标题
         $this->administrator->setTitle($group['name']);
 
-        // Prepare my data
+        // 准备视图数据
         $data = [
             "group" => $group,
             "modules" => $this->getAllRoles($id),
@@ -90,31 +96,31 @@ class Aclmanager extends MX_Controller
             "pages" => $this->cms_model->getPages()
         ];
 
-        // Links
+        // 链接
         foreach ($data['links'] as $key => $value) {
             $data['links'][$key]['has'] = $this->acl_model->groupHasRole($id, $value['id'], "--MENU--");
         }
 
-        // Sideboxes
+        // 边栏
         foreach ($data['sideboxes'] as $key => $value) {
             $data['sideboxes'][$key]['has'] = $this->acl_model->groupHasRole($id, $value['id'], "--SIDEBOX--");
         }
 
-        // Pages
+        // 页面
         foreach ($data['pages'] as $key => $value) {
             $data['pages'][$key]['has'] = $this->acl_model->groupHasRole($id, $value['id'], "--PAGE--");
         }
 
-        // Modules
+        // 模块
         foreach ($data['modules'] as $key => $value) {
-            // Database roles
+            // 数据库角色
             if ($data['modules'][$key]['db']) {
                 foreach ($data['modules'][$key]['db'] as $subKey => $subValue) {
                     $data['modules'][$key]['db'][$subKey]['has'] = $this->acl_model->groupHasRole($id, $subValue['role_name'], $key);
                 }
             }
 
-            // Manifest roles
+            // 清单角色
             if ($data['modules'][$key]['manifest']) {
                 foreach ($data['modules'][$key]['manifest'] as $subKey => $subValue) {
                     $data['modules'][$key]['manifest'][$subKey]['has'] = $this->acl_model->groupHasRole($id, $subKey, $key);
@@ -122,18 +128,17 @@ class Aclmanager extends MX_Controller
             }
         }
 
-        // Load my view
+        // 加载视图模板
         $output = $this->template->loadPage("aclmanager/edit_group.tpl", $data);
 
-        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/aclmanager/groups">Groups</a> &rarr; ' . $group['name'], $output);
+        // 输出到管理面板
+        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/aclmanager/groups">用户组</a> &rarr; ' . $group['name'], $output);
 
         $this->administrator->view($content, "modules/admin/css/aclmanager.css", "modules/admin/js/groups.js");
     }
 
     /**
-     * Delete a group
-     *
-     * @param Int $id
+     * 删除用户组
      */
     public function groupDelete($id)
     {
@@ -143,7 +148,7 @@ class Aclmanager extends MX_Controller
     }
 
     /**
-     * Create a group
+     * 创建用户组
      */
     public function groupCreate()
     {
@@ -155,14 +160,14 @@ class Aclmanager extends MX_Controller
         $description = $this->input->post('description');
         $roles = array();
 
-        // Make sure we have a group name
+        // 确保有用户组名
         if (!$name) {
-            die('Please specify a group name!');
+            die('请指定用户组名!');
         }
 
-        // Loop all POST data to grab the roles
+        // 循环所有POST数据以获取角色
         foreach ($_POST as $k => $v) {
-            // Make sure it is a role
+            // 确保这是一个角色
             if (!in_array($k, array("name", "description", "color"))) {
                 if ($v == "true") {
                     array_push($roles, $k);
@@ -180,11 +185,11 @@ class Aclmanager extends MX_Controller
         $id = $this->acl_model->createGroup($data);
 
         foreach ($roles as $role) {
-            // Handle visibility permissions
+            // 处理可见性权限
             if (preg_match("/^(PAGE|SIDEBOX|MENU)_/", $role)) {
                 /**
-                 * [0] visibility type
-                 * [1] ID/role
+                 * [0] 可见性类型
+                 * [1] ID/角色
                  */
                 $parts = explode("_", $role);
                 $roleName = $parts[1];
@@ -193,8 +198,8 @@ class Aclmanager extends MX_Controller
                 $this->acl_model->addRoleToGroup($id, $roleName, $moduleName);
             } elseif (preg_match("/-/", $role)) {
                 /**
-                 * [0] module
-                 * [1] role
+                 * [0] 模块
+                 * [1] 角色
                  */
                 $roleParts = explode("-", $role);
 
@@ -206,9 +211,7 @@ class Aclmanager extends MX_Controller
     }
 
     /**
-     * Save a group
-     *
-     * @param Int $id
+     * 保存用户组
      */
     public function groupSave($id)
     {
@@ -220,14 +223,14 @@ class Aclmanager extends MX_Controller
         $description = $this->input->post('description');
         $roles = array();
 
-        // Make sure we have a group name
+        // 确保有用户组名
         if (!$name) {
-            die('Please specify a group name!');
+            die('请指定用户组名!');
         }
 
-        // Loop all POST data to grab the roles
+        // 循环所有POST数据以获取角色
         foreach ($_POST as $k => $v) {
-            // Make sure it is a role
+            // 确保这是一个角色
             if (!in_array($k, array("name", "description", "color"))) {
                 if ($v == "true") {
                     array_push($roles, $k);
@@ -240,11 +243,11 @@ class Aclmanager extends MX_Controller
         $this->acl_model->deleteAllRoleFromGroup($id);
 
         foreach ($roles as $role) {
-            // Handle visibility permissions
+            // 处理可见性权限
             if (preg_match("/^(PAGE|SIDEBOX|MENU)_/", $role)) {
                 /**
-                 * [0] visibility type
-                 * [1] ID/role
+                 * [0] 可见性类型
+                 * [1] ID/角色
                  */
                 $parts = explode("_", $role);
                 $roleName = $parts[1];
@@ -253,8 +256,8 @@ class Aclmanager extends MX_Controller
                 $this->acl_model->addRoleToGroup($id, $roleName, $moduleName);
             } elseif (preg_match("/-/", $role)) {
                 /**
-                 * [0] module
-                 * [1] role
+                 * [0] 模块
+                 * [1] 角色
                  */
                 $roleParts = explode("-", $role);
 
@@ -265,6 +268,9 @@ class Aclmanager extends MX_Controller
         die('1');
     }
 
+    /**
+     * 添加用户组成员
+     */
     public function addMember()
     {
         $groupId = $this->input->post('groupId');
@@ -279,6 +285,9 @@ class Aclmanager extends MX_Controller
         $this->acl_model->assignGroupToUser($groupId, $accountId);
     }
 
+    /**
+     * 移除用户组成员
+     */
     public function removeMember()
     {
         $groupId = $this->input->post('groupId');
@@ -289,10 +298,10 @@ class Aclmanager extends MX_Controller
         $this->acl_model->removeGroupFromUser($groupId, $accountId);
     }
 
-    // --- User related methods ---
+    // --- 用户相关方法 ---
 
     /**
-     * Manage the users
+     * 管理用户
      */
     public function users()
     {
@@ -300,25 +309,23 @@ class Aclmanager extends MX_Controller
 
         $output = $this->template->loadPage("aclmanager/users.tpl", $data);
 
-        $output = $this->administrator->box("<a href='" . pageURL . "admin/aclmanager'>User groups &amp; permissions</a> &rarr; Users permissions", $output);
+        $output = $this->administrator->box("<a href='" . pageURL . "admin/aclmanager'>用户组与权限管理</a> &rarr; 用户权限", $output);
 
         $this->administrator->view($output, "modules/admin/css/aclmanager.css", "modules/admin/js/users.js");
     }
 
-    // --- Getters and stuff ---
+    // --- 私有工具方法 ---
 
     /**
-     * Get all roles
-     *
-     * @return Array
+     * 获取所有角色
      */
     private function getAllRoles($group = 0)
     {
         $modules = [];
         $dangerLevel = [
-            3 => "#A11500", // Owner actions
-            2 => "#DF5500", // Admin actions
-            1 => "#A11D73" // Moderator actions
+            3 => "#A11500", // 所有者操作
+            2 => "#DF5500", // 管理员操作
+            1 => "#A11D73" // 管理员操作
         ];
 
         foreach (glob("application/modules/*") as $module) {
