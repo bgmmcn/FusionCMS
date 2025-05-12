@@ -1,6 +1,6 @@
 {
-	"name": "Admin panel",
-	"description": "Default set of tools and pages for the admin panel",
+	"name": "管理面板",
+	"description": "管理面板的默认工具和页面集合",
 	"version": "2.0.0",
 	"date": "2023-05-30",
 	"author": {
@@ -9,63 +9,63 @@
 	},
 
 	"permissions": {
-		"view": { "default": false, "description": "View (log into) the admin panel. Required for all admin-tools." },
+		"view": { "default": false, "description": "查看（登录）管理面板。所有管理工具必需权限。" },
 
-		"viewPermissions": { "default": false, "description": "View the permissions" },
-		"addPermissions": { "default": false, "description": "Add groups, roles and permissions." },
-		"editPermissions": { "default": false, "description": "Edit groups, roles and permissions." },
-		"deletePermissions": { "default": false, "description": "Delete groups, roles and permissions." },
+		"viewPermissions": { "default": false, "description": "查看权限" },
+		"addPermissions": { "default": false, "description": "添加用户组、角色和权限" },
+		"editPermissions": { "default": false, "description": "编辑用户组、角色和权限" },
+		"deletePermissions": { "default": false, "description": "删除用户组、角色和权限" },
 
-		"toggleModules": { "default": false, "description": "Enable or disable modules" },
-		"editModuleConfigs": { "default": false, "description": "Edit the config files of modules" },
+		"toggleModules": { "default": false, "description": "启用或禁用模块" },
+		"editModuleConfigs": { "default": false, "description": "编辑模块配置文件" },
 
-		"changeTheme": { "default": false, "description": "Change the theme" },
+		"changeTheme": { "default": false, "description": "更换主题" },
 
-		"viewLogs": { "default": false, "description": "View the logs" },
+		"viewLogs": { "default": false, "description": "查看日志" },
 
-		"viewMenuLinks": { "default": false, "description": "Can view the menu links" },
-		"addMenuLinks": { "default": false, "description": "Add menu links." },
-		"editMenuLinks": { "default": false, "description": "Edit menu links." },
-		"deleteMenuLinks": { "default": false, "description": "Delete menu links." },
+		"viewMenuLinks": { "default": false, "description": "查看菜单链接" },
+		"addMenuLinks": { "default": false, "description": "添加菜单链接" },
+		"editMenuLinks": { "default": false, "description": "编辑菜单链接" },
+		"deleteMenuLinks": { "default": false, "description": "删除菜单链接" },
 
-		"viewSideboxes": { "default": false, "description": "Can view the sideboxes" },
-		"addSideboxes": { "default": false, "description": "Add sideboxes." },
-		"editSideboxes": { "default": false, "description": "Edit sideboxes." },
-		"deleteSideboxes": { "default": false, "description": "Delete sideboxes." },
+		"viewSideboxes": { "default": false, "description": "查看侧边栏模块" },
+		"addSideboxes": { "default": false, "description": "添加侧边栏模块" },
+		"editSideboxes": { "default": false, "description": "编辑侧边栏模块" },
+		"deleteSideboxes": { "default": false, "description": "删除侧边栏模块" },
 
-		"viewLanguages": { "default": false, "description": "Can view the languages page" },
-		"changeDefaultLanguage": { "default": false, "description": "Can change the default language" },
+		"viewLanguages": { "default": false, "description": "查看语言页面" },
+		"changeDefaultLanguage": { "default": false, "description": "更改默认语言" },
 
-		"viewMessage": { "default": false, "description": "View the global maintenance message" },
-		"toggleMessage": { "default": false, "description": "Toggle the global maintenance message" },
+		"viewMessage": { "default": false, "description": "查看全局维护消息" },
+		"toggleMessage": { "default": false, "description": "切换全局维护状态" },
 
-		"viewCache": { "default": false, "description": "View the cache manager" },
-		"emptyCache": { "default": false, "description": "Empty the cache" },
+		"viewCache": { "default": false, "description": "查看缓存管理器" },
+		"emptyCache": { "default": false, "description": "清空缓存" },
 
-		"viewSlider": { "default": false, "description": "Can view the slider images" },
-		"addSlider": { "default": false, "description": "Add slider images." },
-		"editSlider": { "default": false, "description": "Edit slider images." },
-		"deleteSlider": { "default": false, "description": "Delete slider images." },
+		"viewSlider": { "default": false, "description": "查看轮播图" },
+		"addSlider": { "default": false, "description": "添加轮播图" },
+		"editSlider": { "default": false, "description": "编辑轮播图" },
+		"deleteSlider": { "default": false, "description": "删除轮播图" },
 
-		"viewAccounts": { "default": false, "description": "Can view the account manager" },
-		"editAccounts": { "default": false, "description": "Can edit accounts" },
+		"viewAccounts": { "default": false, "description": "查看账户管理器" },
+		"editAccounts": { "default": false, "description": "编辑用户账户" },
 
-		"viewSessions": { "default": false, "description": "Can view the active sessions" },
+		"viewSessions": { "default": false, "description": "查看活跃会话" },
 
-		"editSystemSettings": { "default": false, "description": "Can edit system settings and realms" },
+		"editSystemSettings": { "default": false, "description": "编辑系统设置和服务器" },
 
-		"viewBackups": { "default": false, "description": "Can view database backup page" },
-		"generateBackup": { "default": false, "description": "Can generate a backup manually" },
-		"editBackupSettings": { "default": false, "description": "Can edit backup settings" },
-		"executeBackupActions": { "default": false, "description": "Can execute backup actions" },
+		"viewBackups": { "default": false, "description": "查看数据库备份页面" },
+		"generateBackup": { "default": false, "description": "手动生成备份" },
+		"editBackupSettings": { "default": false, "description": "编辑备份设置" },
+		"executeBackupActions": { "default": false, "description": "执行备份操作" },
 
-		"updateCms": { "default": false, "description": "Can check and update CMS" }
+		"updateCms": { "default": false, "description": "检查并更新CMS" }
 	},
 
 	"roles": {
 
 		"view": {
-			"description": "View (log into) the admin panel. <b style='color:red;''>Required for all admin-tools.</b>",
+			"description": "查看（登录）管理面板。<b style='color:red;''>所有管理工具必需权限</b>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -74,7 +74,7 @@
 		},
 
 		"managePermissions": {
-			"description": "Manage the user groups &amp; permissions. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理用户组和权限。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -86,7 +86,7 @@
 		},
 
 		"manageModules": {
-			"description": "Manage the modules. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理模块。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -96,7 +96,7 @@
 		},
 
 		"viewLogs": {
-			"description": "View the logs. <font style='color:red;'>Admin-tool</font>",
+			"description": "查看系统日志。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -105,7 +105,7 @@
 		},
 
 		"viewSessions": {
-			"description": "View the active sessions. <font style='color:red;'>Admin-tool</font>",
+			"description": "查看活跃会话。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -114,7 +114,7 @@
 		},
 
 		"viewLanguage": {
-			"description": "View the languages. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理语言设置。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -124,7 +124,7 @@
 		},
 
 		"manageMenu": {
-			"description": "Manage the menu links. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理菜单链接。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -136,7 +136,7 @@
 		},
 
 		"manageSideboxes": {
-			"description": "Manage the sideboxes. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理侧边栏模块。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -148,7 +148,7 @@
 		},
 
 		"globalMaintenance": {
-			"description": "Toggle the global maintenance. <font style='color:red;'>Admin-tool</font>",
+			"description": "全局维护开关。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -159,7 +159,7 @@
 		},
 
 		"manageCache": {
-			"description": "Manage the website cache. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理网站缓存。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -169,7 +169,7 @@
 		},
 
 		"manageSlider": {
-			"description": "Manage the image slider. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理图片轮播。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -181,7 +181,7 @@
 		},
 
 		"manageAccounts": {
-			"description": "Manage the accounts. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理用户账户。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -191,7 +191,7 @@
 		},
 
 		"manageTheme": {
-			"description": "Manage the theme. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理主题设置。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -200,7 +200,7 @@
 		},
 
 		"editSystemSettings": {
-			"description": "Manage realms and edit system settings. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理系统设置和服务器。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -209,7 +209,7 @@
 		},
 
 		"viewBackups": {
-			"description": "View database backup page. <font style='color:red;'>Admin-tool. HIGH SECURITY RISK! BE CAREFUL!</font>",
+			"description": "查看数据库备份页面。<font style='color:red;'>管理工具。高风险操作！请谨慎！</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -218,7 +218,7 @@
 		},
 
 		"generateBackup": {
-			"description": "Generate database backup. <font style='color:red;'>Admin-tool. HIGH SECURITY RISK! BE CAREFUL!</font>",
+			"description": "手动生成数据库备份。<font style='color:red;'>管理工具。高风险操作！请谨慎！</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -227,7 +227,7 @@
 		},
 
 		"editBackupSettings": {
-			"description": "Edit database backup settings. <font style='color:red;'>Admin-tool. HIGH SECURITY RISK! BE CAREFUL!</font>",
+			"description": "编辑数据库备份设置。<font style='color:red;'>管理工具。高风险操作！请谨慎！</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -236,7 +236,7 @@
 		},
 
 		"executeBackupActions": {
-			"description": "Can execute backup actions. <font style='color:red;'>Admin-tool. HIGH SECURITY RISK! BE CAREFUL!</font>",
+			"description": "执行备份相关操作。<font style='color:red;'>管理工具。高风险操作！请谨慎！</font>",
 			"dangerLevel": 3,
 
 			"permissions": {
@@ -247,52 +247,52 @@
 
 	"admin": [
 		{
-			"text": "Website",
+			"text": "网站",
 			"icon": "link",
 			"links": [
 				{
-					"text": "Menu links",
+					"text": "菜单链接",
 					"icon": "link",
 					"controller": "menu",
 					"requirePermission": "viewMenuLinks"
 				},
 				{
-					"text": "Ucp Menu links",
+					"text": "用户面板菜单",
 					"icon": "link",
 					"controller": "ucpmenu",
 					"requirePermission": "viewMenuLinks"
 				},
 
 				{
-					"text": "Sideboxes",
+					"text": "侧边栏模块",
 					"icon": "sidebar",
 					"controller": "sidebox",
 					"requirePermission": "viewSideboxes"
 				},
 
 				{
-					"text": "Global maintenance",
+					"text": "全局维护",
 					"icon": "power-off",
 					"controller": "message",
 					"requirePermission": "viewMessage"
 				},
 
 				{
-					"text": "Manage cache",
+					"text": "管理缓存",
 					"icon": "box-archive",
 					"controller": "cachemanager",
 					"requirePermission": "viewCache"
 				},
 
 				{
-					"text": "Manage slider",
+					"text": "管理轮播图",
 					"icon": "container-storage",
 					"controller": "slider",
 					"requirePermission": "viewSlider"
 				},
 
 				{
-					"text": "Languages",
+					"text": "语言设置",
 					"icon": "globe",
 					"controller": "languages",
 					"requirePermission": "viewLanguages"
@@ -301,25 +301,25 @@
 		},
 
 		{
-			"text":"Users",
+			"text":"用户管理",
 			"icon":"users",
 			"links": [
 				{
-					"text": "Accounts",
+					"text": "账户管理",
 					"icon": "users",
 					"controller": "accounts",
 					"requirePermission": "viewAccounts"
 				},
 				
 				{
-					"text": "User group &amp; permission",
+					"text": "用户组权限",
 					"icon": "cogs",
 					"controller": "aclmanager",
 					"requirePermission": "viewPermissions"
 				},
 
 				{
-					"text": "Active sessions",
+					"text": "活跃会话",
 					"icon": "cloud-word",
 					"controller": "sessions",
 					"requirePermission": "viewSessions"
@@ -327,25 +327,25 @@
 			]
 		},
 		{
-			"text":"Logs",
+			"text":"系统日志",
 			"icon":"list",
 			"links": [
 				{
-					"text": "Error logs",
+					"text": "错误日志",
 					"icon": "list-ul",
 					"controller": "errorlogs",
 					"requirePermission": "editSystemSettings"
 				},
 				
 				{
-					"text": "Website logs",
+					"text": "网站日志",
 					"icon": "list-ul",
 					"controller": "logging",
 					"requirePermission": "viewLogs"
 				},
 
 				{
-					"text": "Email logs",
+					"text": "邮件日志",
 					"icon": "list-ul",
 					"controller": "emaillogs",
 					"requirePermission": "editSystemSettings"
