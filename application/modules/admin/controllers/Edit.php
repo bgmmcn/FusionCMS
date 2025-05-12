@@ -10,7 +10,7 @@ class Edit extends MX_Controller
 
     public function __construct()
     {
-        // Make sure to load the administrator library!
+        // 确保加载管理员库！
         $this->load->library('administrator');
 
         parent::__construct();
@@ -21,13 +21,13 @@ class Edit extends MX_Controller
     }
 
     /**
-     * Output the configs
+     * 输出配置
      *
-     * @param String $module
+     * @param String $module 模块名称
      */
     public function index($module = false)
     {
-        // Make sure the module exists and has configs
+        // 确保模块存在且有配置
         if (
             !$module
             || !file_exists("application/modules/" . $module . "/")
@@ -41,7 +41,7 @@ class Edit extends MX_Controller
         $this->loadModule();
         $this->loadConfigs();
 
-        // Change the title
+        // 修改标题
         $this->administrator->setTitle($this->manifest['name']);
 
         $data = array(
@@ -50,29 +50,29 @@ class Edit extends MX_Controller
             "url" => $this->template->page_url
         );
 
-        // Load my view
+        // 加载视图模板
         $output = $this->template->loadPage("config.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/modules">Modules</a> &rarr; Edit &rarr; ' . $this->manifest['name'], $output);
+        // 将视图放入带标题的主框中
+        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/modules">模块管理</a> &rarr; 编辑 &rarr; ' . $this->manifest['name'], $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容（参数与template->view相同）
         $this->administrator->view($content, false, "modules/admin/js/settings.js");
     }
 
     /**
-     * Load the module manifest
+     * 加载模块清单
      */
     private function loadModule()
     {
         $this->manifest = @file_get_contents("application/modules/" . $this->module . "/manifest.json");
 
         if (!$this->manifest) {
-            die("The module <b>" . $this->module . "</b> is missing manifest.json");
+            die("模块 <b>" . $this->module . "</b> 缺少manifest.json文件");
         } else {
             $this->manifest = json_decode($this->manifest, true);
 
-            // Add the module folder name as name if none was specified
+            // 如果未指定名称，使用模块文件夹名
             if (!array_key_exists("name", $this->manifest)) {
                 $this->manifest['name'] = ucfirst($this->module);
             }
@@ -80,7 +80,7 @@ class Edit extends MX_Controller
     }
 
     /**
-     * Load the module configs
+     * 加载模块配置
      */
     private function loadConfigs()
     {
@@ -95,15 +95,14 @@ class Edit extends MX_Controller
         }
     }
 
-
     /**
-     * Load the config into the function variable scope and assign it to the configs array
+     * 将配置加载到函数作用域并分配到配置数组
      */
     private function getConfig($file)
     {
         include($file);
 
-        // Skip! don't list this file
+        // 跳过强制隐藏的配置
         if(isset($config) && isset($config['force_hidden']) && $config['force_hidden'])
             return;
 
@@ -121,10 +120,10 @@ class Edit extends MX_Controller
     }
 
     /**
-     * Get the config name out of the path
+     * 从路径获取配置名称
      *
-     * @param  String $path
-     * @return String
+     * @param  String $path 文件路径
+     * @return String 配置名称
      */
     private function getConfigName($path = "")
     {
@@ -134,7 +133,7 @@ class Edit extends MX_Controller
     public function save($module = false, $name = false)
     {
         if (!$name || !$module || !$this->configExists($module, $name)) {
-            die("Invalid module or config name");
+            die("无效的模块或配置名称");
         } else {
             if ($this->input->post()) {
                 $fusionConfig = new ConfigEditor("application/modules/" . $module . "/config/" . $name . ".php");
@@ -147,7 +146,7 @@ class Edit extends MX_Controller
 
                 die("yes");
             } else {
-                die("No data to set");
+                die("没有要设置的数据");
             }
         }
     }
@@ -155,7 +154,7 @@ class Edit extends MX_Controller
     public function saveSource($module = false, $name = false)
     {
         if (!$name || !$module || !$this->configExists($module, $name)) {
-            die("Invalid module or config name");
+            die("无效的模块或配置名称");
         } else {
             if ($this->input->post("source")) {
                 $file = fopen("application/modules/" . $module . "/config/" . $name . ".php", "w");
@@ -168,11 +167,14 @@ class Edit extends MX_Controller
 
                 die("yes");
             } else {
-                die("No data to set");
+                die("没有要设置的数据");
             }
         }
     }
 
+    /**
+     * 检查配置是否存在
+     */
     private function configExists($module, $file)
     {
         if (file_exists("application/modules/" . $module . "/config/" . $file . ".php")) {
