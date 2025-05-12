@@ -392,7 +392,7 @@ class Database extends Config
 
         // Check if there is any realm
         if(!$realms || !is_array($realms))
-            die('You must add at least one realm.');
+            die('必须添加至少一个服务器。');
 
         // Fields
         $fields = ['hostname', 'username', 'password', 'characters', 'world', 'cap', 'realm_expansion', 'realmName', 'console_username', 'console_password', 'console_port', 'emulator', 'port', 'db_port'];
