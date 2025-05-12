@@ -10,6 +10,7 @@ class Modules extends MX_Controller
     {
         parent::__construct();
 
+        // 定义核心模块（不可禁用）
         $this->coreModules = array('admin', 'login', 'logout', 'errors', 'news', 'mod');
 
         $this->load->library('administrator');
@@ -21,23 +22,31 @@ class Modules extends MX_Controller
 
     public function index()
     {
-        $this->administrator->setTitle("Modules");
+        // 设置页面标题
+        $this->administrator->setTitle("模块管理");
 
         $this->administrator->loadModules();
 
+        // 准备模块数据
         $data = array(
             'url' => $this->template->page_url,
             'enabled_modules' => $this->administrator->getEnabledModules(),
             'disabled_modules' => $this->administrator->getDisabledModules()
         );
 
+        // 加载视图模板
         $output = $this->template->loadPage("modules.tpl", $data);
 
-        $content = $this->administrator->box('Modules', $output);
+        // 将内容放入管理面板
+        $content = $this->administrator->box('模块管理系统', $output);
 
+        // 输出页面内容
         $this->administrator->view($content, "modules/admin/css/modules.css", "modules/admin/js/modules.js");
     }
 
+    /**
+     * 启用指定模块
+     */
     public function enable($moduleName)
     {
         requirePermission("toggleModules");
@@ -47,6 +56,9 @@ class Modules extends MX_Controller
         die('SUCCESS');
     }
 
+    /**
+     * 禁用指定模块
+     */
     public function disable($moduleName)
     {
         requirePermission("toggleModules");
