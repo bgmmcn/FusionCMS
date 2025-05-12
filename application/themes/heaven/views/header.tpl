@@ -69,8 +69,8 @@
 		{foreach from=$assets.js.parts.module.files item=file}<script type="text/javascript" src="{if $cdn_link != false}{str_replace(base_url(), $cdn_link, $file)}{else}{$file}{/if}?v={$theme_configs.config.version}"></script>{/foreach}
 
 		<!--[if lt IE 9]>
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+			<script type="text/javascript" src="https://cdnjs.loli.net/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script type="text/javascript" src="https://cdnjs.loli.net/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
 		<script type="text/javascript">

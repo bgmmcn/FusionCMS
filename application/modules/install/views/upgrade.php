@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" href="<?= $INSTALL_PATH ?>images/favicon.png" />
 		<link rel="stylesheet" href="<?= $css ?>" />
 
-		<script src="//cdnjs.cloudflare.com/ajax/libs/Kraken/3.8.2/js/html5.min.js"></script>
+		<script src="//cdnjs.loli.net/ajax/libs/Kraken/3.8.2/js/html5.min.js"></script>
 		<script src="<?= base_url() ?>node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
