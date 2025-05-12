@@ -172,7 +172,7 @@
 						<li>
 							<a href="{$url}admin" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-home {if $current_page == "admin"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "admin"}text-primary-500{/if}">Dashboard</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "admin"}text-primary-500{/if}">仪表盘</span>
 							</a>
 						</li>
 						
@@ -209,7 +209,7 @@
 						<li>
 							<a href="{$url}admin/modules" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-sitemap {if $current_page == "modules"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "modules"}text-primary-500{/if}">Modules</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "modules"}text-primary-500{/if}">模块</span>
 							</a>
 						</li>
 						{/if}
@@ -217,7 +217,7 @@
 						<li>
 							<a href="{$url}admin/backups" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-hard-drive {if $current_page == "backups"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "backups"}text-primary-500{/if}">Backups</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "backups"}text-primary-500{/if}">备份</span>
 							</a>
 						</li>
 						{/if}
@@ -225,7 +225,7 @@
 							<div class="group">
 								<button onclick="AdminMenu.openSection('theme')" nr="theme" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center rounded-lg py-3 transition-colors duration-300 gap-4 px-4 {if $current_page == "theme" || $current_page == "edittheme"}open{/if}">
 									<i class="fa-duotone fa-brush {if $current_page == "theme" || $current_page == "edittheme"}text-primary-500{/if}" aria-hidden="true"></i>
-									<span class="block whitespace-nowrap font-sans text-sm {if $current_page == "theme" || $current_page == "edittheme"}text-primary-500{/if} block">Theme</span>
+									<span class="block whitespace-nowrap font-sans text-sm {if $current_page == "theme" || $current_page == "edittheme"}text-primary-500{/if} block">主题</span>
 									<span class="ms-auto items-center justify-center flex">
 
                                         <svg data-v-cd102a71="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon h-4 w-4 transition-transform duration-200 {if $current_page != "theme" &&  $current_page != "edittheme"}rotate-180{/if}" width="1em" height="1em" viewBox="0 0 24 24">
@@ -237,13 +237,13 @@
 									<li class="border-muted-300 dark:border-muted-700 border-s-2 first:mt-2">
 										<a aria-current="page" href="{$url}admin/theme" class="{if $current_page == "theme"}router-link-active !border-primary-500 !text-primary-500 dark:!text-primary-500 -left-0.5 {/if} nui-focus text-muted-500 hover:text-muted-600 dark:text-muted-400/80 dark:hover:text-muted-200 relative flex cursor-pointer items-center gap-2 border-s-2 border-transparent py-2 ps-4 transition-colors duration-300">
 											<i class="fa-duotone fa-palette"></i>
-											<span class="whitespace-nowrap font-sans text-[0.85rem] block">Change theme</span>
+											<span class="whitespace-nowrap font-sans text-[0.85rem] block">更换主题</span>
 										</a>
 									</li>
 									<li class="border-muted-300 dark:border-muted-700 border-s-2 first:mt-2">
 										<a aria-current="page" href="{$url}admin/theme/edit" class="{if $current_page == "edittheme"}router-link-active !border-primary-500 !text-primary-500 dark:!text-primary-500 -left-0.5 {/if} nui-focus text-muted-500 hover:text-muted-600 dark:text-muted-400/80 dark:hover:text-muted-200 relative flex cursor-pointer items-center gap-2 border-s-2 border-transparent py-2 ps-4 transition-colors duration-300">
 											<i class="fa-duotone fa-fill-drip"></i>
-											<span class="whitespace-nowrap font-sans text-[0.85rem] block">Theme settings</span>
+											<span class="whitespace-nowrap font-sans text-[0.85rem] block">主题设置</span>
 										</a>
 									</li>
 								</ul>
@@ -253,21 +253,21 @@
 						<li>
 							<a href="{$url}admin/settings" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-cog {if $current_page == "settings"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "settings"}text-primary-500{/if}">Settings</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "settings"}text-primary-500{/if}">设置</span>
 							</a>
 						</li>
 						{/if}
 						<li>
 							<a href="{$url}install/upgrade" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-arrow-up-from-arc"></i>
-								<span class="whitespace-nowrap font-sans text-sm block">Importer data (Upgrade)</span>
+								<span class="whitespace-nowrap font-sans text-sm block">导入数据（升级）</span>
 							</a>
 						</li>
 						{if hasPermission("updateCms", "admin")}
 						<li>
 							<a href="{$url}admin/updater" class="nui-focus text-muted-500 dark:text-muted-400/80 hover:bg-muted-100 dark:hover:bg-muted-700/60 hover:text-muted-600 dark:hover:text-muted-200 flex w-full cursor-pointer items-center gap-4 rounded-lg py-3 transition-colors duration-300 px-4">
 								<i class="fa-duotone fa-sync {if $current_page == "updater"}text-primary-500{/if}"></i>
-								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "updater"}text-primary-500{/if}">Update</span>
+								<span class="whitespace-nowrap font-sans text-sm block {if $current_page == "updater"}text-primary-500{/if}">更新</span>
 							</a>
 						</li>
 						{/if}
@@ -315,7 +315,7 @@
 									<div role="menu" tabindex="0" data-headlessui-state="open" class="dropdown-menu divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute end-0 mt-2 w-64 origin-top-right divide-y rounded-md shadow-lg" id="language_picker">
 										<div class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 border fixed top-0 z-[100] w-96 end-0">
 											<div class="flex h-16 w-full items-center justify-between px-10">
-												<h2 class="font-heading text-muted-700 text-lg font-semibold dark:text-white"> Select language </h2>
+												<h2 class="font-heading text-muted-700 text-lg font-semibold dark:text-white"> 选择语言 </h2>
 											</div>
 											<div class="relative h-[calc(100%_-_64px)] w-full px-10">
 												<div class="grid grid-cols-3 py-6">
@@ -358,8 +358,8 @@
 									<div role="menu" tabindex="0" data-headlessui-state="open" class="dropdown-menu divide-muted-100 border-muted-200 dark:divide-muted-700 dark:border-muted-700 dark:bg-muted-800 absolute end-0 mt-2 w-72 origin-top-right divide-y rounded-md border bg-white shadow-lg focus:outline-none">
 										<div class="p-4" role="none">
 											<div class="relative flex items-center justify-between" role="none">
-												<h4 class="font-heading text-muted-500 dark:text-muted-200 text-xs uppercase" role="none"> Notifications </h4>
-												<a aria-current="page" href="javascript:void(0)" onClick="Notify.markAllRead()" class="router-link-active router-link-exact-active font-alt text-primary-500 text-sm font-semibold" role="none"> Mark all read </a>
+												<h4 class="font-heading text-muted-500 dark:text-muted-200 text-xs uppercase" role="none"> 通知 </h4>
+												<a aria-current="page" href="javascript:void(0)" onClick="Notify.markAllRead()" class="router-link-active router-link-exact-active font-alt text-primary-500 text-sm font-semibold" role="none"> 标记所有为已读 </a>
 											</div>
 										</div>
 										<div id="content"></div>
@@ -378,15 +378,15 @@
 											<div class="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full" role="none"><img src="{$avatar}" class="max-w-full rounded-full object-cover shadow-sm dark:border-transparent" alt="" role="none"></div>
 											<div class="mt-3" role="none">
 												<h6 class="font-heading text-muted-800 text-sm font-medium dark:text-white mb-2" role="none"> {$nickname} </h6>
-												<a href="{$url}gm" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md w-full" role="none"> GM Panel </a>
+												<a href="{$url}gm" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md w-full" role="none"> GM 面板 </a>
 											</div>
 										</div>
 										<div class="px-6 py-1.5" role="none">
 											<a href="{$url}ucp" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md w-full mb-2" role="none"> UCP </a>
-											<a href="javascript:void(0)" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md w-full mb-2" onClick="Custom.destroySession()" role="none"> Lock Screen </a>
+											<a href="javascript:void(0)" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md w-full mb-2" onClick="Custom.destroySession()" role="none"> 锁定屏幕 </a>
 										</div>
 										<div class="p-6" role="none">
-											<a href="{$url}logout" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md w-full" role="none"> Logout </a>
+											<a href="{$url}logout" type="button" class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md w-full" role="none"> 登出 </a>
 										</div>
 									</div>
                                 </div>
@@ -410,7 +410,7 @@
                         <label class="nui-focus relative block h-9 w-9 shrink-0 overflow-hidden rounded-full transition-all duration-300 focus-visible:outline-2 ring-offset-muted-500 dark:ring-offset-muted-400 ms-auto">
                             <input type="checkbox" class="absolute start-0 top-0 z-[2] h-full w-full cursor-pointer opacity-0">
                             <span class="bg-primary-700 relative block h-9 w-9 rounded-full">
-                                <svg aria-hidden="true" viewbox="0 0 24 24" class="pointer-events-none absolute start-1/2 top-1/2 block h-5 w-5 text-yellow-400 transition-all duration-300 -translate-y-1/2 translate-x-[-50%] opacity-100 rtl:translate-x-[50%]">
+                                <svg aria-hidden="true" viewbox="0 0 24 24" class="pointer-events-none absolute start-1/2 top-1/2 block h-5 w-5 text-yellow-400 transition-all duration-300 translate-x-[-50%] opacity-100 rtl:translate-x-[50%] translate-y-[-150%]">
                                     <g fill="currentColor" stroke="currentColor" class="stroke-2">
                                         <circle cx="12" cy="12" r="5"></circle>
                                         <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
