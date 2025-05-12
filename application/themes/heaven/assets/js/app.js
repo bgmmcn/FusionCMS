@@ -91,35 +91,12 @@ let App = (function()
     }
 
     /**
-     * Copyright
-     * @return void
-     */
-    self.copyright = function()
-    {
-        // Define css
-        const css = {
-            1: 'color: #ff6600; font-weight: bold; font-size: 1.5rem;',
-            2: 'color: #ff0088; font-weight: bold; font-style: italic;',
-            3: 'color: #20882a; font-weight: bold; font-style: italic;'
-        };
-
-        console.log('%c%s', css[1], 'Thank you for reaching out!');
-        console.log('%c%s', css[2], 'Heaven theme is designed by Veins and coded by Darksider <darksider.legend@gmail.com>.');
-        console.log('%c%s', css[2], 'This premium product is completely free of charge, I hope that you will have a nice time using it.');
-        console.log('%c%s', css[3], 'Are you a fan or wish to support me?');
-        console.log('%c%s', css[3], 'BTC: 12BuzF7JEHHuVLdjYMwD2mC1MDBpfBvqRN');
-        console.log('%c%s', css[3], 'USDT (TRC20): TYpJAN55ZfTtbQTDGAwu6CEJ4GDc5mQ7fT');
-        console.log('%c%s', css[3], 'USDT (ERC20): 0x6ef363504b3be115ab0ffb8cd2f2259e340ff6c1');
-    };
-
-    /**
      * Initialize actions
      * @return void
      */
     self.init = function()
     {
         self.toggler();
-        self.copyright();
         self.stickyNav();
         self.owlCarousel();
     }
