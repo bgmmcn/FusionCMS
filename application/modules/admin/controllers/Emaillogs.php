@@ -3,8 +3,8 @@
 use MX\MX_Controller;
 
 /**
- * Emaillogs Controller Class
- * @property dashboard_model $dashboard_model dashboard_model Class
+ * 邮件日志控制器类
+ * @property dashboard_model $dashboard_model 仪表盘模型类
  */
 class Emaillogs extends MX_Controller
 {
@@ -25,10 +25,13 @@ class Emaillogs extends MX_Controller
             'emaillogs' => $emaillogs
         );
 
+        // 加载邮件日志模板
         $output = $this->template->loadPage("emaillogs.tpl", $data);
 
-        $content = $this->administrator->box('Email logs', $output);
+        // 将视图放入管理面板框中
+        $content = $this->administrator->box('邮件日志', $output);
 
+        // 渲染最终页面
         $this->administrator->view($content, false, false);
     }
 }
