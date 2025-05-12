@@ -1,12 +1,12 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('禁止直接访问脚本');
 
-# Import required classes
+# 导入所需类
 use App\Config\Services;
 use \VisualAppeal\AutoUpdate;
 use MX\MX_Controller;
 
 /**
- * Updater
+ * 更新器
  *
  * @package    FusionCMS
  * @subpackage admin/updater
@@ -15,80 +15,80 @@ use MX\MX_Controller;
  * @author     Ehsan Zare (Darksider) <darksider.legend@gmail.com>
  * @author     Keramat Jokar (Nightprince) <https://github.com/Nightprince>
  * @link       https://code-path.com
- * @copyright  (c) 2023 Code-path web developing team
+ * @copyright  (c) 2023 Code-path 网页开发团队
  */
 
 class Updater extends MX_Controller
 {
-    # Directory separator shortcut
+    # 目录分隔符快捷方式
     const DS = DIRECTORY_SEPARATOR;
 
-    # CMS version
+    # CMS版本
     private $version;
 
-    # Log path
+    # 日志路径
     private $log_path;
 
-    # Log file
+    # 日志文件
     private $log_file;
 
-    # Cache path
+    # 缓存路径
     private $cache_path;
 
-    # Cache file
+    # 缓存文件
     private $cache_file;
 
-    # Update path
+    # 更新路径
     private $update_path;
 
-    # Extract path
+    # 解压路径
     private $extract_path;
 
-    # GitHub releases URL
+    # GitHub发布URL
     private $releases_url;
 
-    # Asset file extension
+    # 资产文件扩展名
     private $asset_file_ext;
 
     public function __construct()
     {
-        # Call `MX_Controller` construct
+        # 调用`MX_Controller`构造函数
         parent::__construct();
 
-        # Make sure user has required permissions
+        # 确保用户具有所需权限
         requirePermission('updateCms');
 
-        # Load libraries
+        # 加载库
         $this->load->library('administrator');
 
-        # CMS version
+        # CMS版本
         $this->version = $this->administrator->getVersion();
 
-        # Log path
+        # 日志路径
         $this->log_path = (($this->config->item('log_path') && realpath($this->config->item('log_path'))) ? realpath($this->config->item('log_path')) : realpath(WRITEPATH) . self::DS . 'logs') . self::DS;
 
-        # Log file
+        # 日志文件
         $this->log_file = 'update-{DATE}.log';
 
-        # Cache path
+        # 缓存路径
         $this->cache_path = (($this->config->item('cache_path') && realpath($this->config->item('cache_path'))) ? realpath($this->config->item('cache_path')) : realpath(WRITEPATH) . self::DS . 'cache') . self::DS . 'data' . self::DS . 'update' . self::DS;
 
-        # Cache file
+        # 缓存文件
         $this->cache_file = 'assets.json';
 
-        # Update path
+        # 更新路径
         $this->update_path = realpath(FCPATH) . self::DS;
 
-        # Extract path
+        # 解压路径
         $this->extract_path = $this->update_path . 'temp';
 
-        # GitHub releases URL
+        # GitHub发布URL
         $this->releases_url = 'https://api.github.com/repos/FusionWowCMS/FusionCMS/releases?page={PAGE}&per_page={PER_PAGE}';
 
-        # Asset file extension
+        # 资产文件扩展名
         $this->asset_file_ext = '.zip';
 
-        # Create required paths if not exists
+        # 创建所需路径（如果不存在）
         foreach([$this->log_path, $this->cache_path] as $path)
         {
             if(!file_exists($path))
@@ -108,97 +108,97 @@ class Updater extends MX_Controller
 
     public function index()
     {
-        // Set page title
-        $this->administrator->setTitle('Updater');
+        // 设置页面标题
+        $this->administrator->setTitle('更新器');
 
-        // Get last update log
+        // 获取最后更新日志
         ($log = $this->dblogger->getLogs('updater', 0, 1)) ? $log = reset($log) : $log = ['time' => false];
 
-        // Format last update log time
+        // 格式化最后更新时间
         if($log['time']) $log['time'] = date('Y-m-d H:i:s', $log['time']);
 
-        // Prepare data
+        // 准备数据
         $data = [
-            # General
+            # 通用
             'url'             => $this->template->page_url,
 
-            # Releases url
+            # 发布URL
             'releases_url'    => str_replace(['api.github.com', 'github.com/repos/'], ['github.com', 'github.com/'], substr($this->releases_url, 0, strrpos($this->releases_url, '?'))),
 
-            # Last updated
+            # 最后更新
             'last_updated'    => $log['time'],
 
-            # Logs
+            # 日志
             'logs'            => $this->logs(),
 
-            # Response
+            # 响应
             'response'        => $this->check(),
 
-            # Server info
+            # 服务器信息
             'server_modules'  => function_exists('apache_get_modules') ? apache_get_modules() : false,
             'server_software' => $_SERVER['SERVER_SOFTWARE'],
 
-            # PHP info
+            # PHP信息
             'php_version'     => phpversion(),
             'php_extensions'  => get_loaded_extensions(),
 
-            # Framework versions
+            # 框架版本
             'ci_version'      => CI_VERSION,
             'cms_version'     => $this->version,
             'smarty_version'  => $this->smarty::SMARTY_VERSION
         ];
 
-        // Append last checked
+        // 附加最后检查
         $data['last_checked'] = date('Y-m-d H:i:s', filemtime($this->cache_path . $this->cache_file));
 
-        // Render page
-        $this->administrator->view($this->administrator->box('Updater', $this->template->loadPage('updater.tpl', $data)), false, 'modules/admin/js/updater.js');
+        // 渲染页面
+        $this->administrator->view($this->administrator->box('更新器', $this->template->loadPage('updater.tpl', $data)), false, 'modules/admin/js/updater.js');
     }
 
     /**
-     * Logs
-     * Get update logs
+     * 日志
+     * 获取更新日志
      *
      * @return array $logs
      */
     public function logs()
     {
-        // Initialize logs to bake them later
+        // 初始化日志以稍后烘焙它们
         $logs = [];
 
-        // Get log files
+        // 获取日志文件
         $files = glob($this->log_path . str_replace('{DATE}', '*', $this->log_file), GLOB_BRACE);
 
-        // Explode log file name
+        // 爆炸日志文件名
         $log_file_name_arr = explode('{DATE}', $this->log_file);
 
-        // Loop through files
+        // 循环文件
         foreach($files as $file)
         {
-            // Export file name
+            // 导出文件名
             $fileName = pathinfo(basename($file), PATHINFO_FILENAME);
 
-            // Export file date from name
+            // 从文件名导出文件日期
             $fileDate = str_replace($log_file_name_arr, '', $fileName);
 
-            // Open log file
+            // 打开日志文件
             $log = fopen($file, 'r');
 
-            // Append log file
+            // 附加日志文件
             $logs[$fileDate] = fread($log, filesize($file));
 
-            // Close log file
+            // 关闭日志文件
             fclose($log);
         }
 
-        // Fetch GET data
+        // 获取GET数据
         $today = $this->input->get('today', TRUE);
 
-        // Toss today's log
+        // 丢弃今天的日志
         if($today)
             die(isset($logs[date('Y-m-d')]) ? $logs[date('Y-m-d')] : '');
 
-        // Sort logs
+        // 排序日志
         uksort($logs, function($a, $b) {
             return strtotime($a) <=> strtotime($b);
         });
@@ -207,49 +207,49 @@ class Updater extends MX_Controller
     }
 
     /**
-     * Update
-     * Install update packages
+     * 更新
+     * 安装更新包
      *
      * @return void
      */
     public function update()
     {
-        // Make sure its ajax request
+        // 确保这是一个AJAX请求
         if(!$this->input->is_ajax_request())
-            exit('No direct script access allowed');
+            exit('禁止直接访问脚本');
 
-        // Check for updates
+        // 检查更新
         $response = $this->check();
 
-        // Keep track of updated flag
+        // 跟踪更新标志
         $response['updated'] = '0';
 
-        // Make sure updates available
+        // 确保更新可用
         if(!$response['available'])
             die(json_encode($response));
 
-        // Format update server url
+        // 格式化更新服务器URL
         $update_url = rtrim(str_replace([self::DS, '\\', '/', realpath(APPPATH)], ['/', '/', '/', base_url() . basename(APPPATH)], $this->cache_path), '/');
 
-        // Format packages array
+        // 格式化包数组
         array_walk($response['packages'], function(&$v) {
             $v = $v['asset']['browser_download_url'];
         });
 
-        // Generate update.json
+        // 生成update.json
         $json = fopen($this->cache_path . 'update.json', 'w');
 
-        // Write update.json
+        // 写入update.json
         fwrite($json, json_encode($response['packages'], JSON_PRETTY_PRINT));
 
-        // Close update.json
+        // 关闭update.json
         fclose($json);
 
         ####################################################################################################
-        ########################################## BEGIN UPDATING ##########################################
+        ########################################## 开始更新 ##########################################
         ####################################################################################################
 
-        // Create extract path if not exists
+        // 创建解压路径（如果不存在）
         if(!file_exists($this->extract_path))
         {
             try
@@ -259,70 +259,70 @@ class Updater extends MX_Controller
             }
             catch(Error | Exception $e)
             {
-                // Set message
+                // 设置消息
                 $response['message'] = $e->getMessage();
 
-                // Throw response
+                // 抛出响应
                 die(json_encode($response));
             }
         }
 
-        // Remove extract path (we no longer need them)
+        // 删除解压路径（我们不再需要它们）
         register_shutdown_function(function() { $this->removeDir($this->extract_path); });
 
-        // Create new object off `AutoUpdate`
+        // 创建一个新的`AutoUpdate`对象
         $update = new AutoUpdate($this->extract_path, $this->update_path, 60);
 
-        // `AutoUpdate` Set current version
+        // `AutoUpdate`设置当前版本
         $update->setCurrentVersion($this->version);
 
-        // `AutoUpdate` Set updateUrl
+        // `AutoUpdate`设置更新URL
         $update->setUpdateUrl($update_url);
 
-        // Create new object off `Logger`
+        // 创建一个新的`Logger`对象
         $logger = new \Monolog\Logger('default');
 
-        // `Logger` Set push handler
+        // `Logger`设置推送处理程序
         $logger->pushHandler((new Monolog\Handler\StreamHandler($this->log_path . str_replace('{DATE}', date('Y-m-d'), $this->log_file)))->setFormatter(new Monolog\Formatter\LineFormatter("[%datetime%] %channel%.%level_name%: %message% \n", "Y-m-d|H:i:s")));
 
-        // `AutoUpdate` Set logger
+        // `AutoUpdate`设置记录器
         $update->setLogger($logger);
 
-        // Check for a new update
+        // 检查是否有新更新
         if($update->checkUpdate() === false)
         {
-            // Set message
-            $response['message'] = 'Could not check for updates! See log file for details.';
+            // 设置消息
+            $response['message'] = '无法检查更新！详情请查看日志文件。';
 
-            // Throw response
+            // 抛出响应
             die(json_encode($response));
         }
 
-        // Application is already up-to-date
+        // 应用程序已经是最新的
         if(!$update->newVersionAvailable())
         {
-            // Set message
-            $response['message'] = 'Current Version is up to date.';
+            // 设置消息
+            $response['message'] = '当前版本已是最新。';
 
-            // Throw response
+            // 抛出响应
             die(json_encode($response));
         }
 
-        // Set error handler
+        // 设置错误处理程序
         set_error_handler(function() {});
 
         try
         {
-            // Simulate update
+            // 模拟更新
             $result = $update->update(true);
 
-            // Check for errors
+            // 检查错误
             if($result !== true)
             {
-                // Set message
-                $response['message'] = 'Update simulation failed: ' . $result . '!';
+                // 设置消息
+                $response['message'] = '更新模拟失败：' . $result . '!';
 
-                // Append few more data to message
+                // 附加更多数据到消息
                 if(AutoUpdate::ERROR_SIMULATE && $update->getSimulationResults())
                 {
                     $response['message'] = $response['message'] . '<br />';
@@ -331,54 +331,54 @@ class Updater extends MX_Controller
                     $response['message'] = $response['message'] . '</pre>';
                 }
 
-                // Throw response
+                // 抛出响应
                 die(json_encode($response));
             }
         }
         catch(Error | Exception $e)
         {
-            // Set message
+            // 设置消息
             $response['message'] = $e->getMessage();
 
-            // Throw response
+            // 抛出响应
             die(json_encode($response));
         }
 
-        // Restore error handler
+        // 恢复错误处理程序
         restore_error_handler();
 
-        // Callback on each version update
+        // 回调每个版本更新
         $update->onEachUpdateFinish(function($version) use($logger) { $this->updateCallback($version, $logger); });
 
-        // Callback on all version update
+        // 回调所有版本更新
         $update->setOnAllUpdateFinishCallbacks(function($versions) use($logger) { $this->updateFinishCallback($versions, $logger); });
 
-        // Finally apply updates
+        // 最终应用更新
         $result = $update->update(false);
 
-        // Check for possible errors (network)
+        // 检查可能的错误（网络）
         if($result !== true)
         {
-            // Set message
-            $response['message'] = 'Update failed: ' . $result . '!';
+            // 设置消息
+            $response['message'] = '更新失败：' . $result . '!';
 
-            // Throw response
+            // 抛出响应
             die(json_encode($response));
         }
 
-        // Set updated flag
+        // 设置更新标志
         $response['updated'] = '1';
 
-        // Set message
-        $response['message'] = 'Update successful.';
+        // 设置消息
+        $response['message'] = '更新成功。';
 
-        // Throw response
+        // 抛出响应
         die(json_encode($response));
     }
 
     /**
-     * Update callback
-     * Callback on each version update
+     * 更新回调
+     * 回调每个版本更新
      *
      * @param  string $version
      * @param  object $logger
@@ -392,8 +392,8 @@ class Updater extends MX_Controller
     }
 
     /**
-     * Update finish callback
-     * Callback on all version update
+     * 更新完成回调
+     * 回调所有版本更新
      *
      * @param  array  $versions
      * @param  object $logger
@@ -404,160 +404,160 @@ class Updater extends MX_Controller
     }
 
     /**
-     * Insert SQL
-     * Execute update SQL queries
+     * 插入SQL
+     * 执行更新SQL查询
      *
      * @param  object $logger
      * @return void
      */
     private function insertSQL($logger)
     {
-        // Look for sql files
+        // 查找SQL文件
         $files = array_merge(glob($this->extract_path . self::DS . '*.sql', GLOB_BRACE), glob($this->extract_path . self::DS . '*' . self::DS . '*.sql', GLOB_BRACE));
 
-        // Loop through files
+        // 循环文件
         foreach($files as $file)
         {
-            // Logger
-            $logger->debug(sprintf('Inserting "%s"', $file));
+            // 记录器
+            $logger->debug(sprintf('插入 "%s"', $file));
 
-            // Read the sql file
+            // 读取SQL文件
             $lines = file($file);
 
-            // Initialize statement
+            // 初始化语句
             $statement = '';
 
-            // Loop through lines
+            // 循环行
             foreach($lines as $line)
             {
-                // Append line to statement
+                // 附加行到语句
                 $statement .= $line;
 
-                // Semicolon found! do the magic...
+                // 分号找到！做魔法...
                 if(substr(trim($line), -1) === ';')
                 {
-                    // Run query
+                    // 运行查询
                     $res = $this->db->simple_query($statement);
 
-                    // Logger
-                    ($res) ? $logger->notice(sprintf('Insert "%s" successfully', $file)) : $logger->error(sprintf('Failed to insert: "%s"', $file));
+                    // 记录器
+                    ($res) ? $logger->notice(sprintf('插入 "%s" 成功', $file)) : $logger->error(sprintf('失败插入： "%s"', $file));
 
-                    // Reset statement
+                    // 重置语句
                     $statement = '';
                 }
             }
 
-            // Delete the file
+            // 删除文件
             unlink($file);
         }
     }
 
     /**
-     * Remove files
-     * Check if update wants to remove any files
+     * 删除文件
+     * 检查更新是否需要删除文件
      *
      * @param  object $logger
      * @return void
      */
     private function removeFiles($logger)
     {
-        // Path to remove.txt file
+        // remove.txt文件路径
         $file = $this->extract_path . self::DS . 'remove.txt';
 
-        // Make sure remove.txt exists
+        // 确保remove.txt存在
         if(!file_exists($file))
             return;
 
-        // Read remove.txt file
+        // 读取remove.txt文件
         $lines = file($file);
 
-        // Loop through lines
+        // 循环行
         foreach($lines as $line)
         {
-            // Append root dir
+            // 附加根目录
             $line = realpath($this->update_path . str_replace(['\\', '/'], self::DS, trim($line)));
 
-            // Make sure its valid path
+            // 确保这是一个有效路径
             if(!$line || strpos($line, $this->update_path) === false)
                 continue;
 
-            // Logger
-            $logger->debug(sprintf('Trying to delete "%s"', $line));
+            // 记录器
+            $logger->debug(sprintf('尝试删除 "%s"', $line));
 
             (is_dir($line)) ? $this->removeDir($line) : unlink($line);
 
-            // Logger
-            (file_exists($line)) ? $logger->error(sprintf('Failed to delete: "%s"', $line)) : $logger->notice(sprintf('Deleted "%s" successfully', $line));
+            // 记录器
+            (file_exists($line)) ? $logger->error(sprintf('失败删除： "%s"', $line)) : $logger->notice(sprintf('删除 "%s" 成功', $line));
         }
 
-        // Delete remove.txt file
+        // 删除remove.txt文件
         unlink($file);
     }
 
     /**
-     * Save last update
-     * Keep track of last installed update time
+     * 保存最后更新
+     * 跟踪最后安装更新时间
      *
      * @param  string $version
      * @return void
      */
     private function saveLastUpdate($version)
     {
-        // Prepare data
+        // 准备数据
         $data = [
             'type'    => 'updater',
             'event'   => 'update',
-            'message' => 'Installed update: ' . $version
+            'message' => '安装更新：' . $version
         ];
 
-        // Create log
+        // 创建日志
         $this->dblogger->createLog($data['type'], $data['event'], $data['message']);
     }
 
     /**
-     * Check
-     * Determine if any update package is available
+     * 检查
+     * 确定是否有可用的更新包
      *
      * @return array $data
      */
     private function check()
     {
-        // Initialize data to bake them later
+        // 初始化数据以稍后烘焙它们
         $data = [
             'message'   => false,
             'packages'  => [],
             'available' => false
         ];
 
-        // Get update packages
+        // 获取更新包
         $packages = $this->packages();
 
-        // an error occurred getting update packages
+        // 获取更新包时出错
         if(!is_array($packages))
         {
             $data['message'] = $packages;
         }
         else
         {
-            // No updates available
+            // 没有可用的更新
             if(count($packages) == 0 || array_key_last($packages) == $this->version)
             {
-                $data['message'] = 'No updates available.';
+                $data['message'] = '没有可用的更新。';
             }
             else
             {
-                // Loop through packages
+                // 循环包
                 foreach($packages as $key => $package)
                 {
-                    // We're gonna need rest of packages
+                    // 我们将需要其余的包
                     if(version_compare($this->version, $key, '>='))
                         continue;
 
-                    // Add package
+                    // 添加包
                     $data['packages'][$key] = $package;
                 }
 
-                // Updates available
+                // 可用的更新
                 if(count($data['packages']))
                     $data['available'] = true;
             }
@@ -567,99 +567,99 @@ class Updater extends MX_Controller
     }
 
     /**
-     * Packages
-     * Get update packages
+     * 包
+     * 获取更新包
      *
      * @return array $updates
      */
     private function packages()
     {
-        // Check for cache
+        // 检查缓存
         if(file_exists($this->cache_path . $this->cache_file))
         {
-            // Cache file creation time
+            // 缓存文件创建时间
             $cache_creation_time = filemtime($this->cache_path . $this->cache_file);
 
-            // Make sure cache file is still valid
-            if(time() <= ($cache_creation_time + (60 * 60 * 1))) # Valid for 1 hour
+            // 确保缓存文件仍然有效
+            if(time() <= ($cache_creation_time + (60 * 60 * 1))) # 有效1小时
             {
-                // Open cache file
+                // 打开缓存文件
                 $cache = fopen($this->cache_path . $this->cache_file, 'r');
 
-                // Read cache file
+                // 读取缓存文件
                 $updates = fread($cache, filesize($this->cache_path . $this->cache_file));
 
-                // Close cache file
+                // 关闭缓存文件
                 fclose($cache);
 
                 return json_decode($updates, true);
             }
         }
 
-        // Limit
+        // 限制
         $limit = ['offset' => 1, 'count' => 100];
 
-        // Initialize updates to bake them later
+        // 初始化更新以稍后烘焙它们
         $updates = [];
 
-        // Initialize releases to bake them later
+        // 初始化发布以稍后烘焙它们
         $releases = [];
 
-        // Fetch GitHub repository releases until we find current asset version
+        // 获取GitHub存储库发布，直到找到当前资产版本
         while(strpos(json_encode($releases), $this->version . $this->asset_file_ext) === false)
         {
-            // Send http request to fetch releases
+            // 发送HTTP请求以获取发布
             $data = $this->call(str_replace(['{PAGE}', '{PER_PAGE}'], [$limit['offset'], $limit['count']], $this->releases_url));
 
-            // Parse our json
+            // 解析我们的JSON
             $data = json_decode($data, true);
 
-            // STOP! API error occurred
+            // 停止！API错误发生
             if(is_array($data) && isset($data['message']))
                 return $data['message'];
 
-            // STOP! Looks like this is last page
+            // 停止！看起来这是最后一页
             if(!$data || $data === null || (is_array($data) && count($data) == 0))
                 break;
 
-            // Append data
+            // 附加数据
             $releases = array_merge($releases, $data);
 
-            // Increase offset
+            // 增加偏移量
             $limit['offset'] = $limit['offset'] + 1;
         };
 
-        // Loop through releases
+        // 循环发布
         foreach($releases as $release)
         {
-            // Invalid release
+            // 无效发布
             if(!is_array($release) || !isset($release['assets']) || !is_array($release['assets']))
                 continue;
 
-            // Loop through assets
+            // 循环资产
             foreach($release['assets'] as $asset)
             {
-                // Invalid asset
+                // 无效资产
                 if(!is_array($asset) || !isset($asset['browser_download_url']) || !is_string($asset['browser_download_url']))
                     continue;
 
-                // Get asset file name and extension
+                // 获取资产文件名和扩展名
                 $asset['fileName'] = pathinfo(basename($asset['browser_download_url']), PATHINFO_FILENAME);
                 $asset['fileExt']  = pathinfo(basename($asset['browser_download_url']), PATHINFO_EXTENSION);
 
-                // Invalid asset
+                // 无效资产
                 if(!$asset['fileName'] || $asset['fileExt'] != str_replace('.', '', $this->asset_file_ext))
                     continue;
 
-                // Add asset to our updates array
+                // 将资产添加到我们的更新数组中
                 $updates[$asset['fileName']] = [
-                    # Release info
+                    # 发布信息
                     'release' => [
                         'name'     => isset($release['name'])     ? $release['name']     : '',
                         'html_url' => isset($release['html_url']) ? $release['html_url'] : '',
                     ],
 
-                    # Asset info
+                    # 资产信息
                     'asset' => [
                         'author' => [
                             'name'     => isset($asset['uploader']['login'])      ? $asset['uploader']['login']      : '',
@@ -675,24 +675,24 @@ class Updater extends MX_Controller
             }
         }
 
-        // Sort updates
+        // 排序更新
         $updates = array_reverse($updates);
 
-        // Create cache file
+        // 创建缓存文件
         $cache = fopen($this->cache_path . $this->cache_file, 'w');
 
-        // Write cache file
+        // 写入缓存文件
         fwrite($cache, json_encode($updates, JSON_PRETTY_PRINT));
 
-        // Close cache file
+        // 关闭缓存文件
         fclose($cache);
 
         return $updates;
     }
 
     /**
-     * Call
-     * Send http request
+     * 调用
+     * 发送HTTP请求
      *
      * @param  string $url
      * @return string $response
@@ -702,10 +702,10 @@ class Updater extends MX_Controller
         if(!$url)
             return false;
 
-        // Ignore client abort
+        // 忽略客户端中止
         ignore_user_abort();
 
-        // HACK! Give it some time...
+        // HACK！给它一些时间...
         set_time_limit(0);
 
         $options = [
@@ -722,29 +722,29 @@ class Updater extends MX_Controller
     }
 
     /**
-     * Remove dir
-     * Destroys a directory
+     * 删除目录
+     * 销毁目录
      *
      * @param  string $dir
      * @return void
      */
     private function removeDir($dir)
     {
-        // Make sure its directory
+        // 确保这是一个目录
         if(!is_dir($dir))
             return;
 
-        // Get the tree
+        // 获取树
         $files = new RecursiveIteratorIterator(
             new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS),
             RecursiveIteratorIterator::CHILD_FIRST
         );
 
-        // Remove everything inside
+        // 删除内部的所有内容
         foreach($files as $file)
             ($file->isDir()) ? rmdir($file->getRealPath()) : unlink($file->getRealPath());
 
-        // Remove root directory
+        // 删除根目录
         rmdir($dir);
     }
 }
