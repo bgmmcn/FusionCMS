@@ -2,6 +2,10 @@
 
 use MX\MX_Controller;
 
+/**
+ * Cache Management Controller Class
+ * @property cache_model $cache_model Cache Model Class
+ */
 class Cachemanager extends MX_Controller
 {
     private array $itemMatches;
@@ -22,26 +26,32 @@ class Cachemanager extends MX_Controller
         requirePermission("viewCache");
     }
 
+    /**
+     * Display Cache Management Interface
+     */
     public function index()
     {
-        // Change the title
-        $this->administrator->setTitle("Manage cache");
+        // Set page title
+        $this->administrator->setTitle("Cache Management");
 
         // Prepare my data
         $data = array(
             'url' => $this->template->page_url
         );
 
-        // Load my view
+        // Load my view template
         $output = $this->template->loadPage("cachemanager/cache.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Manage cache', $output);
+        // Output to admin panel
+        $content = $this->administrator->box('Cache Management', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // Output my content
         $this->administrator->view($content, false, "modules/admin/js/cache.js");
     }
 
+    /**
+     * Get Cache Information
+     */
     public function get()
     {
         $item = $this->countItemCache();
@@ -60,15 +70,18 @@ class Cachemanager extends MX_Controller
             'total' => $total
         ];
 
-        // Load my view
+        // Load my view template
         $output = $this->template->loadPage("cachemanager/cache_data.tpl", $data);
 
         die($output);
     }
 
+    /**
+     * Count Item Cache
+     */
     private function countItemCache(): array
     {
-        // Define our result
+        // Define my result
         $result = [
             "files" => 0,
             "size" => 0
@@ -81,9 +94,12 @@ class Cachemanager extends MX_Controller
         return $this->SearchCache($matches, $result);
     }
 
+    /**
+     * Count Theme Cache
+     */
     private function countThemeMinifyCache(): array
     {
-        // Define our result
+        // Define my result
         $result = [
             "files" => 0,
             "size" => 0
@@ -96,9 +112,12 @@ class Cachemanager extends MX_Controller
         return $this->SearchCache($matches, $result);
     }
 
+    /**
+     * Count Website Cache
+     */
     private function countWebsiteCache(): array
     {
-        // Define our result
+        // Define my result
         $result = [
             "files" => 0,
             "size" => 0
@@ -111,6 +130,9 @@ class Cachemanager extends MX_Controller
         return $this->SearchCache($matches, $result);
     }
 
+    /**
+     * Format Byte Size
+     */
     private function formatSize($size): string
     {
         if ($size < 1024) {
@@ -124,6 +146,9 @@ class Cachemanager extends MX_Controller
         }
     }
 
+    /**
+     * Delete Specific Type of Cache
+     */
     public function delete($type = false)
     {
         requirePermission("emptyCache");
@@ -168,11 +193,7 @@ class Cachemanager extends MX_Controller
     }
 
     /**
-     * Get size of cache
-     *
-     * @param array $matches
-     * @param array $result
-     * @return array
+     * Search Cache
      */
     private function SearchCache(array $matches, array $result): array
     {
@@ -184,7 +205,7 @@ class Cachemanager extends MX_Controller
                 // Loop through all matches
                 foreach ($matches as $file) {
                     if (!preg_match("/index\.html/", $file)) {
-                        // Count and add their size to the result
+                        // Count and add size to result
                         $result['files']++;
                         $result['size'] += filesize($file);
                     }
