@@ -21,12 +21,12 @@ function setCookie(c_name,value,exdays) {
 $(document).ready(function() {
 	if (getCookie("acceptCookies") == null){
 		Swal.fire({
-			title: 'Do you like Cookies?',
-			text: 'This website uses cookies to ensure you get the best experience on our website.',
+			title: '您接受Cookie吗？',
+			text: '本网站使用Cookie以确保您获得最佳体验。',
 			showDenyButton: true,
 			showCancelButton: false,
-			confirmButtonText: 'Accept',
-			denyButtonText: 'Cancel',
+			confirmButtonText: '接受',
+			denyButtonText: '取消',
 			backdrop: true,
 			allowOutsideClick: () => {
 				const popup = Swal.getPopup();
