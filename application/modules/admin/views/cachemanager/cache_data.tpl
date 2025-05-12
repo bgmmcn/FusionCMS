@@ -3,26 +3,26 @@
 	<table class="table table-responsive-md table-hover">
 		<thead>
 			<tr>
-				<th>Cache</th>
-				<th>Size</th>
+				<th>缓存类型</th>
+				<th>大小</th>
 			</tr>
 		</thead>
 		<tbody>
 		<tr>
-			<td>Item cache</td>
-			<td id="row_item">{$item.files} files ({$item.sizeString})</td>
+			<td>物品缓存</td>
+			<td id="row_item">{$item.files} 个文件 ({$item.sizeString})</td>
 		</tr>
 		<tr>
-			<td>Website cache</td>
-			<td id="row_website">{$website.files} files ({$website.sizeString})</td>
+			<td>网站缓存</td>
+			<td id="row_website">{$website.files} 个文件 ({$website.sizeString})</td>
 		</tr>
 		<tr>
-			<td>Theme minify cache</td>
-			<td id="row_theme">{$theme.files} files ({$theme.sizeString})</td>
+			<td>主题压缩缓存</td>
+			<td id="row_theme">{$theme.files} 个文件 ({$theme.sizeString})</td>
 		</tr>
 		<tr>
-			<td><b>Total</b></td>
-			<td id="row_total"><b>{$total.files} files ({$total.size})</b></td>
+			<td><b>总计</b></td>
+			<td id="row_total"><b>{$total.files} 个文件 ({$total.size})</b></td>
 		</tr>
 		</tbody>
 	</table>
