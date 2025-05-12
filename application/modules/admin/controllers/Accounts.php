@@ -3,9 +3,9 @@
 use MX\MX_Controller;
 
 /**
- * Accounts Controller Class
- * @property accounts_model $accounts_model accounts_model Class
- * @property logging_model $logging_model logging_model Class
+ * 账户管理控制器类
+ * @property accounts_model $accounts_model 账户模型类
+ * @property logging_model $logging_model 日志模型类
  */
 class Accounts extends MX_Controller
 {
@@ -23,26 +23,29 @@ class Accounts extends MX_Controller
     }
 
     /**
-     * Display the admin panel if we have access
+     * 显示账户管理面板
      */
     public function index()
     {
-        // Change the title
-        $this->administrator->setTitle("Accounts");
+        // 设置页面标题
+        $this->administrator->setTitle("账户管理");
 
-        // Prepare my data
+        // 准备数据
         $data = array();
 
-        // Load my view
+        // 加载视图模板
         $output = $this->template->loadPage("accounts/accounts_search.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Accounts', $output);
+        // 将内容放入管理面板
+        $content = $this->administrator->box('账户管理系统', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出页面内容
         $this->administrator->view($content, false, "modules/admin/js/accounts.js");
     }
     
+    /**
+     * AJAX获取账户数据
+     */
     public function get_accs_ajax()
     {
         $total_users = $this->accounts_model->count_all_users();
@@ -66,11 +69,14 @@ class Accounts extends MX_Controller
         die(json_encode($output));
     }
 
+    /**
+     * 查看账户详情
+     */
     public function get($id = false)
     {
         if (!is_numeric($id))
         {
-            die('<span>No such account</span>');
+            die('<span>账户不存在</span>');
         }
         $data = $this->accounts_model->getById($id);
 
@@ -81,7 +87,7 @@ class Accounts extends MX_Controller
 
             $logs = $this->accounts_model->getLogs($data['id'], 0, 10);
 
-            // Prepare my data
+            // 准备视图数据
             $page_data = array(
                 'internal_details' => $internal_details,
                 'external_details' => $data,
@@ -99,16 +105,16 @@ class Accounts extends MX_Controller
                 'show_more' => $this->dblogger->getLogCount() - count(array($logs))
             );
 
-            // Load my view
+            // 加载视图模板
             $output = $this->template->loadPage("accounts/accounts_found.tpl", $page_data);
 
-            // Put my view in the main box with a headline
-            $content = $this->administrator->box('Account #' . $id . '', $output);
+            // 将内容放入管理面板
+            $content = $this->administrator->box('账户#' . $id . '', $output);
 
-            // Output my content. The method accepts the same arguments as template->view
+            // 输出页面内容
             $this->administrator->view($content, false, "modules/admin/js/accounts.js");
         } else {
-            die("<span>Account doesn't exist</span>");
+            die("<span>账户不存在</span>");
         }
     }
 
@@ -137,7 +143,7 @@ class Accounts extends MX_Controller
     public function save($id = false)
     {
         if (!hasPermission("editAccounts")) {
-            die('You do not have permission to edit accounts');
+            die('您没有权限编辑账户');
         }
 
         if (!$id || !is_numeric($id)) {
@@ -172,7 +178,7 @@ class Accounts extends MX_Controller
 
         $this->accounts_model->save($id, $external_account_data, $external_account_access_data, $internal_account_data);
 
-        die('yes');
+        die('修改已保存');
     }
 
     public function loadMoreLogs($id)
@@ -199,7 +205,7 @@ class Accounts extends MX_Controller
 
             die($output);
         } else {
-            die("<span>No results</span>");
+            die("<span>没有更多日志</span>");
         }
     }
 }
