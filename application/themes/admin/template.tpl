@@ -5,7 +5,7 @@
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://gstatic.loli.net/">
         <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://fonts.loli.net/css2?family=Roboto%20Flex&amp;family=Inter&amp;family=Karla&amp;family=Fira%20Code&amp;display=swap">
         <link rel="icon" type="image/png" href="{if $cdn_link != false}{$cdn_link}{else}{$url}{/if}application/themes/admin/assets/images/favicon.png">
         <meta name="twitter:card" content="summary_large_image">
