@@ -1,25 +1,25 @@
 <?php
 
 /**
- * 模块开发者注意：
- *  将模块特定的语言文件保存在这个
- *  外部文件夹中对于可移植性来说
- *  不是一个好的做法 - 我不建议你
- *  为自己的非默认模块这样做。
- *  相反，只需将你的语言文件放在
+ * Note to module developers:
+ *  Keeping a module specific language file like this
+ *  in this external folder is not a good practise for
+ *  portability - I do not advice you to do this for
+ *  your own modules since they are non-default.
+ *  Instead, simply put your language files in
  *  application/modules/yourModule/language/
- *  你不需要更改任何代码，系统
- *  也会自动在该文件夹中查找。
+ *  You do not need to change any code, the system
+ *  will automatically look in that folder too.
  */
 
-$lang['expansion'] = "资料片";
-$lang['last_ip'] = "上次IP";
+$lang['expansion'] = "扩展版本";
+$lang['last_ip'] = "上次登录IP";
 $lang['current_ip'] = "当前IP";
-$lang['vp'] = "积分";
-$lang['dp'] = "点券";
-$lang['user_panel'] = "用户面板";
-$lang['log_out'] = "登出";
+$lang['vp'] = "虚拟点数";
+$lang['dp'] = "捐赠点数";
+$lang['user_panel'] = "用户中心";
+$lang['log_out'] = "退出登录";
 $lang['username'] = "用户名";
 $lang['password'] = "密码";
-$lang['log_in'] = "登录";
-$lang['register'] = "注册";
+$lang['log_in'] = "立即登录";
+$lang['register'] = "注册账号";

@@ -1,8 +1,8 @@
 <?php
 
 /**
- * 只有当魔兽世界官方自己翻译了这些内容时才进行翻译，
- * 否则会让期望看到英文的玩家感到困惑
+ * Only translate these if World of Warcraft does it themselves,
+ * otherwise you'll confuse people who expect to see them in English
  */
 
 $lang['races'] = array(
@@ -33,8 +33,8 @@ $lang['races'] = array(
     37 => "机械侏儒",
     52 => "龙希尔",
     70 => "龙希尔",
-    84 => "大地之子",
-    85 => "大地之子",
+    84 => "土灵",
+    85 => "土灵",
 );
 
 $lang['classes'] = array(
