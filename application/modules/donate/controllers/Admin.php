@@ -23,7 +23,7 @@ class Admin extends MX_Controller
 
     public function index()
     {
-        $this->administrator->setTitle("Donation log");
+        $this->administrator->setTitle("捐赠记录");
 
         $logs = $this->donate_model->getLogs(0, 10);
 
@@ -37,7 +37,7 @@ class Admin extends MX_Controller
 
         $output = $this->template->loadPage("admin.tpl", $data);
 
-        $content = $this->administrator->box('Donation log', $output);
+        $content = $this->administrator->box('捐赠记录', $output);
 
         $this->administrator->view($content, false, "modules/donate/js/admin.js");
     }
