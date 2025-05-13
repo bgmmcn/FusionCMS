@@ -3,14 +3,14 @@
 use MX\MX_Controller;
 
 /**
- * Slider Controller Class
- * @property slider_model $slider_model slider_model Class
+ * 轮播图控制器类
+ * @property slider_model $slider_model 轮播图模型类
  */
 class Slider extends MX_Controller
 {
     public function __construct()
     {
-        // Make sure to load the administrator library!
+        // 务必加载管理员库！
         $this->load->library('administrator');
         $this->load->model('slider_model');
 
@@ -23,8 +23,8 @@ class Slider extends MX_Controller
 
     public function index()
     {
-        // Change the title
-        $this->administrator->setTitle("Manage slider");
+        // 修改标题
+        $this->administrator->setTitle("管理轮播图");
 
         $slides = $this->cms_model->getSlides();
 
@@ -42,23 +42,23 @@ class Slider extends MX_Controller
             }
         }
 
-        // Prepare my data
+        // 准备数据
         $data = array(
             'url' => $this->template->page_url,
             'slides' => $slides,
-            "slider" => $this->config->item('slider'),
-            "slider_home" => $this->config->item('slider_home'),
-            "slider_interval" => $this->config->item('slider_interval'),
-            "slider_style" => $this->config->item('slider_style')
+            "轮播图" => $this->config->item('slider'),
+            "首页轮播图" => $this->config->item('slider_home'),
+            "轮播间隔" => $this->config->item('slider_interval'),
+            "轮播样式" => $this->config->item('slider_style')
         );
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage("slider/slider.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Slides', $output);
+        // 将视图放入主框架中
+        $content = $this->administrator->box('幻灯片', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, "modules/admin/js/slider.js");
     }
 
@@ -72,7 +72,7 @@ class Slider extends MX_Controller
         $data["footer"] = $this->input->post("text_footer");
 
         if (empty($data["image"])) {
-            die("Image can't be empty");
+            die("图片不能为空");
         }
 
         if(!filter_var($data['image'], FILTER_VALIDATE_URL) && strpos($data['image'], '{image_path}') === false)
@@ -92,47 +92,47 @@ class Slider extends MX_Controller
         $slide = $this->slider_model->getSlide($id);
 
         if (!$slide) {
-            show_error("There is no slide with ID " . $id, 400);
+            show_error("找不到ID为 " . $id . " 的幻灯片", 400);
 
             die();
         }
 
-        // Change the title
-        $this->administrator->setTitle('Slide #' . $slide['id']);
+        // 修改标题
+        $this->administrator->setTitle('幻灯片 #' . $slide['id']);
 
-        // Prepare my data
+        // 准备数据
         $data = array(
             'url' => $this->template->page_url,
             'slide' => $slide
         );
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage("slider/edit_slider.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/slider">Manage slider</a> &rarr; Slide #' . $slide['id'], $output);
+        // 将视图放入主框架中
+        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/slider">管理轮播图</a> &rarr; 幻灯片 #' . $slide['id'], $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, "modules/admin/js/slider.js");
     }
 
     public function new()
     {
-        // Change the title
-        $this->administrator->setTitle('Add slider');
+        // 修改标题
+        $this->administrator->setTitle('添加轮播图');
 
-        // Prepare my data
+        // 准备数据
         $data = array(
             'url' => $this->template->page_url,
         );
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage("slider/add_slider.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('Add slider', $output);
+        // 将视图放入主框架中
+        $content = $this->administrator->box('添加轮播图', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, "modules/admin/js/slider.js");
     }
 
