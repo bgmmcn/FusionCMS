@@ -1,6 +1,6 @@
 {
-	"name": "Item store",
-	"description": "Lets your users purchase ingame items from a web store",
+	"name": "虚拟商店",
+	"description": "允许用户通过网页商店购买游戏内物品",
 	"version": "2.0.0",
 	"date": "2023-05-30",
 	"author": {
@@ -9,21 +9,21 @@
 	},
 
 	"permissions": {
-		"view": {"default" : true, "description": "View the store screen." },
-		"canViewOrders": {"default": false, "description": "View store orders" },
-		"canRefundOrders": {"default": false, "description": "Refund failed orders" },
-		"canViewItems": {"default": false, "description": "View store items" },
-		"canAddItems": {"default": false, "description": "Add store items" },
-		"canRemoveItems": {"default": false, "description": "Remove store items" },
-		"canEditItems": {"default": false, "description": "Edit store items" },
-		"canAddGroups": {"default": false, "description": "Add item groups" },
-		"canRemoveGroups": {"default": false, "description": "Remove item groups" },
-		"canEditGroups": {"default": false, "description": "Edit item groups" }
+		"view": {"default" : true, "description": "访问商店页面。" },
+		"canViewOrders": {"default": false, "description": "查看商店订单" },
+		"canRefundOrders": {"default": false, "description": "处理订单退款" },
+		"canViewItems": {"default": false, "description": "查看商品列表" },
+		"canAddItems": {"default": false, "description": "添加新商品" },
+		"canRemoveItems": {"default": false, "description": "删除商品" },
+		"canEditItems": {"default": false, "description": "编辑商品信息" },
+		"canAddGroups": {"default": false, "description": "创建商品分类" },
+		"canRemoveGroups": {"default": false, "description": "删除商品分类" },
+		"canEditGroups": {"default": false, "description": "编辑商品分类" }
 	},
 
 	"roles": {
 		"view": {
-			"description": "View the store module.",
+			"description": "查看商店模块",
 
 			"permissions": {
 				"view": true
@@ -31,7 +31,7 @@
 		},
 
 		"moderate": {
-			"description": "Manage the store orders. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理商店订单。<font style='color:red;'>管理员工具</font>",
 			"dangerLevel": 1,
 
 			"permissions": {
@@ -41,7 +41,7 @@
 		},
 
 		"manage": {
-			"description": "Manage the store items. <font style='color:red;'>Admin-tool</font>",
+			"description": "管理商店商品。<font style='color:red;'>管理员工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -58,18 +58,18 @@
 
 	"admin": [
 		{
-			"text": "Store",
+			"text": "商店",
 			"icon": "share",
 			"links": [
 				{
-					"text": "Items",
+					"text": "商品",
 					"icon": "tag",
 					"controller": "admin_items",
 					"requirePermission": "canViewItems"
 				},
 				
 				{
-					"text": "Orders",
+					"text": "订单",
 					"icon": "users",
 					"controller": "admin_orders",
 					"requirePermission": "canViewOrders"
