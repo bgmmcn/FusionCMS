@@ -30,30 +30,30 @@ var Theme = {
 	select: function(name)
 	{
 			Swal.fire({
-			  title: 'Do you want to change the theme to "'+ name +'"?',
+			  title: '您确定要切换至主题“'+ name +'”吗？',
 			  showDenyButton: true,
 			  showCancelButton: false,
-			  confirmButtonText: 'Change',
-			  denyButtonText: `Don't change`,
+			  confirmButtonText: '切换',
+			  denyButtonText: '取消',
 			  icon: 'question'
 			}).then((result) => {
 				if (result.isConfirmed) {
 					$.get(Config.URL + "admin/theme/set/" + name, function(data) {
 						if(data == "yes") {
 							Swal.fire({
-							  title: 'Theme was saved!',
+							  title: '主题已保存！',
 							  showDenyButton: false,
 							  showCancelButton: false,
-							  confirmButtonText: 'OK',
+							  confirmButtonText: '确定',
 							  icon: 'success'
 							}).then((result) => {
 								//Remove dsiabled from all button and set text to enabled
 								$("#all_themes .theme_action button").removeAttr("disabled");
-								$("#all_themes .theme_action button").text("Enable");
+								$("#all_themes .theme_action button").text("启用");
 								
 								//Add to button disabled state and current Text
 								$("#btn-"+ name).attr("disabled", "true");
-								$("#btn-"+ name).text("Current");
+								$("#btn-"+ name).text("当前");
 								window.location.reload();
 							});
 						} else {
