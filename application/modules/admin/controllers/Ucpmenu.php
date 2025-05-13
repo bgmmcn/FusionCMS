@@ -3,8 +3,8 @@
 use MX\MX_Controller;
 
 /**
- * Menu Controller Class
- * @property ucpmenu_model $ucpmenu_model ucpmenu_model Class
+ * 菜单控制器类
+ * @property ucpmenu_model $ucpmenu_model ucpmenu_model 类
  */
 class Ucpmenu extends MX_Controller
 {
@@ -20,32 +20,32 @@ class Ucpmenu extends MX_Controller
     }
 
     /**
-     * Loads the page
+     * 加载页面
      */
     public function index()
     {
-        //Set the title to menu
-        $this->administrator->setTitle("UCP Menu links");
+        // 设置标题
+        $this->administrator->setTitle("UCP菜单链接");
 
         $links = $this->ucpmenu_model->getMenuLinks();
 
         if ($links) {
             foreach ($links as $key => $value) {
-                // Shorten the link if necessary
+                // 缩短链接
                 if (strlen($value['link']) > 12) {
                     $links[$key]['link_short'] = mb_substr($value['link'], 0, 12) . '...';
                 } else {
                     $links[$key]['link_short'] = $value['link'];
                 }
 
-                // Add the website path if internal link
+                // 添加网站路径（内部链接）
                 if (!preg_match("/https?:\/\//", $value['link'])) {
                     $links[$key]['link'] = $this->template->page_url . $value['link'];
                 }
 
                 $links[$key]['name'] = langColumn($links[$key]['name']);
 
-                // Shorten the name if necessary
+                // 缩短名称
                 if (strlen($links[$key]['name']) > 15) {
                     $links[$key]['name'] = mb_substr($links[$key]['name'], 0, 15) . '...';
                 }
@@ -58,20 +58,20 @@ class Ucpmenu extends MX_Controller
             }
         }
 
-        // Prepare my data
+        // 准备数据
         $data = [
             'url' => $this->template->page_url,
             'links' => $links,
             'pages' => $pages
         ];
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage('menu/ucp_menu.tpl', $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('UCP Menu links', $output);
+        // 将视图放入管理面板
+        $content = $this->administrator->box('UCP菜单链接', $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, 'modules/admin/js/ucp_menu.js');
     }
 
@@ -86,18 +86,18 @@ class Ucpmenu extends MX_Controller
         $permission = $this->input->post('permission');
         $permissionModule = $this->input->post('permissionModule');
 
-		$array = json_decode($name, true);
+        $array = json_decode($name, true);
 
-		foreach ($array as $key => $value)
-		{
-			if (empty($value))
-			{
-				die("$key name can't be empty");
-			}
-		}
+        foreach ($array as $key => $value)
+        {
+            if (empty($value))
+            {
+                die("$key 名称不能为空");
+            }
+        }
 
         if (empty($link)) {
-            die("Link can't be empty");
+            die("链接不能为空");
         }
 
         $this->ucpmenu_model->add($name, $link, $icon, $group, $permission, $permissionModule);
@@ -112,7 +112,7 @@ class Ucpmenu extends MX_Controller
         if ($this->ucpmenu_model->delete($id)) {
             die("success");
         } else {
-            die("An error occurred while trying to delete this menu link.");
+            die("删除菜单链接时发生错误");
         }
     }
 
@@ -127,10 +127,10 @@ class Ucpmenu extends MX_Controller
         $link = $this->ucpmenu_model->getMenuLink($id);
 
         if (!$link) {
-            show_error("There is no link with ID " . $id, 400);
+            show_error("找不到ID为 " . $id . " 的链接", 400);
         }
 
-        // Change the title
+        // 设置标题
         $this->administrator->setTitle(langColumn($link['name']));
 
         if ($pages = $this->menu_model->getPages()) {
@@ -139,7 +139,7 @@ class Ucpmenu extends MX_Controller
             }
         }
 
-        // Prepare my data
+        // 准备数据
         $data = [
             'url' => $this->template->page_url,
             'links' => $this->ucpmenu_model->getMenuLinks(),
@@ -147,13 +147,13 @@ class Ucpmenu extends MX_Controller
             'pages' => $pages
         ];
 
-        // Load my view
+        // 加载视图
         $output = $this->template->loadPage("menu/edit_ucp_menu.tpl", $data);
 
-        // Put my view in the main box with a headline
-        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/ucpmenu">Menu links</a> &rarr; ' . langColumn($link['name']), $output);
+        // 将视图放入管理面板
+        $content = $this->administrator->box('<a href="' . $this->template->page_url . 'admin/ucpmenu">菜单链接</a> &rarr; ' . langColumn($link['name']), $output);
 
-        // Output my content. The method accepts the same arguments as template->view
+        // 输出内容
         $this->administrator->view($content, false, "modules/admin/js/ucp_menu.js");
     }
 
