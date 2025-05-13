@@ -1,10 +1,10 @@
 <div class="card">
 	<div class="card-header">
-		Failed orders in the past week
+		过去一周的失败订单
 	</div>
 	<div class="card-body">
 	<span>
-		Orders that show up here have failed because of a system error. If the error didn't occur immediately some items might have been delivered. You should manually investigate if the user should be refunded.
+		此处显示的订单因系统错误失败。若错误未立即发生，部分物品可能已发放。请人工核查是否需要给用户退款。
 	</span>
 
 		{if $failed}
@@ -19,17 +19,17 @@
 						</td>
 						
 						<td width="35%">
-							{if $failed_log.vp_cost}<img src="{$url}application/images/icons/lightning.png" align="absmiddle" style="margin:0px;opacity:1;" /> <b>{$failed_log.vp_cost} VP</b>&nbsp;&nbsp;&nbsp;{/if}
-							{if $failed_log.dp_cost}<img src="{$url}application/images/icons/coins.png" align="absmiddle"  style="margin:0px;opacity:1;"/> <b>{$failed_log.dp_cost} DP</b>{/if}
+							{if $failed_log.vp_cost}<img src="{$url}application/images/icons/lightning.png" align="absmiddle" style="margin:0px;opacity:1;" /> <b>{$failed_log.vp_cost} 虚拟点</b>&nbsp;&nbsp;&nbsp;{/if}
+							{if $failed_log.dp_cost}<img src="{$url}application/images/icons/coins.png" align="absmiddle"  style="margin:0px;opacity:1;"/> <b>{$failed_log.dp_cost} 捐赠点</b>{/if}
 						</td>
 
 						<td>
-							<a data-bs-toggle="tooltip" data-placement="top" data-html="true" title="{foreach from=$failed_log.json item=item}{$item.itemName} to {$item.characterName}<br>{/foreach}">{count($failed_log.json)} items</a>
+							<a data-bs-toggle="tooltip" data-placement="top" data-html="true" title="{foreach from=$failed_log.json item=item}{$item.itemName} 发送至 {$item.characterName}<br>{/foreach}">{count($failed_log.json)} 件物品</a>
 						</td>
 						
 						{if hasPermission("canRefundOrders")}
 							<td style="text-align:right;">
-								<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md" href="javascript:void(0)" onClick="Orders.refund({$failed_log.id}, this)">Refund</a>
+								<a class="relative font-sans font-normal text-sm inline-flex items-center justify-center leading-5 no-underline h-8 px-3 py-2 space-x-1 border nui-focus transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:shadow-none text-muted-700 border-muted-300 dark:text-white dark:bg-muted-700 dark:border-muted-600 dark:hover:enabled:bg-muted-600 hover:enabled:bg-muted-50 dark:active:enabled:bg-muted-700/70 active:enabled:bg-muted-100 rounded-md" href="javascript:void(0)" onClick="Orders.refund({$failed_log.id}, this)">退款</a>
 							</td>
 						{/if}
 					</tr>
@@ -41,13 +41,13 @@
 
 <div class="card">
 	<div class="card-header">
-		Last 10 successful orders
+		最近 10 个成功订单
 	</div>
 	<div class="card-body">
 	<form class="input-group mb-3" onSubmit="Orders.search('successful'); return false">
-		<input class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="text" name="search_successful" id="search_successful" placeholder="Search by username" style="width:90%;margin-right:5px;"/>
+		<input class="form-control nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 px-3 rounded" type="text" name="search_successful" id="search_successful" placeholder="搜索用户名" style="width:90%;margin-right:5px;"/>
 
-		<button type="submit" class="btn btn-primary">Search</button>
+		<button type="submit" class="btn btn-primary">搜索</button>
 	</form>
 
 	<span id="order_list_successful">
@@ -64,12 +64,12 @@
 						</td>
 						
 						<td width="35%">
-							{if $completed_log.vp_cost}<img src="{$url}application/images/icons/lightning.png" align="absmiddle" style="margin:0px;opacity:1;" /> <b>{$completed_log.vp_cost} VP</b>&nbsp;&nbsp;&nbsp;{/if}
-							{if $completed_log.dp_cost}<img src="{$url}application/images/icons/coins.png" align="absmiddle"  style="margin:0px;opacity:1;"/> <b>{$completed_log.dp_cost} DP</b>{/if}
+							{if $completed_log.vp_cost}<img src="{$url}application/images/icons/lightning.png" align="absmiddle" style="margin:0px;opacity:1;" /> <b>{$completed_log.vp_cost} 虚拟点</b>&nbsp;&nbsp;&nbsp;{/if}
+							{if $completed_log.dp_cost}<img src="{$url}application/images/icons/coins.png" align="absmiddle"  style="margin:0px;opacity:1;"/> <b>{$completed_log.dp_cost} 捐赠点</b>{/if}
 						</td>
 
 						<td>
-							<a data-toggle="tooltip" data-placement="top" data-html="true" title="{foreach from=$completed_log.json item=item}{$item.itemName} to {$item.characterName}<br />{/foreach}">{count($completed_log.json)} items</a>
+							<a data-toggle="tooltip" data-placement="top" data-html="true" title="{foreach from=$completed_log.json item=item}{$item.itemName} 发送至 {$item.characterName}<br />{/foreach}">{count($completed_log.json)} 件物品</a>
 						</td>
 					</tbody>
 					</tr>
