@@ -1,6 +1,6 @@
 {
-	"name": "Donate panel",
-	"description": "PayPal donation system",
+	"name": "捐赠面板",
+	"description": "PayPal捐赠系统",
 	"version": "2.0.0",
 	"date": "2023-05-30",
 	"author": {
@@ -10,11 +10,11 @@
 
 	"admin": [
 		{
-			"text": "Store",
+			"text": "商店",
 			"icon": "share",
 			"links": [
 				{
-					"text": "Donation log",
+					"text": "捐赠记录",
 					"icon": "list",
 					"controller": "admin",
 					"requirePermission": "viewAdmin"
@@ -24,13 +24,13 @@
 	],
 
 	"permissions": {
-		"view": {"default" : true, "description": "View the donation page." },
-		"viewAdmin": {"default" : false, "description": "View the donation log." }
+		"view": {"default" : true, "description": "查看捐赠页面。" },
+		"viewAdmin": {"default" : false, "description": "查看捐赠记录。" }
 	},
 
 	"roles": {
 		"view": {
-			"description": "View the donate module.",
+			"description": "查看捐赠模块。",
 
 			"permissions": {
 				"view": true
@@ -38,7 +38,7 @@
 		},
 
 		"administrate": {
-			"description": "View the donation log.",
+			"description": "管理捐赠记录",
 			"dangerLevel": 2,
 
 			"permissions": {
