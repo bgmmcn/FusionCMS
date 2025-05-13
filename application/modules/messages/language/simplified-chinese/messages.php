@@ -1,0 +1,37 @@
+<?php
+
+$lang['recipient'] = "收件人";
+$lang['search'] = "搜索用户...";
+$lang['send'] = "发送私信";
+$lang['hi_there'] = "你好!";
+$lang['compose'] = "撰写消息";
+$lang['messages'] = "消息中心";
+$lang['title'] = "主题";
+$lang['message_limit'] = "消息内容必须超过3个字符!";
+$lang['title_limit'] = "主题必须在1-50个字符之间";
+$lang['recipient_empty'] = "收件人不能为空!";
+$lang['invalid_recipient'] = "无效的收件人";
+$lang['sent'] = "消息已发送! 正在返回";
+$lang['the_inbox'] = "收件箱";
+$lang['error'] = "出错了，请重试!";
+$lang['title_cant_be_empty'] = "主题不能为空!";
+$lang['pm'] = "私信";
+$lang['newer'] = "新消息";
+$lang['older'] = "旧消息";
+$lang['deleting'] = "删除中";
+$lang['inbox'] = "收件箱";
+$lang['sent_items'] = "已发送";
+$lang['no_messages'] = "没有消息";
+$lang['compose_message'] = "撰写消息";
+$lang['empty_inbox'] = "收件箱为空";
+$lang['sender'] = "发件人";
+$lang['message_title'] = "主题";
+$lang['date'] = "日期";
+$lang['view_profile'] = "查看资料";
+$lang['read_message'] = "阅读消息";
+$lang['receiver'] = "收件人";
+$lang['conversation_between'] = "你与";
+$lang['you'] = "你的";
+$lang['not_found'] = "消息不存在";
+$lang['enter_recipient'] = "请输入收件人";
+$lang['enter_message'] = "请输入内容";
