@@ -75,14 +75,14 @@ const UI = {
                 // check folder permissions
                 Ajax.checkPermissions(function () {
                     if ($('.folder-permissions .error').length) {
-                        notifyResult(false, 'Please fix all folder permissions to continue.');
+                        notifyResult(false, '请修复所有文件夹权限以继续.');
                     } else {
                         // check Apache or Nginx Modules
                         Ajax.checkApacheModules(function (result) {
                             if (result == '2') {
-                                notifyResult(false, 'Unable to check Apache or Nginx Modules, make sure required modules are enabled.');
+                                notifyResult(false, '无法检查Apache或Nginx模块，请确保启用了所需模块.');
                             } else if (result != '1') {
-                                notifyResult(false, 'Please enable all required Apache or Nginx modules to continue.');
+                                notifyResult(false, '请启用所有必需的Apache或Nginx模块以继续.');
                             }
                         });
                         // check php extensions
@@ -93,11 +93,11 @@ const UI = {
                                     if (result == '1') {
                                         notifyResult(true);
                                     } else {
-                                        notifyResult(false, 'FusionCMS requires at least PHP 8.0');
+                                        notifyResult(false, 'FusionCMS需要PHP 8.0或更高版本');
                                     }
                                 });
                             } else {
-                                notifyResult(false, 'Please enable all required PHP extensions to continue.');
+                                notifyResult(false, '请启用所有必需的PHP扩展以继续.');
                             }
                         });
                     }
@@ -147,18 +147,18 @@ const UI = {
                 }
 
                 if (!all_filled) {
-                    notifyResult(false, 'Please fill all fields.');
+                    notifyResult(false, '请填写所有字段.');
                     return;
                 }
 
                 // all filled, check connections
                 Ajax.setAndCheckDbConnection(dbData, function (result) {
                     if (result != '1') {
-                        notifyResult(false, 'database connection failed:<br />' + result);
+                        notifyResult(false, '数据库连接失败：<br />' + result);
                     } else {
                         Ajax.checkAuthConfig(authSettings, function (result) {
                             if (result != '1') {
-                                notifyResult(false, 'Missing config:<br />' + result);
+                                notifyResult(false, '缺少配置：<br />' + result);
                             } else {
                                 notifyResult(true);
                             }
@@ -188,14 +188,14 @@ const UI = {
                         return false;
                     }
 
-                    UI.confirm('<input type="text" id="superadmin" class="nui-focus border-muted-300 text-white placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 pe-4 ps-4 rounded" placeholder="输入将获得所有者权限的用户名..." autofocus />', 'Accept', function () {
+                    UI.confirm('<input type="text" id="superadmin" class="nui-focus border-muted-300 text-white placeholder:text-muted-300 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 peer w-full border bg-white font-monospace transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-75 px-2 h-10 py-2 text-sm leading-5 pe-4 ps-4 rounded" placeholder="输入将获得所有者权限的用户名..." autofocus />', '确认', function () {
 							const name = $("#superadmin").val();
 							if (name.length) {
                                 notifyResult(true);
                                 Ajax.Realms.saveAll();
                                 Ajax.Install.initialize(name);
                             } else {
-                                notifyResult(false, 'Invalid username.');
+                                notifyResult(false, '无效的用户名.');
                             }
                         },
                         function () {

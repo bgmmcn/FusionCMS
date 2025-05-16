@@ -16,7 +16,7 @@ $config['use_captcha'] = false;
  * 'inbuilt'    = inbuilt captcha system
  *
  */
-$config['captcha_type'] = "disabled";
+$config['captcha_type'] = "inbuilt";
 
 /**
  *

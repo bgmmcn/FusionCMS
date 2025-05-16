@@ -450,7 +450,7 @@ class Realms
      */
     public function getExpansions(): array
     {
-        $expansions = $this->CI->config->item('expansions_name_en');
+        $expansions = $this->CI->config->item('expansions_name_cn');
         $return = [];
 
         foreach ($expansions as $key => $value)

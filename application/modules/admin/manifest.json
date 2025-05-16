@@ -47,8 +47,8 @@
 		"editSlider": { "default": false, "description": "编辑轮播图" },
 		"deleteSlider": { "default": false, "description": "删除轮播图" },
 
-		"viewAccounts": { "default": false, "description": "查看账户管理器" },
-		"editAccounts": { "default": false, "description": "编辑用户账户" },
+		"viewAccounts": { "default": false, "description": "查看账号管理器" },
+		"editAccounts": { "default": false, "description": "编辑用户账号" },
 
 		"viewSessions": { "default": false, "description": "查看活跃会话" },
 
@@ -181,7 +181,7 @@
 		},
 
 		"manageAccounts": {
-			"description": "管理用户账户。<font style='color:red;'>管理工具</font>",
+			"description": "管理用户账号。<font style='color:red;'>管理工具</font>",
 			"dangerLevel": 2,
 
 			"permissions": {
@@ -305,7 +305,7 @@
 			"icon":"users",
 			"links": [
 				{
-					"text": "账户管理",
+					"text": "账号管理",
 					"icon": "users",
 					"controller": "accounts",
 					"requirePermission": "viewAccounts"

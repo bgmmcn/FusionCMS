@@ -10,7 +10,7 @@
             var selected = $(select).find('option:selected');
 
             if (typeof selected != 'undefined' && selected.length > 0) {
-                // Check if changed
+                // 检查是否已改变
                 if (selected.val() != this.realm) {
                     setCookie('store_realm', selected.val(), 365, '/');
                     this.toggleRealm(selected.val());
@@ -19,7 +19,7 @@
         },
 
         toggleRealm: function (realmId) {
-            // Check if it's already active
+            // 检查是否已激活
             if (this.realm == realmId)
                 return;
 
@@ -34,7 +34,7 @@
         },
 
         toggleType: function (id) {
-            // Check if it's already active
+            // 检查是否已激活
             if (this.type == id)
                 return;
 
@@ -55,7 +55,7 @@
         },
 
         togglePVPTab: function (id) {
-            // Check if it's already active
+            // 检查是否已激活
             if (this.pvpTab == id)
                 return;
 
@@ -248,7 +248,7 @@
                 <div data-id="1" class="type_content type_content_achievement" style="display: none;">
                     <div class="header">
                         <div id="column"><a href="javascript:void(0);"
-                                            class="achievementtab_button active">Achievement</a>
+                                            class="achievementtab_button active">成就排行</a>
                             <div id="tab_dot"></div>
                         </div>
                     </div>
@@ -302,7 +302,7 @@
                 <!-- START OF GUILD TABS -->
                 <div data-id="2" class="type_content type_content_guild" style="display: none;">
                     <div class="header">
-                        <div id="column"><a href="javascript:void(0);" class="guildtab_button active">Guilds</a>
+                        <div id="column"><a href="javascript:void(0);" class="guildtab_button active">公会排行</a>
                             <div id="tab_dot"></div>
                         </div>
                     </div>
@@ -333,7 +333,7 @@
                                                     <a href="{$url}character/{$realm.id}/{$guild.leaderguid}"
                                                        data-character-tip="{$guild.leaderguid}"
                                                        data-realm="{$realm.id}">
-                                                        Leader ({$guild.leaderName})
+                                                        领袖 ({$guild.leaderName})
                                                     </a>
                                                 </td>
 
@@ -359,11 +359,11 @@
     <div class="top_ranked_row">
         <div id="top10_types_menu">
             <a href="javascript:void(0);" id="type_button_0" onClick="Top.toggleType(0);"
-               class="col-xs-12 col-sm-12 col-md-12 col-lg-3 nice_button active">PVP</a>
+               class="col-xs-12 col-sm-12 col-md-12 col-lg-3 nice_button active">综合排行</a>
             <a href="javascript:void(0);" id="type_button_1" onClick="Top.toggleType(1);"
-               class="col-xs-12 col-sm-12 col-md-12 col-lg-3 nice_button">ACHIEVEMENT</a>
+               class="col-xs-12 col-sm-12 col-md-12 col-lg-3 nice_button">职业排行</a>
             <a href="javascript:void(0);" id="type_button_2" onClick="Top.toggleType(2);"
-               class="col-xs-12 col-sm-12 col-md-12 col-lg-3 nice_button">GUILD</a>
+               class="col-xs-12 col-sm-12 col-md-12 col-lg-3 nice_button">公会排行</a>
         </div>
 
         <div id="top10_realms_menu">

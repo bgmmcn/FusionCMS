@@ -95,7 +95,7 @@ class Admin_orders extends MX_Controller
                 $user_id = $this->user->getId($string);
 
                 if (!$user_id) {
-                    die("<span>未知账户</span>");
+                    die("<span>未知账号</span>");
                 }
 
                 $results = $this->store_model->findByUserId($type, $user_id);

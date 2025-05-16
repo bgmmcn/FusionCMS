@@ -394,17 +394,17 @@
 														<div class="col-span-12">
 															<div class="group/nui-input relative">
 																<select id="max_expansion" data-tip="Max expansion" required class="nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer/input relative w-full border bg-white pe-12 ps-4 font-sans text-sm leading-5 focus:shadow-lg disabled:cursor-not-allowed disabled:opacity-75 rounded-xl">
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="10">The War Within</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="9">Dragonflight/Wotlk Classic</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="8">Shadowlands</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="7">Battle for Azeroth</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="6">Legion</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="5">Warlords of Draenor</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="4">Mists Of Pandaria</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="3">Cataclysm</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="2">Wrath of the Lich King</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="1">The Burning Crusade</option>
-																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="0">No expansion allowed</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="10">地心之战</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="9">巨龙时代/巫妖王之怒怀旧服</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="8">暗影国度</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="7">争霸艾泽拉斯</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="6">军团再临</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="5">德拉诺之王</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="4">熊猫人之谜</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="3">大地的裂变</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="2">巫妖王之怒</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="1">燃烧的远征</option>
+																	<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="0">禁用资料片</option>
 																</select>
 															</div>
 														</div>
@@ -701,17 +701,17 @@
 																	<div class="col-span-12">
 																		<div class="group/nui-input relative">
 																			<select id="realm_expansion" data-tip="{{realm_expansion_detail}}" required class="nui-focus border-muted-300 text-muted-600 placeholder:text-muted-300 focus:border-muted-300 focus:shadow-muted-300/50 dark:border-muted-700 dark:bg-muted-900/75 dark:text-muted-200 dark:placeholder:text-muted-500 dark:focus:border-muted-700 dark:focus:shadow-muted-800/50 peer/input relative w-full border bg-white pe-12 ps-4 font-sans text-sm leading-5 focus:shadow-lg disabled:cursor-not-allowed disabled:opacity-75 rounded-xl">
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="10">The War Within</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="9">Dragonflight/Wotlk Classic</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="8">Shadowlands</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="7">Battle for Azeroth</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="6">Legion</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="5">Warlords of Draenor</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="4">Mists Of Pandaria</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="3">Cataclysm</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="2">Wrath of the Lich King</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="1">The Burning Crusade</option>
-																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="0">Vanilla</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="10">地心之战</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="9">巨龙时代/巫妖王之怒怀旧服</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="8">暗影国度</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="7">争霸艾泽拉斯</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="6">军团再临</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="5">德拉诺之王</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="4">熊猫人之谜</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="3">大地的裂变</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="2">巫妖王之怒</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="1">燃烧的远征</option>
+																				<option class="relative flex cursor-pointer select-none items-center px-3 py-2 rounded" value="0">经典旧世</option>
 																			</select>
 																		</div>
 																	</div>

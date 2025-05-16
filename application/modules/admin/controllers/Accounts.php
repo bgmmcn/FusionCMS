@@ -3,8 +3,8 @@
 use MX\MX_Controller;
 
 /**
- * 账户管理控制器类
- * @property accounts_model $accounts_model 账户模型类
+ * 账号管理控制器类
+ * @property accounts_model $accounts_model 账号模型类
  * @property logging_model $logging_model 日志模型类
  */
 class Accounts extends MX_Controller
@@ -23,12 +23,12 @@ class Accounts extends MX_Controller
     }
 
     /**
-     * 显示账户管理面板
+     * 显示账号管理面板
      */
     public function index()
     {
         // 设置页面标题
-        $this->administrator->setTitle("账户管理");
+        $this->administrator->setTitle("账号管理");
 
         // 准备数据
         $data = array();
@@ -37,14 +37,14 @@ class Accounts extends MX_Controller
         $output = $this->template->loadPage("accounts/accounts_search.tpl", $data);
 
         // 将内容放入管理面板
-        $content = $this->administrator->box('账户管理系统', $output);
+        $content = $this->administrator->box('账号管理系统', $output);
 
         // 输出页面内容
         $this->administrator->view($content, false, "modules/admin/js/accounts.js");
     }
     
     /**
-     * AJAX获取账户数据
+     * AJAX获取账号数据
      */
     public function get_accs_ajax()
     {
@@ -70,13 +70,13 @@ class Accounts extends MX_Controller
     }
 
     /**
-     * 查看账户详情
+     * 查看账号详情
      */
     public function get($id = false)
     {
         if (!is_numeric($id))
         {
-            die('<span>账户不存在</span>');
+            die('<span>账号不存在</span>');
         }
         $data = $this->accounts_model->getById($id);
 
@@ -109,12 +109,12 @@ class Accounts extends MX_Controller
             $output = $this->template->loadPage("accounts/accounts_found.tpl", $page_data);
 
             // 将内容放入管理面板
-            $content = $this->administrator->box('账户#' . $id . '', $output);
+            $content = $this->administrator->box('账号#' . $id . '', $output);
 
             // 输出页面内容
             $this->administrator->view($content, false, "modules/admin/js/accounts.js");
         } else {
-            die("<span>账户不存在</span>");
+            die("<span>账号不存在</span>");
         }
     }
 
@@ -143,7 +143,7 @@ class Accounts extends MX_Controller
     public function save($id = false)
     {
         if (!hasPermission("editAccounts")) {
-            die('您没有权限编辑账户');
+            die('您没有权限编辑账号');
         }
 
         if (!$id || !is_numeric($id)) {

@@ -47,8 +47,8 @@ $lang['banned'] = "已封禁";
 $lang['close_tool'] = "关闭工具";
 $lang['offline'] = "离线";
 
-$lang['voting_points'] = "投票点数";
-$lang['donation_points'] = "捐赠点数";
+$lang['voting_points'] = "人口";
+$lang['donation_points'] = "本位";
 
 $lang['change_avatar'] = "更换头像";
 
@@ -56,14 +56,14 @@ $lang['change_avatar'] = "更换头像";
 $lang['vote'] = "投票";
 $lang['donate'] = "捐赠";
 $lang['store'] = "商店";
-$lang['account_settings'] = "账户设置";
-$lang['account_security'] = "账户安全";
+$lang['account_settings'] = "账号设置";
+$lang['account_security'] = "账号安全";
 $lang['teleport_hub'] = "传送中心";
 
 $lang['gm_panel'] = "GM面板";
 $lang['admin_panel'] = "管理员面板";
 
 $lang['login'] = "登录";
-$lang['logout'] = "退出登录";
+$lang['logout'] = "退出";
 $lang['register'] = "注册";
-$lang['account'] = "账户";
+$lang['account'] = "账号";

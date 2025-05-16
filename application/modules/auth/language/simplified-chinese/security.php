@@ -8,7 +8,7 @@ $lang['six_digit_not_empty'] = "6 位验证码不能为空";
 $lang['six_digit_not_true'] = "验证码不正确";
 $lang['verified'] = "验证成功。";
 
-$lang['security_title'] = "账户安全";
+$lang['security_title'] = "账号安全";
 $lang['two_factor_auth'] = "双重认证";
 $lang['security_questions'] = "密保问题";
 $lang['update_success'] = "安全设置已更新！";

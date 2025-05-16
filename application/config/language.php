@@ -18,7 +18,7 @@ if (! defined('BASEPATH')) {
   | Also acts as fallback language
   |
  */
-$config['language'] = "english";
+$config['language'] = "simplified-chinese";
 
 /*
   |--------------------------------------------------------------------------
@@ -36,6 +36,5 @@ $config['detect_language'] = false;
 |--------------------------------------------------------------------------
 */
 $config['supported_languages'] = array(
-    'en' => array('name' => 'english'),
-    //'de' => array('name' => 'deutsch')
+    'cn' => array('name' => 'simplified-chinese')
 );

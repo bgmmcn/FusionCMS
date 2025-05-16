@@ -33,11 +33,11 @@
 			<div class="col-sm-12 col-lg-6">
 				<!-- Logos.Start -->
 				<div class="footer-logos">
-					<div class="logo-icon type-fcms" data-bs-html="true" data-bs-toggle="tooltip" data-bs-title="Powered by <b>FusionCMS</b>"></div>
+					<div class="logo-icon type-fcms" data-bs-html="true" data-bs-toggle="tooltip" data-bs-title="Powered by <b>JOKER</b>"></div>
 					<div class="logo-sep"></div>
-					<div class="logo-icon type-evil" data-bs-html="true" data-bs-toggle="tooltip" data-bs-title="Designed by <b>EvilSystem</b>"></div>
+					<div class="logo-icon type-evil" data-bs-html="true" data-bs-toggle="tooltip" data-bs-title="Designed by <b>JOKER</b>"></div>
 					<div class="logo-sep"></div>
-					<div class="logo-icon type-dark" data-bs-html="true" data-bs-toggle="tooltip" data-bs-title="Coded by <b>Darksider</b>"></div>
+					<div class="logo-icon type-dark" data-bs-html="true" data-bs-toggle="tooltip" data-bs-title="Coded by <b>JOKER</b>"></div>
 				</div>
 				<!-- Logos.End -->
 			</div>

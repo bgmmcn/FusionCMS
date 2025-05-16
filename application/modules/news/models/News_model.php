@@ -3,10 +3,10 @@
 class News_model extends CI_Model
 {
     /**
-     * Get news entries
+     * 获取新闻条目
      *
-     * @param  Int $start
-     * @param  Int $limit
+     * @param  Int $start 起始位置
+     * @param  Int $limit 获取数量
      * @return Array
      */
     public function getArticles($start = 0, $limit = 1)
@@ -29,8 +29,8 @@ class News_model extends CI_Model
             return [
                 [
                     'id'           => 0,
-                    'headline'     => 'Welcome to your new FusionCMS powered website!',
-                    'content'      => 'Your website has been successfully installed and we, the FusionCMS team, sincerely hope that you will have a nice time using it.<div><br></div><div>To proceed, log into the administrator panel using an administrator account and the security code you specified during the installation.</div><div><br></div><br><div>Best regards,</div><div>the FusionCMS team</div>',
+                    'headline'     => '',
+                    'content'      => '',
                     'author_id'    => 0,
                     'timestamp'    => time(),
                     'type'         => 0,
@@ -42,9 +42,9 @@ class News_model extends CI_Model
     }
 
     /**
-     * Get the article with the specified id.
+     * 获取指定ID的文章
      *
-     * @param  $id
+     * @param  $id 文章ID
      * @return bool|array
      */
     public function getArticle($id): bool|array
@@ -61,9 +61,9 @@ class News_model extends CI_Model
     }
 
     /**
-     * Get the tags for the given article id
+     * 获取给定文章ID的标签
      *
-     * @param  $articleId
+     * @param  $articleId 文章ID
      * @return array|bool
      */
     public function getTags($articleId): bool|array
@@ -81,7 +81,7 @@ class News_model extends CI_Model
     }
 
     /**
-     * Count the articles
+     * 计算文章数量
      *
      * @return int|string
      */
@@ -91,10 +91,10 @@ class News_model extends CI_Model
     }
 
     /**
-     * Check whether an article exists or not
+     * 检查文章是否存在
      *
-     * @param  Int $id
-     * @param  Boolean $comment Check if comments are enabled
+     * @param  Int $id 文章ID
+     * @param  Boolean $comment 检查评论是否启用
      * @return bool
      */
     public function articleExists($id, $comment = false)
@@ -120,13 +120,13 @@ class News_model extends CI_Model
     }
 
     /**
-     * Create a news article
+     * 创建新闻文章
      *
-     * @param $type
-     * @param $type_content
-     * @param  $comments
-     * @param  $headline
-     * @param  $content
+     * @param $type 文章类型
+     * @param $type_content 文章类型内容
+     * @param  $comments 评论状态
+     * @param  $headline 文章标题
+     * @param  $content 文章内容
      * @return bool
      */
     public function create($type, $type_content, $comments, $headline, $content)
@@ -147,14 +147,14 @@ class News_model extends CI_Model
     }
 
     /**
-     * Update the article with the given id
+     * 更新指定ID的文章
      *
-     * @param  $id
-     * @param $type
-     * @param $type_content
-     * @param  $comments
-     * @param  $headline
-     * @param  $content
+     * @param  $id 文章ID
+     * @param $type 文章类型
+     * @param $type_content 文章类型内容
+     * @param  $comments 评论状态
+     * @param  $headline 文章标题
+     * @param  $content 文章内容
      * @return bool
      */
     public function update($id, $type, $type_content, $comments, $headline, $content)
@@ -186,9 +186,9 @@ class News_model extends CI_Model
     }
 
     /**
-     * Delete the article with the given id.
+     * 删除指定ID的文章
      *
-     * @param  $articleId
+     * @param  $articleId 文章ID
      * @return bool
      */
     public function delete($articleId)

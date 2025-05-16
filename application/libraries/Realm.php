@@ -252,13 +252,13 @@ class Realm
 
     public function getExpansionSmallName(): string
     {
-        $expansions = $this->CI->config->item('expansions_small_name_en');
+        $expansions = $this->CI->config->item('expansions_small_name_cn');
         return array_key_exists($this->getExpansionId(), $expansions) ? $expansions[$this->getExpansionId()] : 'default';
     }
 
     public function getExpansionNameById($id): string
     {
-        $expansions = $this->CI->config->item('expansions_name_en');
+        $expansions = $this->CI->config->item('expansions_name_cn');
         return array_key_exists($id, $expansions) ? $expansions[$id] : 'default';
     }
 

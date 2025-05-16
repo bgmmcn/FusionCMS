@@ -12,7 +12,7 @@
  *  will automatically look in that folder too.
  */
 
-$lang['account_creation'] = "账户创建";
+$lang['account_creation'] = "账号创建";
 $lang['register'] = "立即注册";
 $lang['username_limit_length'] = "用户名必须为4-24个字符";
 $lang['username_limit'] = "用户名只能包含字母和数字";
@@ -21,15 +21,15 @@ $lang['email_invalid'] = "请输入有效的邮箱地址";
 $lang['password_short'] = "密码至少需要6个字符";
 $lang['password_match'] = "两次输入的密码不一致";
 $lang['email_not_available'] = "该邮箱已被注册";
-$lang['confirm_account'] = "请完成账户验证";
-$lang['created'] = "账户创建成功！";
-$lang['activate_account'] = "激活账户";
-$lang['created_account_activate'] = "账户已创建，请前往此处激活：";
+$lang['confirm_account'] = "请完成账号验证";
+$lang['created'] = "账号创建成功！";
+$lang['activate_account'] = "激活账号";
+$lang['created_account_activate'] = "账号已创建，请前往此处激活：";
 $lang['invalid_key'] = "无效的激活密钥";
 $lang['invalid_key_long'] = "提供的激活密钥无效！";
-$lang['the_account'] = "账户";
-$lang['has_been_created'] = "已创建成功，请查收邮件激活账户";
-$lang['creating_account_forum'] = "正在创建论坛账户，请稍候...";
+$lang['the_account'] = "账号";
+$lang['has_been_created'] = "已创建成功，请查收邮件激活账号";
+$lang['creating_account_forum'] = "正在创建论坛账号，请稍候...";
 $lang['has_been_created_redirecting'] = "已创建成功，正在跳转到";
 $lang['user_panel'] = "用户中心";
 $lang['username'] = "用户名";

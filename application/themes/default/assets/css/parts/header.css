@@ -250,8 +250,8 @@
 /* Header: Navbar: Brand
 /*-----------------------------------------------------*/
 .header .navbar .navbar-brand {
-	--brand-width: 231px;
-	--brand-height: 77px;
+	--brand-width: 256px;
+	--brand-height: 64px;
 
 	width: var(--brand-width);
 	height: var(--brand-height);
@@ -263,7 +263,7 @@
 
 	background-size: 100% var(--brand-height);
 	background-color: transparent;
-	background-image: url('../../images/logo/logo-main.png');
+	background-image: url('../../images/logo/logo.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 

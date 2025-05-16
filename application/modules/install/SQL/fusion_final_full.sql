@@ -12,7 +12,7 @@ CREATE TABLE `account_data`  (
   `total_votes` int(11) NOT NULL DEFAULT 0,
   `location` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `nickname` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `language` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'english',
+  `language` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'simplified-chinese',
   `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT '1',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
@@ -365,20 +365,20 @@ CREATE TABLE `acl_groups`  (
   `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `name`(`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
 
 -- ----------------------------
 -- Records of acl_groups
 -- ----------------------------
 INSERT INTO `acl_groups` (`id`, priority, `name`, `color`, `description`) VALUES
-(1, 1, 'Guest', '', 'Rank that the user gets when they are not logged in, can be defined in the configs that it is this rank.'),
-(2, 2, 'Player', '', 'Default player rank, the normal rank that you get when you are logged in and got no extra special rights.'),
-(3, 3, 'GM', '#8e208f', 'The rank GM, they got rights to access the Admin panel but then only with their tools that they need, examples are player support tickets, ...'),
-(4, 4, 'Moderator', '#00a3b6', 'They can manage shouts, users, ...'),
-(5, 5, 'QA', '#2a9553', 'A QA (= Quality Assurance) checks the quality on the website, ingame and on the other services, they then report this to the developers to get bugs fixed whey they find some.'),
-(6, 6, 'Developer', '#d56007', 'A developer'),
-(7, 7, 'Administrator', '#dc6200', 'The Administrators take care of the staff'),
-(8, 8, 'Owner', '#ae1600', 'This is the owner of the server.');
+(1, 1, '游客', '', '用户未登录时获得的默认权限组，可在配置文件中定义'),
+(2, 2, '玩家', '', '默认玩家权限组，登录后无特殊权限的普通用户组'),
+(3, 3, '游戏管理员', '#8e208f', '可访问管理面板，但仅限于处理玩家支持工单等必要工具权限'), 
+(4, 4, '版主', '#00a3b6', '管理公告、用户等权限'),
+(5, 5, '质量监督员', '#2a9553', '负责检查网站、游戏及其他服务的质量，发现漏洞后向开发团队报告'),
+(6, 6, '开发人员', '#d56007', '负责系统开发工作'),
+(7, 7, '管理员', '#dc6200', '负责管理团队成员'),
+(8, 8, '所有者', '#ae1600', '服务器拥有者权限');
 
 -- ----------------------------
 -- Table structure for article_tag
@@ -596,7 +596,7 @@ CREATE TABLE `email_templates`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `template_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
 
 -- ----------------------------
 -- Records of email_templates
@@ -618,15 +618,15 @@ CREATE TABLE `image_slider`  (
   `body` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `footer` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
 
 -- ----------------------------
 -- Records of image_slider
 -- ----------------------------
 INSERT INTO `image_slider` (`id`, `image`, `link`, `text`, `order`, `header`, `body`, `footer`) VALUES
-(1, '{image_path}slides/slide-01.jpg', '', 'Welcome to FusionCMS', 1, 'Welcome to FusionCMS', 'Private Community', 'Join today!'),
-(2, '{image_path}slides/slide-01.jpg', 'register', 'Join the battle today! Click here to sign up!', 2, 'Join the battle today!', 'Click here to sign up!', ''),
-(3, '{image_path}slides/slide-01.jpg', 'vote', 'Vote and be rewarded', 3, 'Vote and be rewarded', '', '');
+(1, '{image_path}slides/slide-01.jpg', '', '欢迎使用FusionCMS', 1, '欢迎使用FusionCMS', '专属游戏社区', '立即加入！'),
+(2, '{image_path}slides/slide-01.jpg', 'register', '立即参战！点击此处注册账号', 2, '立即加入战斗', '点击此处注册', ''),
+(3, '{image_path}slides/slide-01.jpg', 'vote', '投票获取奖励', 3, '投票赢取奖励', '', '');
 
 -- ----------------------------
 -- Table structure for item_template
@@ -693,38 +693,37 @@ CREATE TABLE `menu`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `FK_menu_ranks`(`rank`) USING BTREE,
   CONSTRAINT `FK_menu_ranks` FOREIGN KEY (`rank`) REFERENCES `ranks` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
 
 -- ----------------------------
 -- Records of menu
 -- ----------------------------
 INSERT INTO `menu` (`id`, `name`, `link`, `type`, `rank`, `specific_rank`, `order`, `permission`, `side`, `dropdown`, `parent_id`) VALUES
-(1, '{"english":"Home","spanish":"Inicio","simplified-chinese":"首页","portuguese-brazilian":"Início","france":"Accueil","persian":"خانه"}', 'news', 'top', 1, 0, 1, NULL, 'L', 0, 0),
-(3, '{"english":"Features","france":"Fonctionnalités","spanish":"Características","persian":"ویژگی‌ها","portuguese-brazilian":"Funcionalidades","simplified-chinese":"功能"}', '#', 'top', 1, 0, 4, NULL, 'L', 1, 0),
-(4, '{"english":"Forum","france":"Forum","persian":"فروم","portuguese-brazilian":"Fórum","simplified-chinese":"论坛 ","spanish":"Foro"}', 'forum', 'top', 1, 0, 3, NULL, 'L', 0, 0),
-(7, '{"english":"Home","france":"Accueil","persian":"خانه ","portuguese-brazilian":"Início","simplified-chinese":"首页 ","spanish":"Inicio"}', 'news', 'side', 1, 0, 8, NULL, 'L', 0, 0),
-(8, '{"english":"Private messages","france":"Messages privés","persian":"پیام‌های خصوصی","portuguese-brazilian":"Mensagens privadas","simplified-chinese":"私信 ","spanish":"Mensajes privados"}', 'messages', 'side', 2, 0, 11, '', 'L', 0, 0),
-(9, '{"english":"How to connect","france":"Comment se connecter","persian":"نحوه اتصال","portuguese-brazilian":"Como conectar","simplified-chinese":"如何连接","spanish":"Cómo conectarse"}', 'page/connect', 'top', 1, 0, 1, NULL, 'L', 0, 12),
-(10, '{"english":"Forum","france":"Forum","persian":"فروم","portuguese-brazilian":"Fórum","simplified-chinese":"论坛 ","spanish":"Foro"}', 'forum', 'side', 1, 0, 11, NULL, 'L', 0, 0),
-(11, '{"english":"Sign in","france":"Se connecter","persian":"وارد شوید","portuguese-brazilian":"Entrar","simplified-chinese":"登录","spanish":"Iniciar sesión"}', 'login', 'side', 1, 1, 13, '11', 'L', 0, 0),
-(12, '{"english":"Support","france":"Support","persian":"پشتیبانی ","portuguese-brazilian":"Suporte","simplified-chinese":"支持 ","spanish":"Soporte"}', '#', 'top', 1, 0, 6, NULL, 'L', 1, 0),
-(13, '{"english":"User panel","france":"Panneau de l\'utilisateur","persian":"پنل کاربری","portuguese-brazilian":"Painel do usuário","simplified-chinese":"用户面板 ","spanish":"Panel de usuario"}', 'ucp', 'side', 2, 0, 16, '13', 'L', 0, 0),
-(14, '{"english":"Online players","france":"Joueurs en ligne","persian":"بازیکنان آنلاین","portuguese-brazilian":"Jogadores online","simplified-chinese":"在线玩家","spanish":"Jugadores en línea"}', 'online', 'top', 1, 0, 5, NULL, 'L', 0, 0),
-(15, '{"english":"Armory","france":"Arsenal","persian":"اسلحه خانه","portuguese-brazilian":"Arsenal","simplified-chinese":"军械库","spanish":"Arsenal"}', 'armory', 'top', 1, 0, 1, NULL, 'L', 0, 3),
-(16, '{"english":"PvP Statistics","france":"Statistiques JcJ","persian":"آمار PvP","portuguese-brazilian":"Estatísticas PvP","simplified-chinese":"PvP 统计数据","spanish":"Estadísticas de JcJ"}', 'pvp_statistics', 'top', 1, 0, 3, NULL, 'L', 0, 3),
-(17, '{"english":"Changelog","france":"Journal des modifications","persian":"تاریخچه تغییرات","portuguese-brazilian":"Registro de alterações","simplified-chinese":"更新日志","spanish":"Registro de cambios"}', 'changelog', 'top', 1, 0, 4, NULL, 'L', 0, 3),
-(18, '{"english":"Armory","france":"Arsenal","persian":"اسلحه خانه","portuguese-brazilian":"Arsenal","simplified-chinese":"军械库","spanish":"Arsenal"}', 'armory', 'side', 1, 0, 19, NULL, NULL, 0, 0),
-(19, '{"english":"Online players","france":"Joueurs en ligne","persian":"بازیکنان آنلاین","portuguese-brazilian":"Jogadores online","simplified-chinese":"在线玩家","spanish":"Jugadores en línea"}', 'online', 'side', 1, 0, 14, NULL, 'L', 0, 0),
-(20, '{"english":"Changelog","france":"Journal des modifications","persian":"تاریخچه تغییرات","portuguese-brazilian":"Registro de alterações","simplified-chinese":"更新日志","spanish":"Registro de cambios"}', 'changelog', 'side', 1, 0, 21, NULL, NULL, 0, 0),
-(21, '{"english":"Admin panel","france":"Panneau d\'administration","persian":"پنل مدیریت","portuguese-brazilian":"Painel de administração","simplified-chinese":"管理面板","spanish":"Panel de administración"}', 'admin', 'side', 5, 0, 18, '21', 'L', 0, 0),
-(22, '{"english":"Home","france":"Accueil","persian":"خانه","portuguese-brazilian":"Início","simplified-chinese":"首页 ","spanish":"Inicio"}', 'news', 'bottom', 1, 0, 10, NULL, 'L', 0, 0),
-(23, '{"english":"Forum","france":"Forum","persian":"فروم","portuguese-brazilian":"Fórum","simplified-chinese":"论坛 ","spanish":"Foro"}', 'forum', 'bottom', 1, 0, 11, NULL, 'L', 0, 0),
-(24, '{"english":"Store","france":"Boutique","persian":"فروشگاه","portuguese-brazilian":"Loja","simplified-chinese":"商店","spanish":"Tienda"}', 'store', 'bottom', 1, 0, 13, NULL, 'L', 0, 0),
-(25, '{"english":"How to connect","france":"Comment se connecter","persian":"چگونه متصل شویم","portuguese-brazilian":"Como se conectar","simplified-chinese":"如何连接","spanish":"Cómo conectarse"}', 'page/connect', 'bottom', 1, 0, 12, NULL, 'L', 0, 0),
-(26, '{"english":"Vote","france":"Voter","persian":"رای دادن","portuguese-brazilian":"Votar","simplified-chinese":"投票","spanish":"Votar"}', 'vote', 'bottom', 1, 0, 14, NULL, 'L', 0, 0),
-(27, '{"english":"Donate","france":"Faire un don","persian":"اهدا کردن","portuguese-brazilian":"Doar","simplified-chinese":"捐赠","spanish":"Donar"}', 'donate', 'bottom', 1, 0, 15, NULL, 'L', 0, 0),
-(100, '{"english":"Log out","france":"Se déconnecter","persian":"خروج از حساب","portuguese-brazilian":"Sair","simplified-chinese":"登出","spanish":"Cerrar sesión"}', 'logout', 'side', 2, 0, 100, '100', 'L', 0, 0);
-
+(1, '{"simplified-chinese":"首页"}', 'news', 'top', 1, 0, 1, NULL, 'L', 0, 0),
+(3, '{"simplified-chinese":"功能"}', '#', 'top', 1, 0, 4, NULL, 'L', 1, 0),
+(4, '{"simplified-chinese":"论坛"}', 'forum', 'top', 1, 0, 3, NULL, 'L', 0, 0),
+(7, '{"simplified-chinese":"首页"}', 'news', 'side', 1, 0, 8, NULL, 'L', 0, 0),
+(8, '{"simplified-chinese":"私信"}', 'messages', 'side', 2, 0, 11, '', 'L', 0, 0),
+(9, '{"simplified-chinese":"如何连接"}', 'page/connect', 'top', 1, 0, 1, NULL, 'L', 0, 12),
+(10, '{"simplified-chinese":"论坛"}', 'forum', 'side', 1, 0, 11, NULL, 'L', 0, 0),
+(11, '{"simplified-chinese":"登录"}', 'login', 'side', 1, 1, 13, '11', 'L', 0, 0),
+(12, '{"simplified-chinese":"支持"}', '#', 'top', 1, 0, 6, NULL, 'L', 1, 0),
+(13, '{"simplified-chinese":"用户面板"}', 'ucp', 'side', 2, 0, 16, '13', 'L', 0, 0),
+(14, '{"simplified-chinese":"在线玩家"}', 'online', 'top', 1, 0, 5, NULL, 'L', 0, 0),
+(15, '{"simplified-chinese":"军械库"}', 'armory', 'top', 1, 0, 1, NULL, 'L', 0, 3),
+(16, '{"simplified-chinese":"PvP统计"}', 'pvp_statistics', 'top', 1, 0, 3, NULL, 'L', 0, 3),
+(17, '{"simplified-chinese":"更新日志"}', 'changelog', 'top', 1, 0, 4, NULL, 'L', 0, 3),
+(18, '{"simplified-chinese":"军械库"}', 'armory', 'side', 1, 0, 19, NULL, NULL, 0, 0),
+(19, '{"simplified-chinese":"在线玩家"}', 'online', 'side', 1, 0, 14, NULL, 'L', 0, 0),
+(20, '{"simplified-chinese":"更新日志"}', 'changelog', 'side', 1, 0, 21, NULL, NULL, 0, 0),
+(21, '{"simplified-chinese":"管理面板"}', 'admin', 'side', 5, 0, 18, '21', 'L', 0, 0),
+(22, '{"simplified-chinese":"首页"}', 'news', 'bottom', 1, 0, 10, NULL, 'L', 0, 0),
+(23, '{"simplified-chinese":"论坛"}', 'forum', 'bottom', 1, 0, 11, NULL, 'L', 0, 0),
+(24, '{"simplified-chinese":"商店"}', 'store', 'bottom', 1, 0, 13, NULL, 'L', 0, 0),
+(25, '{"simplified-chinese":"如何连接"}', 'page/connect', 'bottom', 1, 0, 12, NULL, 'L', 0, 0),
+(26, '{"simplified-chinese":"投票"}', 'vote', 'bottom', 1, 0, 14, NULL, 'L', 0, 0),
+(27, '{"simplified-chinese":"捐赠"}', 'donate', 'bottom', 1, 0, 15, NULL, 'L', 0, 0),
+(100, '{"simplified-chinese":"退出"}', 'logout', 'side', 2, 0, 100, '100', 'L', 0, 0);
 
 -- ----------------------------
 -- Table structure for menu_ucp
@@ -740,21 +739,21 @@ CREATE TABLE IF NOT EXISTS `menu_ucp` (
   `permission` varchar(100) DEFAULT NULL,
   `permissionModule` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu_ucp
 -- ----------------------------
 INSERT INTO `menu_ucp` (`id`, `name`, `link`, `icon`, `order`, `group`, `permission`, `permissionModule`) VALUES
-(1, '{"english":"Account Overview"}', 'ucp', NULL, 1, 1, 'view', 'ucp'),
-(2, '{"english":"Account settings"}', 'ucp/settings', NULL, 2, 1, 'canUpdateAccountSettings', 'ucp'),
-(3, '{"english":"Account Security"}', 'ucp/security', NULL, 3, 1, 'securityAccount', 'ucp'),
-(4, '{"english":"Teleport hub"}', 'teleport', NULL, 4, 2, 'view', 'teleport'),
-(5, '{"english":"Vote panel"}', 'vote', NULL, 5, 2, 'view', 'vote'),
-(6, '{"english":"Donate panel"}', 'donate', NULL, 6, 2, 'view', 'donate'),
-(7, '{"english":"Store"}', 'store', NULL, 7, 2, 'view', 'store'),
-(8, '{"english":"GM panel"}', 'gm', NULL, 8, 3, 'view', 'gm'),
-(9, '{"english":"Admin panel"}', 'admin', NULL, 9, 3, 'view', 'admin');
+(1, '{"simplified-chinese":"账号概览"}', 'ucp', NULL, 1, 1, 'view', 'ucp'),
+(2, '{"simplified-chinese":"账号设置"}', 'ucp/settings', NULL, 2, 1, 'canUpdateAccountSettings', 'ucp'),
+(3, '{"simplified-chinese":"账号安全"}', 'ucp/security', NULL, 3, 1, 'securityAccount', 'ucp'),
+(4, '{"simplified-chinese":"传送中心"}', 'teleport', NULL, 4, 2, 'view', 'teleport'),
+(5, '{"simplified-chinese":"投票面板"}', 'vote', NULL, 5, 2, 'view', 'vote'),
+(6, '{"simplified-chinese":"捐赠面板"}', 'donate', NULL, 6, 2, 'view', 'donate'),
+(7, '{"simplified-chinese":"商店"}', 'store', NULL, 7, 2, 'view', 'store'),
+(8, '{"simplified-chinese":"游戏管理面板"}', 'gm', NULL, 8, 3, 'view', 'gm'),
+(9, '{"simplified-chinese":"管理面板"}', 'admin', NULL, 9, 3, 'view', 'admin');
 
 -- ----------------------------
 -- Table structure for gm_log
@@ -852,13 +851,13 @@ CREATE TABLE `pages`  (
   UNIQUE INDEX `identifier`(`identifier`) USING BTREE,
   INDEX `fk_rank_needed_ranks`(`rank_needed`) USING BTREE,
   CONSTRAINT `fk_rank_needed_ranks` FOREIGN KEY (`rank_needed`) REFERENCES `ranks` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
 
 -- ----------------------------
 -- Records of pages
 -- ----------------------------
 INSERT INTO `pages` (`id`, `identifier`, `name`, `content`, `permission`, `rank_needed`) VALUES
-(1, 'connect', '{\"english\":\"How to connect\"}', '<p><strong>1.</strong> First of all, you must create an account. The account is used to log into both the game and our website. <a href=\"../register\">Click here</a> to open the registration page. <br /><br /><strong>2.</strong> Install World of Warcraft. You can download it (legally) from here: <a href=\"https://www.worldofwarcraft.com/account/download/clients/pc/InstallWoW.exe\" target=\"_blank\" rel=\"noopener\">Windows</a> or <a href=\"https://www.worldofwarcraft.com/account/download/clients/mac/InstallWoW.zip\" target=\"_blank\" rel=\"noopener\">Mac</a>. Make sure to upgrade to our current supported patch, which is 3.3.5 (build 12340). Patch mirrors can be found <a href=\"http://www.wowwiki.com/Patch_mirrors\" target=\"_blank\" rel=\"noopener\">here</a>. <br /><br /><strong>3.</strong> Open up the \"World of Warcraft\" directory. The default directory is \"C:\\Program Files\\World of Warcraft\". When you\'ve found it, open up the directory called \"data\", then go into the directory called either enUS or enGB, depending on your client language. <br /><br /><strong>4.</strong> Open up the file called \"realmlist.wtf\" with a text editor such as Notepad. To do this, you must right click on the file and choose properties, then select notepad as the default software for files with the \".wtf\" ending. You may also just start the text editor and drag the file into the edit window. <br /><br /><strong>5.</strong> Erase all text and change it to:</p>\n<div style=\"padding: 30px; display: block; font-weight: bold;\">set realmlist logon.myserver.com (edit from admin panel -&gt; pages)</div>\n<p><strong>You may now start playing! If you need any help, do not hesitate to create a support ticket.</strong></p>', NULL, 1);
+(1, 'connect', '{\"simplified-chinese\":\"如何连接\"}', '<p><strong>1.</strong> 首先，您需要创建一个账号。该账号用于登录游戏和我们的网站。<a href=\"../register\">点击此处</a>打开注册页面。<br /><br /><strong>2.</strong> 安装《魔兽世界》。您可以从以下链接合法下载：<a href=\"https://www.worldofwarcraft.com/account/download/clients/pc/InstallWoW.exe\" target=\"_blank\" rel=\"noopener\">Windows版</a> 或 <a href=\"https://www.worldofwarcraft.com/account/download/clients/mac/InstallWoW.zip\" target=\"_blank\" rel=\"noopener\">Mac版</a>。请确保升级到我们当前支持的3.3.5a(12340)版本，补丁镜像可在此<a href=\"http://www.wowwiki.com/Patch_mirrors\" target=\"_blank\" rel=\"noopener\">页面</a>找到。<br /><br /><strong>3.</strong> 打开《魔兽世界》安装目录（默认路径为\"C:\\Program Files\\World of Warcraft\"）。找到目录后，进入\"data\"文件夹，然后根据客户端语言选择进入enUS或enGB文件夹。<br /><br /><strong>4.</strong> 用文本编辑器（如记事本）打开\"realmlist.wtf\"文件。具体操作：右键点击该文件选择属性，将.wtf文件的默认打开程序设置为记事本。或者直接打开记事本后拖拽文件到编辑窗口。<br /><br /><strong>5.</strong> 删除所有内容并修改为：</p>\n<div style=\"padding: 30px; display: block; font-weight: bold;\">set realmlist logon.myserver.com (请通过管理面板->页面编辑修改)</div>\n<p><strong>现在您可以开始游戏了！如需任何帮助，请随时提交支持工单。</strong></p>', NULL, 1);
 
 -- ----------------------------
 -- Table structure for password_recovery_key
@@ -913,7 +912,7 @@ CREATE TABLE `paypal_donate`  (
   `tax` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `points` int(11) NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
 
 -- ----------------------------
 -- Records of paypal_donate
@@ -1008,18 +1007,18 @@ CREATE TABLE `ranks`  (
   `is_admin` int(1) NULL DEFAULT 0,
   `is_owner` int(1) NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
 
 -- ----------------------------
 -- Records of ranks
 -- ----------------------------
 INSERT INTO `ranks` (`id`, `rank_name`, `access_id`, `is_gm`, `is_dev`, `is_admin`, `is_owner`) VALUES
-(1, 'Guest', '-1', 0, 0, 0, 0),
-(2, 'Player', '0', 0, 0, 0, 0),
-(3, 'Game master', '1', 1, 0, 0, 0),
-(4, 'Developer', '2', 1, 1, 0, 0),
-(5, 'Administrator', '3', 1, 1, 1, 0),
-(6, 'Owner', '4', 1, 1, 1, 1);
+(1, '游客', '-1', 0, 0, 0, 0),
+(2, '玩家', '0', 0, 0, 0, 0),
+(3, '游戏管理员', '1', 1, 0, 0, 0),
+(4, '开发人员', '2', 1, 1, 0, 0),
+(5, '管理员', '3', 1, 1, 1, 0),
+(6, '所有者', '4', 1, 1, 1, 1);
 
 -- ----------------------------
 -- Table structure for realms
@@ -1086,17 +1085,15 @@ CREATE TABLE `sideboxes`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_sb_rank_needed`(`rank_needed`) USING BTREE,
   CONSTRAINT `fk_sb_rank_needed` FOREIGN KEY (`rank_needed`) REFERENCES `ranks` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=Dynamic;
 
 -- ----------------------------
 -- Records of sideboxes
 -- ----------------------------
 INSERT INTO `sideboxes` (`id`, `type`, `displayName`, `rank_needed`, `order`, `location`, `permission`, `pages`) VALUES
-(1, 'status', '{"english": "Server Status","spanish": "Estado del Servidor","simplified-chinese": "服务器状态","portuguese-brazilian": "Status do Servidor","france": "État du Serveur","persian": "وضعیت سرور"}', 1, 0, 'side', NULL, '["news"]'),
-(2, 'language_picker', '{"english": "Language","spanish": "Idioma","simplified-chinese": "语言","portuguese-brazilian": "Idioma","france": "Langue","persian": "زبان"}', 1, 3, 'side', NULL, '["news"]'),
-(3, 'top', '', 1, 1, 'top', NULL, '["news"]'),
-(4, 'info_login', '{"english": "User area","spanish": "Área de usuario","simplified-chinese": "用户区域","portuguese-brazilian": "Área do usuário","france": "Zone utilisateur","persian": "منطقه کاربری"}', 1, 2, 'side', NULL, '["news"]'),
-(5, 'discord', '{"english": "Discord","spanish": "Discord","simplified-chinese": "Discord","portuguese-brazilian": "Discord","france": "Discord","persian": "دیسکورد"}', 1, 4, 'side', NULL, '["news"]');
+(1, 'status', '{"simplified-chinese":"服务器状态"}', 1, 0, 'side', NULL, '["news"]'),
+(2, 'top', '', 1, 1, 'top', NULL, '["news"]'),
+(3, 'info_login', '{"simplified-chinese":"用户面板"}', 1, 2, 'side', NULL, '["news"]');
 
 -- ----------------------------
 -- Table structure for sideboxes_custom
@@ -1194,7 +1191,7 @@ CREATE TABLE `store_groups`  (
 -- Records of store_groups
 -- ----------------------------
 INSERT INTO `store_groups` (`id`, `title`, `orderNumber`) VALUES
-(1, 'Test group', 1);
+(1, '测试组', 1);
 
 -- ----------------------------
 -- Table structure for store_items

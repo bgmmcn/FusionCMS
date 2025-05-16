@@ -12,7 +12,7 @@
  *  will automatically look in that folder too.
  */
 
-$lang['changelog_title'] = "Changelog";
+$lang['changelog_title'] = "更新日志";
 $lang['changes_made_on'] = "更改于";
 $lang['no_changes'] = "暂无更改内容。";
 $lang['change_info'] = "请描述修改内容";

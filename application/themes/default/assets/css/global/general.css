@@ -19,7 +19,7 @@
 	--font-family-secondary: 'Arial', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 	/* Colors */
-	--color-primary: #4f4b42;
+	--color-primary: #ff9900;
 	--color-secondary: #716a5e;
 	--color-tertiary: #695b3b;
 
@@ -162,9 +162,9 @@ body {
 	-ms-flex-direction: column;
 	flex-direction: column;
 
-	background-size: 2400px auto;
+	background-size: 100% auto;
 	background-color: transparent;
-	background-image: url('../../images/backgrounds/background-01.jpg');
+	background-image: url('../../images/backgrounds/background.png');
 	background-repeat: no-repeat;
 	background-position: top center;
 }

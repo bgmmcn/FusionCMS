@@ -10,7 +10,7 @@ $lang["login_button"] = "立即登录";
 $lang['log_in'] = "登录";
 
 //Errors
-$lang["error"] = "未找到匹配的账户信息";
+$lang["error"] = "未找到匹配的账号信息";
 $lang["ip_blocked"] = "您的IP已被封禁";
 $lang["try_again"] = "请等待";
 $lang["minutes"] = "分钟后重试";

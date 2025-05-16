@@ -1,19 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-
- This website is powered by
-  ______         _              _____ __  __  _____
- |  ____|       (_)            / ____|  \/  |/ ____|
- | |__ _   _ ___ _  ___  _ __ | |    | \  / | (___
- |  __| | | / __| |/ _ \| '_ \| |    | |\/| |\___ \
- | |  | |_| \__ \ | (_) | | | | |____| |  | |____) |
- |_|   \__,_|___/_|\___/|_| |_|\_____|_|  |_|_____/
-
- www.fusion-hub.com
-
--->
-
 <html dir="{if lang('isRTL', 'theme') === 1}rtl{else}ltr{/if}" lang="{lang('abbreviation', 'main')}">
 	<head>
 		<title>{$title}</title>

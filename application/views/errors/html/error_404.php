@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-<title>404 Page Not Found</title>
+<title>404 页面未找到</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -72,8 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <div class="wrap">
-    <h1>404 - File Not Found</h1>
-    <p>Sorry! Cannot seem to find the page you were looking for.</p>
+    <h1>404 - 页面未找到</h1>
+    <p>抱歉！无法找到您要访问的页面。</p>
 </div>
 </body>
 </html>

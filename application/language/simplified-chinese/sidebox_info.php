@@ -13,10 +13,10 @@
  */
 
 $lang['expansion'] = "扩展版本";
-$lang['last_ip'] = "上次登录IP";
-$lang['current_ip'] = "当前IP";
-$lang['vp'] = "虚拟点数";
-$lang['dp'] = "捐赠点数";
+$lang['last_ip'] = "上次";
+$lang['current_ip'] = "当前";
+$lang['vp'] = "人口";
+$lang['dp'] = "本位";
 $lang['user_panel'] = "用户中心";
 $lang['log_out'] = "退出登录";
 $lang['username'] = "用户名";
